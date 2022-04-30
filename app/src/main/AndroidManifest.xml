@@ -12,7 +12,7 @@
         <activity
             android:name=".views.splash.SplashScreenActivity"
             android:exported="true"
-            android:parentActivityName=".views.home.MainActivity"
+            android:parentActivityName=".views.home.HomeActivity"
             android:theme="@style/SplashTheme.Background" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.home.MainActivity"
+            android:name=".views.home.HomeActivity"
             android:exported="false" />
     </application>
 

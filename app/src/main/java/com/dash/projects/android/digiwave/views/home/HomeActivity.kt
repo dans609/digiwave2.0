@@ -6,7 +6,7 @@ import com.dash.projects.android.digiwave.databinding.ActivityMainBinding
 import com.dash.projects.android.digiwave.enum.FeatureName
 import com.dash.projects.android.digiwave.interfaces.OnFeatureClickCallback
 
-class MainActivity : AppCompatActivity(), OnFeatureClickCallback {
+class HomeActivity : AppCompatActivity(), OnFeatureClickCallback {
     private var _binding: ActivityMainBinding? = null
     private val binding
         get() = _binding

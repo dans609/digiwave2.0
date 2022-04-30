@@ -7,7 +7,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.dash.projects.android.digiwave.R
-import com.dash.projects.android.digiwave.views.home.MainActivity
+import com.dash.projects.android.digiwave.views.home.HomeActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -25,7 +25,7 @@ class SplashScreenActivity : AppCompatActivity() {
             } catch (e: InterruptedException) {
                 Log.d(TAG, e.printStackTrace().toString())
             } finally {
-                startActivity(Intent(context, MainActivity::class.java))
+                startActivity(Intent(context, HomeActivity::class.java))
                 finish()
             }
         }
