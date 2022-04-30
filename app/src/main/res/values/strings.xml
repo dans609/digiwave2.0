@@ -1,0 +1,15 @@
+<resources>
+    <!-- Application name -->
+    <string name="app_name">Digiwave</string>
+
+
+    <!-- Application version information -->
+    <string name="app_version">version %d.%d.%d</string>
+    <string name="app_version_sample">version 1.0.0</string>
+
+
+    <!-- Image content description strings -->
+    <string name="codes_applicationLogo">application logo</string>
+
+    <!-- Content application strings   -->
+</resources>

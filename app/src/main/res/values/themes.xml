@@ -1,0 +1,138 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Digiwave" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colombianBlue</item>
+        <item name="colorPrimaryVariant">@color/darkColombianBlue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/malachiteGreen</item>
+        <item name="colorSecondaryVariant">@color/darkMalachiteGreen</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Application component styles -->
+    <style name="SplashTheme" parent="Theme.Digiwave">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SplashTheme.Background">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="NoAppBar" parent="SplashTheme">
+        <item name="windowNoTitle">false</item>
+    </style>
+
+
+
+    <!-- Base content container dimension -->
+    <style name="FillContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="ConstraintContainer">
+        <item name="android:layout_width">@dimen/clear</item>
+        <item name="android:layout_height">@dimen/clear</item>
+    </style>
+
+    <style name="HugContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LargeFixedContainer">
+        <item name="android:layout_width">@dimen/imageDensity_200</item>
+        <item name="android:layout_height">@dimen/imageDensity_200</item>
+    </style>
+
+
+
+    <!-- Content styles -->
+    <!-- Outer barrier -->
+    <style name="OuterBarrier">
+        <item name="android:layout_marginTop">@dimen/defaultBarrierValue</item>
+        <item name="android:layout_marginEnd">@dimen/defaultBarrierValue</item>
+        <item name="android:layout_marginBottom">@dimen/defaultBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/defaultBarrierValue</item>
+    </style>
+
+    <style name="WideOuterBarrier">
+        <item name="android:layout_marginTop">@dimen/wideBarrierValue</item>
+        <item name="android:layout_marginEnd">@dimen/wideBarrierValue</item>
+        <item name="android:layout_marginBottom">@dimen/wideBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/wideBarrierValue</item>
+    </style>
+
+    <style name="SuperWideOuterBarrier">
+        <item name="android:layout_marginTop">@dimen/superWideBarrierValue</item>
+        <item name="android:layout_marginEnd">@dimen/superWideBarrierValue</item>
+        <item name="android:layout_marginBottom">@dimen/superWideBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/superWideBarrierValue</item>
+    </style>
+
+    <!-- Inner barrier -->
+    <style name="InnerBarrier">
+        <item name="android:paddingTop">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingStart">@dimen/defaultBarrierValue</item>
+    </style>
+
+    <style name="WideInnerBarrier">
+        <item name="android:paddingTop">@dimen/wideBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/wideBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/wideBarrierValue</item>
+        <item name="android:paddingStart">@dimen/wideBarrierValue</item>
+    </style>
+
+    <style name="SuperWideInnerBarrier">
+        <item name="android:paddingTop">@dimen/superWideBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/superWideBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/superWideBarrierValue</item>
+        <item name="android:paddingStart">@dimen/superWideBarrierValue</item>
+    </style>
+
+
+
+    <!-- Chain styles (2 styles) -->
+    <!-- Background themes -->
+    <style name="FillContainer.WhiteSmokeBackground">
+        <item name="android:background">@color/lightWhiteSmoke</item>
+    </style>
+
+    <style name="FillContainer.GradientBlueBackground">
+        <item name="android:background">@drawable/bg_splash</item>
+    </style>
+
+    <!-- Text styles -->
+    <style name="HugContent.WhiteColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Inner barrier -->
+    <style name="HugContent.InnerBarrier" parent="InnerBarrier">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <!-- Chain styles (3 styles) -->
+    <!-- Text styles -->
+    <style name="HugContent.InnerBarrier.WhiteColor" parent="HugContent.InnerBarrier">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!-- Reset chain -->
+    <style name="DefaultTextFormat" parent="HugContent.InnerBarrier.WhiteColor">
+        <item name="android:maxLines">@integer/high</item>
+    </style>
+</resources>
