@@ -3,8 +3,10 @@ package com.dash.projects.android.digiwave.views.home
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dash.projects.android.digiwave.databinding.ActivityMainBinding
+import com.dash.projects.android.digiwave.enum.FeatureName
+import com.dash.projects.android.digiwave.interfaces.OnFeatureClickCallback
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnFeatureClickCallback {
     private var _binding: ActivityMainBinding? = null
     private val binding
         get() = _binding
@@ -13,8 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         ::_binding.set(ActivityMainBinding.inflate(layoutInflater))
         setContentView(binding?.root)
-
-        // TODO: 24/12/2021
     }
 
     override fun onDestroy() {
@@ -24,5 +24,13 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "MainActivity"
+    }
+
+    override fun onFeatureClicked(featureName: FeatureName) {
+        when(featureName) {
+            FeatureName.KarnaughMap -> {}
+            FeatureName.NumberSystem -> {}
+            FeatureName.LogicGate -> {}
+        }
     }
 }
