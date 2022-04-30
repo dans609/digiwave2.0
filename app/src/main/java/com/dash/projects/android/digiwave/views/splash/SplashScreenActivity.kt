@@ -13,16 +13,19 @@ import kotlinx.coroutines.launch
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val context = this
+        val splashDuration =
+            resources.getInteger(R.integer.milliSecs_3000)
+
         lifecycleScope.launch {
             try {
-                delay(resources.getInteger(R.integer.milliSecs_3000).toLong())
+                delay(splashDuration.toLong())
             } catch (e: InterruptedException) {
                 Log.d(TAG, e.printStackTrace().toString())
             } finally {
-                startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
+                startActivity(Intent(context, MainActivity::class.java))
                 finish()
             }
         }
