@@ -18,6 +18,8 @@ ext {
     materialAppVersion = '1.5.0'
     constraintLayoutVersion = '2.1.3'
     kotlinCoroutinesVersion = '1.3.8'
+    rxJava2Version = '2.2.19'
+    rxBinding2Version = '2.0.0'
 
     junitVersion = '4.13.2'
     androidxExtJunitVersion = '1.1.3'
