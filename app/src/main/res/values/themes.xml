@@ -48,11 +48,15 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="LargeFixedContainer">
+    <style name="ContainerSize200">
         <item name="android:layout_width">@dimen/imageDensity_200</item>
         <item name="android:layout_height">@dimen/imageDensity_200</item>
     </style>
 
+    <style name="AppbarContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/appbarSize</item>
+    </style>
 
 
     <!-- Content styles -->
@@ -102,8 +106,7 @@
 
 
 
-    <!-- Chain styles (2 styles) -->
-    <!-- Background themes -->
+    <!-- Multiple chain styles -->
     <style name="FillContainer.WhiteSmokeBackground">
         <item name="android:background">@color/lightWhiteSmoke</item>
     </style>
@@ -112,27 +115,44 @@
         <item name="android:background">@drawable/bg_splash</item>
     </style>
 
-    <!-- Text styles -->
     <style name="HugContent.WhiteColor">
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <!-- Inner barrier -->
     <style name="HugContent.InnerBarrier" parent="InnerBarrier">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-
-    <!-- Chain styles (3 styles) -->
-    <!-- Text styles -->
     <style name="HugContent.InnerBarrier.WhiteColor" parent="HugContent.InnerBarrier">
         <item name="android:textColor">@color/white</item>
     </style>
 
-
-    <!-- Reset chain -->
     <style name="DefaultTextFormat" parent="HugContent.InnerBarrier.WhiteColor">
         <item name="android:maxLines">@integer/high</item>
+    </style>
+
+    <style name="AppbarContainer.SuperInnerBarrier">
+        <item name="android:paddingTop">@dimen/superWideBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/superWideBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/superWideBarrierValue</item>
+        <item name="android:paddingStart">@dimen/superWideBarrierValue</item>
+    </style>
+
+    <style name="AppbarContainer.SuperInnerBarrier.NoElevation">
+        <item name="elevation">@dimen/clear</item>
+        <item name="android:elevation">@dimen/clear</item>
+    </style>
+
+    <style name="AppbarStyle.WhiteBackground" parent="AppbarContainer.SuperInnerBarrier.NoElevation">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="AppbarStyle.PrimaryAccentBackground" parent="AppbarStyle.WhiteBackground">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="FillContainer.WhiteSmokeBackground.FitsSystemWindows">
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 </resources>

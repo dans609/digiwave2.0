@@ -24,6 +24,7 @@
     <dimen name="wideBarrierValue">15dp</dimen>
     <dimen name="superWideBarrierValue">20dp</dimen>
     <dimen name="imageDensity_200">200dp</dimen>
+    <dimen name="appbarSize">300dp</dimen>
 
 
     <!-- Scale-independent pixel values  -->
