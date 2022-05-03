@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity(), OnFeatureClickCallback {
 
     override fun onDestroy() {
         super.onDestroy()
-        _binding = null
+        ::_binding.set(null)
     }
 
     override fun onFeatureClicked(featureName: FeatureName) {
