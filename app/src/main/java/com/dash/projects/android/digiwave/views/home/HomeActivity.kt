@@ -2,6 +2,7 @@ package com.dash.projects.android.digiwave.views.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.dash.projects.android.digiwave.databinding.ActivityHomeBinding
 import com.dash.projects.android.digiwave.enum.FeatureName
 import com.dash.projects.android.digiwave.interfaces.OnFeatureClickCallback
@@ -13,6 +14,7 @@ class HomeActivity : AppCompatActivity(), OnFeatureClickCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         ::_binding.set(ActivityHomeBinding.inflate(layoutInflater))
         setContentView(binding?.root)
     }

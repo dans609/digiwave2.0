@@ -15,19 +15,10 @@
     </style>
 
     <!-- Application component styles -->
-    <style name="SplashTheme" parent="Theme.Digiwave">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="SplashTheme.Background">
-        <item name="android:windowBackground">@drawable/bg_splash</item>
-        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    </style>
-
-    <style name="NoAppBar" parent="SplashTheme">
-        <item name="windowNoTitle">false</item>
+    <style name="Theme.SplashTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.Digiwave</item>
     </style>
 
 
@@ -109,10 +100,6 @@
     <!-- Multiple chain styles -->
     <style name="FillContainer.WhiteSmokeBackground">
         <item name="android:background">@color/lightWhiteSmoke</item>
-    </style>
-
-    <style name="FillContainer.GradientBlueBackground">
-        <item name="android:background">@drawable/bg_splash</item>
     </style>
 
     <style name="HugContent.WhiteColor">
