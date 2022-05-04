@@ -27,6 +27,8 @@
         <aapt:attr name="android:animation">
             <set>
                 <objectAnimator
+                    android:repeatMode="restart"
+                    android:repeatCount="infinite"
                     android:propertyName="trimPathEnd"
                     android:duration="1500"
                     android:valueFrom="0"
@@ -34,6 +36,8 @@
                     android:valueType="floatType"
                     android:interpolator="@android:anim/linear_interpolator"/>
                 <objectAnimator
+                    android:repeatMode="restart"
+                    android:repeatCount="infinite"
                     android:propertyName="trimPathStart"
                     android:duration="1500"
                     android:valueFrom="0"
