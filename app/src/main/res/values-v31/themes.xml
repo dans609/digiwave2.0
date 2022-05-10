@@ -3,8 +3,27 @@
     <style name="Theme.SplashTheme" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/logo_anim</item>
-        <item name="postSplashScreenTheme">@style/Theme.Digiwave</item>
+        <item name="postSplashScreenTheme">@style/Theme.Digiwave.NoActionBar</item>
         <item name="android:windowSplashScreenBrandingImage">@drawable/ic_logo_api12</item>
         <item name="windowSplashScreenAnimationDuration">3000</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Digiwave.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colombianBlue</item>
+        <item name="colorPrimaryVariant">@color/darkColombianBlue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/malachiteGreen</item>
+        <item name="colorSecondaryVariant">@color/darkMalachiteGreen</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>

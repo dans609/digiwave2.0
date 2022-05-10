@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/FillContainer.PrimaryBackground.SuperInnerBarrier">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        style="@style/FillContainer"
+        android:contentDescription="@string/cd_appbar_gate"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_appbar_gate" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        style="@style/HugContent.SuperOuterBarrier.ONLY_BOTTOM"
+        android:layout_gravity="end|bottom"
+        android:contentDescription="@string/cd_appbar_numsys"
+        app:srcCompat="@drawable/ic_appbar_numsys_end" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        style="@style/HugContent"
+        android:contentDescription="@string/cd_appbar_numsys"
+        app:srcCompat="@drawable/ic_appbar_numsys_start" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        style="@style/HugContent.CustomOuterBarrier.Dim50.ONLY_BOTTOM"
+        android:layout_gravity="center"
+        android:contentDescription="@string/cd_appbar_title"
+        app:srcCompat="@drawable/ic_appbar_title" />
+
+</FrameLayout>

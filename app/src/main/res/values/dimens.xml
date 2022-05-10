@@ -20,9 +20,12 @@
 
     <!-- Density-independent pixel values -->
     <dimen name="clear">0dp</dimen>
+    <dimen name="smallBarrierValue">5dp</dimen>
     <dimen name="defaultBarrierValue">10dp</dimen>
     <dimen name="wideBarrierValue">15dp</dimen>
-    <dimen name="superWideBarrierValue">20dp</dimen>
+    <dimen name="superBarrierValue">20dp</dimen>
+    <dimen name="dim50">50dp</dimen>
+    <dimen name="imageDensity_100">100dp</dimen>
     <dimen name="imageDensity_200">200dp</dimen>
     <dimen name="appbarSize">300dp</dimen>
 

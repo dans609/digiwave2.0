@@ -12,15 +12,34 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Digiwave.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colombianBlue</item>
+        <item name="colorPrimaryVariant">@color/darkColombianBlue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/malachiteGreen</item>
+        <item name="colorSecondaryVariant">@color/darkMalachiteGreen</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <!-- Application component styles -->
     <style name="Theme.SplashTheme" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo</item>
-        <item name="postSplashScreenTheme">@style/Theme.Digiwave</item>
-    </style>
+        <item name="postSplashScreenTheme">@style/Theme.Digiwave.NoActionBar</item>
 
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
 
     <!-- Base content container dimension -->
@@ -66,11 +85,11 @@
         <item name="android:layout_marginStart">@dimen/wideBarrierValue</item>
     </style>
 
-    <style name="SuperWideOuterBarrier">
-        <item name="android:layout_marginTop">@dimen/superWideBarrierValue</item>
-        <item name="android:layout_marginEnd">@dimen/superWideBarrierValue</item>
-        <item name="android:layout_marginBottom">@dimen/superWideBarrierValue</item>
-        <item name="android:layout_marginStart">@dimen/superWideBarrierValue</item>
+    <style name="SuperOuterBarrier">
+        <item name="android:layout_marginTop">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginEnd">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginBottom">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/superBarrierValue</item>
     </style>
 
     <!-- Inner barrier -->
@@ -88,18 +107,21 @@
         <item name="android:paddingStart">@dimen/wideBarrierValue</item>
     </style>
 
-    <style name="SuperWideInnerBarrier">
-        <item name="android:paddingTop">@dimen/superWideBarrierValue</item>
-        <item name="android:paddingEnd">@dimen/superWideBarrierValue</item>
-        <item name="android:paddingBottom">@dimen/superWideBarrierValue</item>
-        <item name="android:paddingStart">@dimen/superWideBarrierValue</item>
+    <style name="SuperInnerBarrier">
+        <item name="android:paddingTop">@dimen/superBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/superBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/superBarrierValue</item>
+        <item name="android:paddingStart">@dimen/superBarrierValue</item>
     </style>
-
 
 
     <!-- Multiple chain styles -->
     <style name="FillContainer.WhiteSmokeBackground">
         <item name="android:background">@color/lightWhiteSmoke</item>
+    </style>
+
+    <style name="FillContainer.PrimaryBackground">
+        <item name="android:background">@color/colombianBlue</item>
     </style>
 
     <style name="HugContent.WhiteColor">
@@ -115,15 +137,19 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="FillContainer.PrimaryBackground.SuperInnerBarrier">
+        <item name="android:padding">@dimen/superBarrierValue</item>
+    </style>
+
     <style name="DefaultTextFormat" parent="HugContent.InnerBarrier.WhiteColor">
         <item name="android:maxLines">@integer/high</item>
     </style>
 
     <style name="AppbarContainer.SuperInnerBarrier">
-        <item name="android:paddingTop">@dimen/superWideBarrierValue</item>
-        <item name="android:paddingEnd">@dimen/superWideBarrierValue</item>
-        <item name="android:paddingBottom">@dimen/superWideBarrierValue</item>
-        <item name="android:paddingStart">@dimen/superWideBarrierValue</item>
+        <item name="android:paddingTop">@dimen/superBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/superBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/superBarrierValue</item>
+        <item name="android:paddingStart">@dimen/superBarrierValue</item>
     </style>
 
     <style name="AppbarContainer.SuperInnerBarrier.NoElevation">
@@ -141,5 +167,114 @@
 
     <style name="FillContainer.WhiteSmokeBackground.FitsSystemWindows">
         <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="FillContainer.SuperOuterBarrier" parent="SuperOuterBarrier">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    
+    <style name="FillContainer.SuperOuterBarrier.ONLY_BOTTOM">
+        <item name="android:layout_marginTop">@dimen/clear</item>
+        <item name="android:layout_marginEnd">@dimen/clear</item>
+        <item name="android:layout_marginBottom">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/clear</item>
+    </style>
+
+    <style name="LightCardViewStyle.SuperOuterBarrier" parent="CardView.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">@dimen/defaultBarrierValue</item>
+        <item name="cardElevation">@dimen/defaultBarrierValue</item>
+        <item name="cardMaxElevation">@dimen/defaultBarrierValue</item>
+        <item name="android:layout_marginTop">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginEnd">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginBottom">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/superBarrierValue</item>
+    </style>
+
+    <style name="DarkCardViewStyle.SuperOuterBarrier" parent="CardView.Dark">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">@dimen/defaultBarrierValue</item>
+        <item name="cardElevation">@dimen/defaultBarrierValue</item>
+        <item name="cardMaxElevation">@dimen/defaultBarrierValue</item>
+        <item name="android:layout_marginTop">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginEnd">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginBottom">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/superBarrierValue</item>
+    </style>
+
+    <style name="LightCardViewStyle.SuperOuterBarrier.CLEAR_BOTTOM">
+        <item name="android:layout_marginBottom">@dimen/clear</item>
+    </style>
+
+    <style name="DarkCardViewStyle.SuperOuterBarrier.CLEAR_BOTTOM">
+        <item name="android:layout_marginBottom">@dimen/clear</item>
+    </style>
+
+    <style name="FeatureListStyle">
+        <item name="android:layout_width">@dimen/imageDensity_100</item>
+        <item name="android:layout_height">@dimen/imageDensity_100</item>
+    </style>
+
+    <style name="FeatureImageThemes">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">@color/lightColombianBlue</item>
+        <item name="android:backgroundTint">@color/lightColombianBlue</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="FeatureTitleTextThemes">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">@integer/high</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/aestheticBlack</item>
+    </style>
+
+    <style name="FeatureDescriptionTextThemes" parent="FeatureTitleTextThemes">
+        <item name="android:maxLines">@integer/triad</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ConstraintContainer.OuterBarrier" parent="OuterBarrier">
+        <item name="android:layout_width">@dimen/clear</item>
+        <item name="android:layout_height">@dimen/clear</item>
+    </style>
+
+    <style name="ConstraintContainer.OuterBarrier.ONLY_BOTTOM" parent="ConstraintContainer.OuterBarrier">
+        <item name="android:layout_marginTop">@dimen/clear</item>
+        <item name="android:layout_marginEnd">@dimen/clear</item>
+        <item name="android:layout_marginStart">@dimen/clear</item>
+    </style>
+
+    <style name="FillContainer.RecyclerViewStyles">
+        <item name="android:background">@drawable/bg_list_features</item>
+        <item name="android:elevation">@dimen/defaultBarrierValue</item>
+        <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
+        <item name="android:clipToPadding">true</item>
+        <item name="android:paddingBottom">@dimen/superBarrierValue</item>
+    </style>
+
+    <style name="FillContainer.RecyclerViewStyles.WithBarrier">
+        <item name="android:layout_marginBottom">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/superBarrierValue</item>
+        <item name="android:layout_marginEnd">@dimen/superBarrierValue</item>
+    </style>
+
+    <style name="FillContainer.PrimaryBackground.FitsSystemWindows">
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="FillContainer.FitsSystemWindows">
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="HugContent.SuperOuterBarrier.ONLY_BOTTOM" parent="HugContent">
+        <item name="android:layout_marginBottom">@dimen/superBarrierValue</item>
+    </style>
+
+    <style name="HugContent.CustomOuterBarrier.Dim50.ONLY_BOTTOM" parent="HugContent">
+        <item name="android:layout_marginBottom">@dimen/dim50</item>
     </style>
 </resources>

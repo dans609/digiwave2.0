@@ -1,15 +1,24 @@
 <resources>
     <!-- Application name -->
     <string name="app_name">Digiwave</string>
-
-
+    
     <!-- Application version information -->
     <string name="app_version">version %d.%d.%d</string>
     <string name="app_version_sample">version 1.0.0</string>
 
+    <!-- Content description strings -->
+    <string name="cd_applicationLogo">Application logo</string>
+    <string name="cd_featureImage">Feature picture</string>
+    <string name="cd_appbar_numsys">Icon number system</string>
+    <string name="cd_appbar_gate">Icon logic gate</string>
+    <string name="cd_appbar_title">Vector of application title</string>
 
-    <!-- Image content description strings -->
-    <string name="codes_applicationLogo">application logo</string>
+    <!-- Application content strings -->
+    <string name="numberSystemFeatureName">Number System</string>
+    <string name="karnaughMapFeatureName">Karnaugh Map</string>
+    <string name="logicGateFeatureName">Logic Gate Simulator</string>
 
-    <!-- Content application strings   -->
+    <string name="numberSystemFeatureDesc">This feature is used to perform number system and code system conversions.</string>
+    <string name="karnaughMapFeatureDesc">This feature is used to simulate the Karnaugh map in simplifying the logic equations of digital numbers with graphical representations.</string>
+    <string name="logicGateFeatureDesc">This feature is used to perform simulations in building logic gate circuits and analyze the result obtained from the simulation process.</string>
 </resources>
