@@ -21,6 +21,7 @@ ext {
     rxJava2Version = '2.2.19'
     rxBinding2Version = '2.0.0'
     splashScreenApiVersion = '1.0.0-beta02'
+    navigationGraphVersion = '2.4.2'
 
     junitVersion = '4.13.2'
     androidxExtJunitVersion = '1.1.3'
