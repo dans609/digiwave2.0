@@ -3,7 +3,6 @@ package com.dash.projects.android.digiwave.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.RecyclerView
 import com.dash.projects.android.digiwave.databinding.LayoutFeatureTemplateBinding
 import com.dash.projects.android.digiwave.interfaces.OnFeatureClickCallback
@@ -24,9 +23,9 @@ class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) 
                     tvFeatureTitle.text = res.getString(appFeature.featureName)
                     tvFeatureDesc.text = res.getString(appFeature.featureDescription)
 
-                    itemView.setOnClickListener {
+                    itemView.setOnClickListener { v ->
                         Toast.makeText(
-                            it.context,
+                            v.context,
                             tvFeatureTitle.text.toString(),
                             Toast.LENGTH_SHORT
                         ).show()
@@ -37,17 +36,16 @@ class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) 
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeaturesViewHolder =
-        FeaturesViewHolder(
-            LayoutFeatureTemplateBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = FeaturesViewHolder(
+        LayoutFeatureTemplateBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
         )
+    )
 
     override fun onBindViewHolder(holder: FeaturesViewHolder, position: Int) =
         holder.bind(listFeatures[position])
 
-    override fun getItemCount(): Int = listFeatures.size
+    override fun getItemCount() = listFeatures.size
 }
