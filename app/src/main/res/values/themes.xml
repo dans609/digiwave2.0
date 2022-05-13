@@ -252,7 +252,7 @@
         <item name="android:background">@drawable/bg_list_features</item>
         <item name="android:elevation">@dimen/defaultBarrierValue</item>
         <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
-        <item name="android:clipToPadding">true</item>
+        <item name="android:clipToPadding">false</item>
         <item name="android:paddingBottom">@dimen/superBarrierValue</item>
     </style>
 
@@ -260,6 +260,11 @@
         <item name="android:layout_marginBottom">@dimen/superBarrierValue</item>
         <item name="android:layout_marginStart">@dimen/superBarrierValue</item>
         <item name="android:layout_marginEnd">@dimen/superBarrierValue</item>
+    </style>
+
+    <style name="VerticalScrollbarStyle">
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
     </style>
 
     <style name="FillContainer.PrimaryBackground.FitsSystemWindows">
