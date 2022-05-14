@@ -29,7 +29,7 @@ class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) 
                             tvFeatureTitle.text.toString(),
                             Toast.LENGTH_SHORT
                         ).show()
-                        clickCallbackListener.onFeatureClicked(appFeature.featureType)
+                        clickCallbackListener.onFeatureClicked(appFeature.featureType, v)
                     }
                 }
             }

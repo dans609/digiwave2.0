@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.`object`.FeatureData.generateFeatures
 import com.dash.projects.android.digiwave.adapter.FeatureAdapter
 import com.dash.projects.android.digiwave.databinding.FragmentHomeBinding
@@ -54,9 +56,15 @@ class HomeFragment : Fragment(), OnFeatureClickCallback {
         ::_binding.set(null)
     }
 
-    override fun onFeatureClicked(featureName: FeatureName) = when (featureName) {
-        FeatureName.NumberSystem -> {}
-        FeatureName.KarnaughMap -> {}
-        FeatureName.LogicGate -> {}
+    override fun onFeatureClicked(featureName: FeatureName, itemView: View) = itemView.nav {
+        when (featureName) {
+            FeatureName.NumberSystem -> R.id.action_homeFragment_to_numberSystemActivity
+            // the id bellow will changed later if task above is finish
+            FeatureName.KarnaughMap -> R.id.action_homeFragment_to_numberSystemActivity
+            FeatureName.LogicGate -> R.id.action_homeFragment_to_numberSystemActivity
+        }
     }
+
+    private fun View.nav(actionId: (View) -> Int) =
+        findNavController().navigate(actionId(this))
 }

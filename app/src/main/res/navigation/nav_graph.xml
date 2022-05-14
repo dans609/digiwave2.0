@@ -11,14 +11,14 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_numberSystemFeatureFragment"
-            app:destination="@id/numberSystemFeatureFragment" />
+            android:id="@+id/action_homeFragment_to_numberSystemActivity"
+            app:destination="@id/numberSystemActivity" />
     </fragment>
 
-    <fragment
-        android:id="@+id/numberSystemFeatureFragment"
-        android:name="com.dash.projects.android.digiwave.views.features.NumberSystemFeatureFragment"
-        android:label="fragment_number_system_feature"
-        tools:layout="@layout/fragment_number_system_feature" />
+    <activity
+        android:id="@+id/numberSystemActivity"
+        android:name="com.dash.projects.android.digiwave.views.features.numsys.NumberSystemActivity"
+        android:label="activity_number_system"
+        tools:layout="@layout/activity_number_system" />
 
 </navigation>

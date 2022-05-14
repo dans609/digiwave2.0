@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SplashTheme">
         <activity
+            android:name=".views.features.numsys.NumberSystemActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Digiwave" />
+        <activity
             android:name=".views.home.HomeActivity"
             android:exported="true">
             <intent-filter>
