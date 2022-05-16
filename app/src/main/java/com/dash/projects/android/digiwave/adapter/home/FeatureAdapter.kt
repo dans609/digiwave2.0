@@ -1,8 +1,10 @@
 package com.dash.projects.android.digiwave.adapter.home
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.recyclerview.widget.RecyclerView
 import com.dash.projects.android.digiwave.databinding.LayoutFeatureTemplateBinding
 import com.dash.projects.android.digiwave.interfaces.OnFeatureClickCallback
@@ -15,6 +17,10 @@ class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) 
     fun addFeatures(features: List<AppFeature>) =
         featureList.addAll(features)
 
+    fun View.callToast(@StringRes text: Int, short: Boolean = true) = Toast.makeText(
+        context, text, if (short) Toast.LENGTH_SHORT else Toast.LENGTH_LONG
+    ).show()
+
     inner class FeaturesViewHolder(private val binding: LayoutFeatureTemplateBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(appFeature: AppFeature) {
@@ -25,11 +31,7 @@ class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) 
                     tvFeatureDesc.text = res.getString(appFeature.featureDescription)
 
                     itemView.setOnClickListener { v ->
-                        Toast.makeText(
-                            v.context,
-                            tvFeatureTitle.text.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        v.callToast(appFeature.featureName)
                         clickCallbackListener.onFeatureClicked(appFeature.featureType, v)
                     }
                 }
