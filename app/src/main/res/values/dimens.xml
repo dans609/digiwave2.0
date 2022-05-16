@@ -20,6 +20,10 @@
 
     <!-- Density-independent pixel values -->
     <dimen name="clear">0dp</dimen>
+    <dimen name="oddLowMicroValue">1dp</dimen>
+    <dimen name="evenLowMicroValue">2dp</dimen>
+    <dimen name="oddHighMicroValue">3dp</dimen>
+    <dimen name="evenHighMicroValue">4dp</dimen>
     <dimen name="smallBarrierValue">5dp</dimen>
     <dimen name="defaultBarrierValue">10dp</dimen>
     <dimen name="wideBarrierValue">15dp</dimen>

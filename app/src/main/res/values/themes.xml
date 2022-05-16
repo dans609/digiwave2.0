@@ -282,4 +282,16 @@
     <style name="HugContent.CustomOuterBarrier.Dim50.ONLY_BOTTOM" parent="HugContent">
         <item name="android:layout_marginBottom">@dimen/dim50</item>
     </style>
+
+    <style name="PrimaryBackground">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="SoftGreyBackground">
+        <item name="android:background">@color/softGrey</item>
+    </style>
+
+    <style name="ConstraintContainer.SuperMicroElevation">
+        <item name="android:elevation">@dimen/oddLowMicroValue</item>
+    </style>
 </resources>

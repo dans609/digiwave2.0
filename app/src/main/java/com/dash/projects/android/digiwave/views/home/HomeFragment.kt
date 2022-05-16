@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.`object`.FeatureData.generateFeatures
-import com.dash.projects.android.digiwave.adapter.FeatureAdapter
+import com.dash.projects.android.digiwave.adapter.home.FeatureAdapter
 import com.dash.projects.android.digiwave.databinding.FragmentHomeBinding
 import com.dash.projects.android.digiwave.enum.FeatureName
 import com.dash.projects.android.digiwave.interfaces.OnFeatureClickCallback

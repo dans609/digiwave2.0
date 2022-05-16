@@ -1,4 +1,4 @@
-package com.dash.projects.android.digiwave.adapter
+package com.dash.projects.android.digiwave.adapter.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,9 +10,10 @@ import com.dash.projects.android.digiwave.model.AppFeature
 
 class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) :
     RecyclerView.Adapter<FeatureAdapter.FeaturesViewHolder>() {
-    private val listFeatures = ArrayList<AppFeature>()
+    private val featureList = ArrayList<AppFeature>()
 
-    fun addFeatures(features: List<AppFeature>) = listFeatures.addAll(features)
+    fun addFeatures(features: List<AppFeature>) =
+        featureList.addAll(features)
 
     inner class FeaturesViewHolder(private val binding: LayoutFeatureTemplateBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -45,7 +46,7 @@ class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) 
     )
 
     override fun onBindViewHolder(holder: FeaturesViewHolder, position: Int) =
-        holder.bind(listFeatures[position])
+        holder.bind(featureList[position])
 
-    override fun getItemCount() = listFeatures.size
+    override fun getItemCount() = featureList.size
 }

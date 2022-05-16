@@ -16,4 +16,9 @@ class HomeActivity : AppCompatActivity() {
         ::_binding.set(ActivityHomeBinding.inflate(layoutInflater))
         setContentView(binding?.root)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ::_binding.set(null)
+    }
 }

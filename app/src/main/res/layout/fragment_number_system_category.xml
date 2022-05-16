@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/FillContainer"
-    tools:context=".views.features.numsys.NumberSystemActivity">
+    tools:context=".views.features.numsys.branch.NumberSystemCategoryFragment">
 
-    <include
-        android:id="@+id/inc_tab_layout"
-        style="@style/ConstraintContainer"
-        layout="@layout/layout_tab"
+    <TextView
+        style="@style/FillContainer"
+        android:gravity="center"
+        android:text="Number System Category"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
