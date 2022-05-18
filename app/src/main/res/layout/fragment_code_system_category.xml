@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/FillContainer"
-    tools:context=".views.features.numsys.branch.CodeSystemCategoryFragment">
+    style="@style/FillContainer.FillViewPort"
+    tools:context=".views.features.numsys.branch.NumberSystemCategoryFragment">
 
-    <TextView
+    <include
+        android:id="@+id/rv_codesys_input"
         style="@style/FillContainer"
-        android:gravity="center"
-        android:text="Code System Category"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
+        layout="@layout/layout_text_input_codesys" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+

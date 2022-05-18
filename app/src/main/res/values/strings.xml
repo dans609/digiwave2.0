@@ -22,4 +22,20 @@
     <string name="karnaughMapFeatureDesc">This feature is used to simulate the Karnaugh map in simplifying the logic equations of digital numbers with graphical representations.</string>
     <string name="logicGateFeatureDesc">This feature is used to perform simulations in building logic gate circuits and analyze the result obtained from the simulation process.</string>
     <string name="code_system_tab_title">Code System</string>
+
+    <string name="bin_text">Binary</string>
+    <string name="dec_text">Decimal</string>
+    <string name="oct_text">Octal</string>
+    <string name="hex_text">Hexadecimal</string>
+    <string name="placeholder_bin_number">0100 101111</string>
+    <string name="placeholder_dec_number">0329</string>
+    <string name="placeholder_oct_number">0367</string>
+    <string name="placeholder_hex_number">036F</string>
+
+    <string name="bcd_text">Binary-Coded Decimal</string>
+    <string name="xs3_text">Excess-3</string>
+    <string name="gray_code_text">Gray Code</string>
+    <string name="placeholder_bcd_number">0111 0101</string>
+    <string name="placeholder_xs3_number">0110 0011</string>
+    <string name="placeholder_gray_code_number">1000 0001</string>
 </resources>

@@ -32,13 +32,12 @@ class HomeFragment : Fragment(), OnFeatureClickCallback {
         savedInstanceState: Bundle?
     ): View? {
         ::_binding.set(FragmentHomeBinding.inflate(inflater, container, false))
+        ::_featureAdapter.set(FeatureAdapter(this))
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ::_featureAdapter.set(FeatureAdapter(this))
-
         binding?.run {
             rvFeatures.setHasFixedSize(true)
             showRecyclerView(rvFeatures)

@@ -1,23 +1,25 @@
 package com.dash.projects.android.digiwave.`object`
 
 import com.dash.projects.android.digiwave.R
+import com.dash.projects.android.digiwave.`object`.utils.Utils.drawableResListOf
+import com.dash.projects.android.digiwave.`object`.utils.Utils.stringResListOf
 import com.dash.projects.android.digiwave.enum.FeatureName
 import com.dash.projects.android.digiwave.model.AppFeature
 
 object FeatureData {
-    private val featureNames = listOf(
+    private val featureNames = stringResListOf(
         R.string.numberSystemFeatureName,
         R.string.karnaughMapFeatureName,
         R.string.logicGateFeatureName,
     )
 
-    private val featureDescriptions = listOf(
+    private val featureDescriptions = stringResListOf(
         R.string.numberSystemFeatureDesc,
         R.string.karnaughMapFeatureDesc,
         R.string.logicGateFeatureDesc,
     )
 
-    private val featureImages = listOf(
+    private val featureImages = drawableResListOf(
         R.drawable.ic_feature_numsys,
         R.drawable.ic_feature_kmap,
         R.drawable.ic_feature_logate,

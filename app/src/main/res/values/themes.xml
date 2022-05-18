@@ -173,7 +173,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
-    
+
     <style name="FillContainer.SuperOuterBarrier.ONLY_BOTTOM">
         <item name="android:layout_marginTop">@dimen/clear</item>
         <item name="android:layout_marginEnd">@dimen/clear</item>
@@ -293,5 +293,25 @@
 
     <style name="ConstraintContainer.SuperMicroElevation">
         <item name="android:elevation">@dimen/oddLowMicroValue</item>
+    </style>
+
+    <style name="FillContainer.FillViewPort">
+        <item name="android:fillViewport">true</item>
+    </style>
+
+    <style name="FillContainer.SuperInnerBarrier">
+        <item name="android:paddingTop">@dimen/superBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/superBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/superBarrierValue</item>
+        <item name="android:paddingStart">@dimen/superBarrierValue</item>
+    </style>
+
+    <style name="TextInputThemes" parent="Widget.MaterialComponents.TextInputLayout.FilledBox" />
+    <style name="TextInputTypeNumber">
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="ConstraintContainer.SuperOuterBarrier.JUST_TOP" parent="ConstraintContainer">
+        <item name="android:layout_marginTop">@dimen/superBarrierValue</item>
     </style>
 </resources>

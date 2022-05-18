@@ -1,16 +1,14 @@
 package com.dash.projects.android.digiwave.views.features.numsys
 
 import android.os.Bundle
-import android.util.Log
-import androidx.annotation.DrawableRes
-import androidx.annotation.IntegerRes
-import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.dash.projects.android.digiwave.R
+import com.dash.projects.android.digiwave.`object`.utils.Utils.drawableRes
+import com.dash.projects.android.digiwave.`object`.utils.Utils.intRes
+import com.dash.projects.android.digiwave.`object`.utils.Utils.stringRes
 import com.dash.projects.android.digiwave.adapter.features.numsys.ViewPagerAdapter
 import com.dash.projects.android.digiwave.databinding.ActivityNumberSystemBinding
-import com.dash.projects.android.digiwave.enum.NumberSystemCategory
+import com.dash.projects.android.digiwave.enum.NumberSystemFeatureCategory
 import com.google.android.material.tabs.TabLayoutMediator
 
 class NumberSystemActivity : AppCompatActivity() {
@@ -36,22 +34,13 @@ class NumberSystemActivity : AppCompatActivity() {
             viewPager2.adapter = adapter
             tabLayout.background = drawableRes(R.color.softGrey)
             TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
-                tab.text = when (ViewPagerAdapter.ITEM_CATEGORY[position]) {
-                    NumberSystemCategory.NUMBER_SYSTEM -> stringRes(R.string.numberSystemFeatureName)
-                    NumberSystemCategory.CODE_SYSTEM -> stringRes(R.string.code_system_tab_title)
+                tab.text = when (ViewPagerAdapter.FEATURE_CATEGORY[position]) {
+                    NumberSystemFeatureCategory.NUMBER_SYSTEM -> stringRes(R.string.numberSystemFeatureName)
+                    NumberSystemFeatureCategory.CODE_SYSTEM -> stringRes(R.string.code_system_tab_title)
                 }
             }.attach()
         }
     }
-
-    private fun intRes(@IntegerRes id: Int) =
-        resources::getInteger.invoke(id)
-
-    private fun stringRes(@StringRes id: Int) =
-        resources.getString(id)
-
-    private fun drawableRes(@DrawableRes id: Int) =
-        ContextCompat.getDrawable(this, id)
 
     override fun onDestroy() {
         super.onDestroy()

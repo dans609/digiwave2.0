@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/FillContainer.SuperInnerBarrier">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etl_bin"
+        style="@style/ConstraintContainer"
+        android:layout_height="wrap_content"
+        android:hint="@string/bin_text"
+        android:theme="@style/TextInputThemes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderText="@string/placeholder_bin_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_bin"
+            style="@style/FillContainer"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextInputTypeNumber" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etl_dec"
+        style="@style/ConstraintContainer.SuperOuterBarrier.JUST_TOP"
+        android:layout_height="wrap_content"
+        android:hint="@string/dec_text"
+        android:theme="@style/TextInputThemes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etl_bin"
+        app:placeholderText="@string/placeholder_dec_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_dec"
+            style="@style/FillContainer"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextInputTypeNumber" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etl_oct"
+        style="@style/ConstraintContainer.SuperOuterBarrier.JUST_TOP"
+        android:layout_height="wrap_content"
+        android:hint="@string/oct_text"
+        android:theme="@style/TextInputThemes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etl_dec"
+        app:placeholderText="@string/placeholder_oct_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_oct"
+            style="@style/FillContainer"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextInputTypeNumber" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etl_hex"
+        style="@style/ConstraintContainer.SuperOuterBarrier.JUST_TOP"
+        android:layout_height="wrap_content"
+        android:hint="@string/hex_text"
+        android:theme="@style/TextInputThemes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etl_oct"
+        app:placeholderText="@string/placeholder_hex_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_hex"
+            style="@style/FillContainer"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextInputTypeNumber" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
