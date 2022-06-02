@@ -64,6 +64,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun View.nav(actionId: (View) -> Int) =
-        findNavController().navigate(actionId(this))
+    private fun View.nav(actionId: View.() -> Int) =
+        findNavController().navigate(actionId())
 }
