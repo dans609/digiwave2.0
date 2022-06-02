@@ -13,9 +13,8 @@ import com.dash.projects.android.digiwave.`object`.FeatureData.generateFeatures
 import com.dash.projects.android.digiwave.adapter.home.FeatureAdapter
 import com.dash.projects.android.digiwave.databinding.FragmentHomeBinding
 import com.dash.projects.android.digiwave.enum.FeatureName
-import com.dash.projects.android.digiwave.interfaces.OnFeatureClickCallback
 
-class HomeFragment : Fragment(), OnFeatureClickCallback {
+class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding
         get() = _binding
@@ -32,7 +31,7 @@ class HomeFragment : Fragment(), OnFeatureClickCallback {
         savedInstanceState: Bundle?
     ): View? {
         ::_binding.set(FragmentHomeBinding.inflate(inflater, container, false))
-        ::_featureAdapter.set(FeatureAdapter(this))
+        ::_featureAdapter.set(FeatureAdapter())
         return binding?.root
     }
 
@@ -46,6 +45,7 @@ class HomeFragment : Fragment(), OnFeatureClickCallback {
 
     private fun showRecyclerView(rv: RecyclerView) = featureAdapter?.also { adapter ->
         adapter.addFeatures(getListFeature)
+        adapter.onFeatureClicked = ::onFeatureClicked
         rv.layoutManager = LinearLayoutManager(activity)
         rv.adapter = adapter
     }
@@ -55,7 +55,7 @@ class HomeFragment : Fragment(), OnFeatureClickCallback {
         ::_binding.set(null)
     }
 
-    override fun onFeatureClicked(featureName: FeatureName, itemView: View) = itemView.nav {
+    private fun onFeatureClicked(featureName: FeatureName, itemView: View) = itemView.nav {
         when (featureName) {
             FeatureName.NumberSystem -> R.id.action_homeFragment_to_numberSystemActivity
             // the id bellow will changed later if task above is finish

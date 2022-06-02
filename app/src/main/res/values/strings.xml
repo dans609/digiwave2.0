@@ -31,6 +31,8 @@
     <string name="placeholder_dec_number">0329</string>
     <string name="placeholder_oct_number">0367</string>
     <string name="placeholder_hex_number">036F</string>
+    <string name="first_hex_allowed_symbol">A</string>
+    <string name="last_hex_allowed_symbol">F</string>
 
     <string name="bcd_text">Binary-Coded Decimal</string>
     <string name="xs3_text">Excess-3</string>
@@ -38,4 +40,9 @@
     <string name="placeholder_bcd_number">0111 0101</string>
     <string name="placeholder_xs3_number">0110 0011</string>
     <string name="placeholder_gray_code_number">1000 0001</string>
+
+    <!-- error description string  -->
+    <string name="et_error_format">Please input allowed digit: (%1$d-%2$d)</string>
+    <string name="et_error_format_with_symbol">Please input allowed digit and symbol: (%1$d-%2$d) \u0026 (%3$s-%4$s)</string>
+    <string name="err_exceeding_limit">The number is exceeds the maximum limit</string>
 </resources>

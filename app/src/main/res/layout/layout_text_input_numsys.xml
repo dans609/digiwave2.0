@@ -5,7 +5,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_bin"
-        style="@style/ConstraintContainer"
+        style="@style/ConstraintContainer.TextInputStyles"
         android:layout_height="wrap_content"
         android:hint="@string/bin_text"
         android:theme="@style/TextInputThemes"
@@ -23,7 +23,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_dec"
-        style="@style/ConstraintContainer.SuperOuterBarrier.JUST_TOP"
+        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
         android:layout_height="wrap_content"
         android:hint="@string/dec_text"
         android:theme="@style/TextInputThemes"
@@ -41,7 +41,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_oct"
-        style="@style/ConstraintContainer.SuperOuterBarrier.JUST_TOP"
+        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
         android:layout_height="wrap_content"
         android:hint="@string/oct_text"
         android:theme="@style/TextInputThemes"
@@ -59,7 +59,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_hex"
-        style="@style/ConstraintContainer.SuperOuterBarrier.JUST_TOP"
+        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
         android:layout_height="wrap_content"
         android:hint="@string/hex_text"
         android:theme="@style/TextInputThemes"
@@ -72,7 +72,7 @@
             android:id="@+id/et_hex"
             style="@style/FillContainer"
             android:layout_height="wrap_content"
-            android:theme="@style/TextInputTypeNumber" />
+            android:theme="@style/TextInputTypeTextChapCharacters" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

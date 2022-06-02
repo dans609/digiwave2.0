@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Digiwave" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
@@ -10,7 +10,7 @@
         <item name="colorSecondaryVariant">@color/darkMalachiteGreen</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/black</item>
     </style>
@@ -307,11 +307,21 @@
     </style>
 
     <style name="TextInputThemes" parent="Widget.MaterialComponents.TextInputLayout.FilledBox" />
+
+    <style name="ConstraintContainer.TextInputStyles">
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">?attr/colorPrimary</item>
+    </style>
+
     <style name="TextInputTypeNumber">
         <item name="android:inputType">number</item>
     </style>
 
-    <style name="ConstraintContainer.SuperOuterBarrier.JUST_TOP" parent="ConstraintContainer">
+    <style name="TextInputTypeTextChapCharacters">
+        <item name="android:inputType">textCapCharacters</item>
+    </style>
+
+    <style name="ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP" parent="ConstraintContainer.TextInputStyles">
         <item name="android:layout_marginTop">@dimen/superBarrierValue</item>
     </style>
 </resources>

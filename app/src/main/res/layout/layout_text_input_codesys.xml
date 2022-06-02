@@ -5,7 +5,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_bcd"
-        style="@style/ConstraintContainer"
+        style="@style/ConstraintContainer.TextInputStyles"
         android:layout_height="wrap_content"
         android:hint="@string/bcd_text"
         android:theme="@style/TextInputThemes"
@@ -23,7 +23,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_gray"
-        style="@style/ConstraintContainer.SuperOuterBarrier.JUST_TOP"
+        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
         android:layout_height="wrap_content"
         android:hint="@string/gray_code_text"
         android:theme="@style/TextInputThemes"
@@ -41,7 +41,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_xs3"
-        style="@style/ConstraintContainer.SuperOuterBarrier.JUST_TOP"
+        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
         android:layout_height="wrap_content"
         android:hint="@string/xs3_text"
         android:theme="@style/TextInputThemes"

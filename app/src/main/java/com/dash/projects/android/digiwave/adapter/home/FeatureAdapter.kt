@@ -1,15 +1,17 @@
 package com.dash.projects.android.digiwave.adapter.home
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dash.projects.android.digiwave.`object`.utils.Utils.callToast
 import com.dash.projects.android.digiwave.databinding.LayoutFeatureTemplateBinding
-import com.dash.projects.android.digiwave.interfaces.OnFeatureClickCallback
+import com.dash.projects.android.digiwave.enum.FeatureName
 import com.dash.projects.android.digiwave.model.AppFeature
 
-class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) :
+class FeatureAdapter :
     RecyclerView.Adapter<FeatureAdapter.FeaturesViewHolder>() {
+    var onFeatureClicked: ((FeatureName, View) -> Unit)? = null
     private val _featureList = ArrayList<AppFeature>()
     private val featureList: List<AppFeature>
         get() = _featureList
@@ -28,7 +30,7 @@ class FeatureAdapter(private val clickCallbackListener: OnFeatureClickCallback) 
 
                     itemView.setOnClickListener { v ->
                         v.callToast(appFeature.featureName)
-                        clickCallbackListener.onFeatureClicked(appFeature.featureType, v)
+                        onFeatureClicked?.invoke(appFeature.featureType, v)
                     }
                 }
             }
