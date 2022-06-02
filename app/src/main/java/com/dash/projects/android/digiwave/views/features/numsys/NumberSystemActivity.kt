@@ -27,7 +27,6 @@ class NumberSystemActivity : AppCompatActivity() {
 
     private fun actionBarSettings() = supportActionBar?.apply {
         elevation = intRes(R.integer.low).toFloat()
-        hide()
     }
 
     private fun injectViewPager() = binding?.incTabLayout?.run {
