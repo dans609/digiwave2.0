@@ -65,7 +65,7 @@ class NumberSystemCategoryFragment : Fragment() {
                 try {
                     when (radix) {
                         2 -> {
-                            if (t.isEmpty()) clearText(etDec, etOct, etHex, inpLayout = etlBin)
+                            if (t.isEmpty()) clearText(etlBin, etOct, etDec, etHex)
                             else {
                                 val decResult = t.fold(0L) { acc, char ->
                                     (acc * radix) + char.digitToInt(radix)
@@ -80,7 +80,7 @@ class NumberSystemCategoryFragment : Fragment() {
                             }
                         }
                         10 -> {
-                            if (t.isEmpty()) clearText(etBin, etOct, etHex, inpLayout = etlDec)
+                            if (t.isEmpty()) clearText(etlDec, etBin, etOct, etHex)
                             else {
                                 val binResult = t.toString(2)
                                 val octResult = t.toString(8)
@@ -93,7 +93,7 @@ class NumberSystemCategoryFragment : Fragment() {
                             }
                         }
                         8 -> {
-                            if (t.isEmpty()) clearText(etBin, etDec, etHex, inpLayout = etlOct)
+                            if (t.isEmpty()) clearText(etlOct, etBin, etDec, etHex)
                             else {
                                 val decResult = t.fold(0L) { acc, char ->
                                     (acc * radix) + char.digitToInt(radix)
@@ -108,7 +108,7 @@ class NumberSystemCategoryFragment : Fragment() {
                             }
                         }
                         16 -> {
-                            if (t.isEmpty()) clearText(etBin, etDec, etOct, inpLayout = etlHex)
+                            if (t.isEmpty()) clearText(etlHex, etBin, etDec, etOct)
                             else {
                                 val decResult = t.fold(0L) { acc, char ->
                                     (acc * radix) + char.digitToInt(radix)
@@ -186,7 +186,7 @@ class NumberSystemCategoryFragment : Fragment() {
         this.setText(text)
     }
 
-    private fun clearText(vararg editText: EditText, inpLayout: TextInputLayout) {
+    private fun clearText(inpLayout: TextInputLayout, vararg editText: EditText) {
         inpLayout.enableError(false)
         editText.forEach { it.text = null }
     }
