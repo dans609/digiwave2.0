@@ -16,7 +16,6 @@ class ViewPagerAdapter(fm: FragmentManager, l: Lifecycle) : FragmentStateAdapter
     }
 
     companion object {
-        val FEATURE_CATEGORY: List<NumberSystemFeatureCategory> =
-            NumberSystemFeatureCategory.values().toList()
+        val FEATURE_CATEGORY = NumberSystemFeatureCategory.values()
     }
 }

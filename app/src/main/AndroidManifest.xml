@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SplashTheme">
         <activity
+            android:name=".views.features.kmap.KarnaughMapActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.features.numsys.NumberSystemActivity"
             android:exported="false"
             android:theme="@style/Theme.Digiwave" />
@@ -18,6 +21,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
