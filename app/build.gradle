@@ -52,7 +52,8 @@ dependencies {
     implementation "androidx.core:core-splashscreen:$splashScreenApiVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationGraphVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationGraphVersion"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.legacy:legacy-support-v4:$androidxLegacy"
+    implementation("com.tbuonomo:dotsindicator:$dotsIndicatorVersion")
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxExtJunitVersion"

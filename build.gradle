@@ -13,6 +13,7 @@ buildscript {
 ext {
     appCompatVersion = '1.4.2'
     androidxCoreKtxVersion = '1.8.0'
+    androidxLegacy = '1.0.0'
 
     materialAppVersion = '1.6.1'
     constraintLayoutVersion = '2.1.4'
@@ -20,6 +21,7 @@ ext {
     rxBinding2Version = '2.0.0'
     splashScreenApiVersion = '1.0.0-rc01'
     navigationGraphVersion = '2.5.0'
+    dotsIndicatorVersion = '4.3'
 
     junitVersion = '4.13.2'
     androidxExtJunitVersion = '1.1.3'
