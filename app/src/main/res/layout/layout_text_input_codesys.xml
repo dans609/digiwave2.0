@@ -4,14 +4,49 @@
     style="@style/FillContainer.SuperInnerBarrier">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdown_inp_layout"
+        style="@style/ConstraintContainer.OutlinedDropdownMenuStyles.CodeSystemThemes"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_tv_dropdown"
+            style="@style/FillContainer.InputType.NONE"
+            android:hint="@string/hint_dropdown_code_system"
+            android:text="@string/auto_complete_tv_default_mode" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etl_bin"
+        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
+        android:layout_height="wrap_content"
+        android:hint="@string/bin_text"
+        android:theme="@style/TextInputThemes"
+        app:layout_constraintEnd_toEndOf="@id/dropdown_inp_layout"
+        app:layout_constraintStart_toStartOf="@id/dropdown_inp_layout"
+        app:layout_constraintTop_toBottomOf="@id/dropdown_inp_layout"
+        app:placeholderText="@string/placeholder_bin_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_bin"
+            style="@style/FillContainer"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextInputTypeNumber" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_bcd"
-        style="@style/ConstraintContainer.TextInputStyles"
+        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
         android:layout_height="wrap_content"
         android:hint="@string/bcd_text"
         android:theme="@style/TextInputThemes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/etl_bin"
+        app:layout_constraintStart_toStartOf="@id/etl_bin"
+        app:layout_constraintTop_toBottomOf="@id/etl_bin"
         app:placeholderText="@string/placeholder_bcd_number">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -19,24 +54,7 @@
             style="@style/FillContainer"
             android:layout_height="wrap_content"
             android:theme="@style/TextInputTypeNumber" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etl_gray"
-        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
-        android:layout_height="wrap_content"
-        android:hint="@string/gray_code_text"
-        android:theme="@style/TextInputThemes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etl_bcd"
-        app:placeholderText="@string/placeholder_gray_code_number">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_gray"
-            style="@style/FillContainer"
-            android:layout_height="wrap_content"
-            android:theme="@style/TextInputTypeNumber" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -45,9 +63,10 @@
         android:layout_height="wrap_content"
         android:hint="@string/xs3_text"
         android:theme="@style/TextInputThemes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etl_gray"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/etl_bin"
+        app:layout_constraintStart_toStartOf="@id/etl_bin"
+        app:layout_constraintTop_toBottomOf="@id/etl_bin"
         app:placeholderText="@string/placeholder_xs3_number">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -55,6 +74,26 @@
             style="@style/FillContainer"
             android:layout_height="wrap_content"
             android:theme="@style/TextInputTypeNumber" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etl_gray"
+        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
+        android:layout_height="wrap_content"
+        android:hint="@string/gray_code_text"
+        android:theme="@style/TextInputThemes"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/etl_bin"
+        app:layout_constraintStart_toStartOf="@id/etl_bin"
+        app:layout_constraintTop_toBottomOf="@id/etl_bin"
+        app:placeholderText="@string/placeholder_gray_code_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_gray"
+            style="@style/FillContainer"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextInputTypeNumber" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

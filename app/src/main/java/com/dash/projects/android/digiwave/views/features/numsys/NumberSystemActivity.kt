@@ -46,4 +46,9 @@ class NumberSystemActivity : AppCompatActivity() {
         super.onDestroy()
         ::_binding.set(null)
     }
+
+    companion object {
+        const val ON_NEXT_TAG = "onNext"
+        const val ON_ERROR_TAG = "onError"
+    }
 }

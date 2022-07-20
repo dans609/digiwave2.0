@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.`object`.utils.Utils.intRes
 import com.dash.projects.android.digiwave.databinding.FragmentNumberSystemCategoryBinding
+import com.dash.projects.android.digiwave.views.features.numsys.NumberSystemActivity.Companion.ON_ERROR_TAG
+import com.dash.projects.android.digiwave.views.features.numsys.NumberSystemActivity.Companion.ON_NEXT_TAG
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.jakewharton.rxbinding2.widget.RxTextView
@@ -199,7 +201,5 @@ class NumberSystemCategoryFragment : Fragment() {
 
     companion object {
         private const val IS_ATTACH = false
-        private const val ON_NEXT_TAG = "onNext"
-        private const val ON_ERROR_TAG = "onError"
     }
 }

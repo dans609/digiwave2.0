@@ -5,9 +5,8 @@
     tools:context=".views.features.numsys.branch.NumberSystemCategoryFragment">
 
     <include
-        android:id="@+id/rv_codesys_input"
+        android:id="@+id/inc_codesys_input"
         style="@style/FillContainer"
         layout="@layout/layout_text_input_codesys" />
 
 </androidx.core.widget.NestedScrollView>
-

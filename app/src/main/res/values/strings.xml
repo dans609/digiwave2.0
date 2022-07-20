@@ -41,8 +41,25 @@
     <string name="placeholder_xs3_number">0110 0011</string>
     <string name="placeholder_gray_code_number">1000 0001</string>
 
+    <!-- NOTE: Please do not changed or reposition this code below, it may cause an Exception -->
+    <!-- [START] dropdown menus array strings -->
+    <string name="auto_complete_tv_default_mode">Binary \u21C4 Binary-Coded Decimal</string>
+    <string-array name="code_system_mode">
+        <item>Binary \u21C4 Binary-Coded Decimal</item>
+        <item>Binary \u21C4 Excess-3</item>
+        <item>Binary \u21C4 Gray Code</item>
+    </string-array>
+    <!-- [END] dropdown menus mode strings -->
+
+    <!-- hints -->
+    <string name="hint_dropdown_code_system">Modes</string>
+    <string name="hint_bcd_keyword">BCD</string>
+    <string name="hint_xs3_keyword">XS3</string>
+
     <!-- error description string  -->
     <string name="et_error_format">Please input allowed digit: (%1$d-%2$d)</string>
     <string name="et_error_format_with_symbol">Please input allowed digit and symbol: (%1$d-%2$d) \u0026 (%3$s-%4$s)</string>
     <string name="err_exceeding_limit">The number is exceeds the maximum limit</string>
+    <string name="error_radix_namespace">radix=%d</string>
+    <string name="nybble_error">Contain %1$s forbidden 4-bit: %2$s</string>
 </resources>

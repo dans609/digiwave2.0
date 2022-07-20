@@ -324,4 +324,26 @@
     <style name="ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP" parent="ConstraintContainer.TextInputStyles">
         <item name="android:layout_marginTop">@dimen/superBarrierValue</item>
     </style>
+
+    <style name="OutlinedBox.ExposedDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu" />
+
+    <style name="ConstraintContainer.OutlinedDropdownMenuStyles" parent="OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_width">@dimen/clear</item>
+        <item name="android:layout_height">@dimen/clear</item>
+    </style>
+
+    <style name="FillContainer.OutlinedDropdownMenuStyles" parent="OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="ConstraintContainer.OutlinedDropdownMenuStyles.CodeSystemThemes">
+        <item name="android:hint">@string/hint_dropdown_code_system</item>
+        <item name="startIconDrawable">@drawable/ic_bit_icon</item>
+        <item name="startIconTint">@null</item>
+    </style>
+
+    <style name="FillContainer.InputType.NONE" parent="FillContainer">
+        <item name="android:inputType">none</item>
+    </style>
 </resources>

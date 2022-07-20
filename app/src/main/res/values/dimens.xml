@@ -6,6 +6,9 @@
     <integer name="bitRadix">2</integer>
     <integer name="byteRadix">8</integer>
     <integer name="decRadix">10</integer>
+    <integer name="slab">12</integer>
+    <integer name="parcel">15</integer>
+
     <integer name="hexRadix">16</integer>
     <integer name="triad">3</integer>
     <integer name="nibble">4</integer>
@@ -15,6 +18,8 @@
     <integer name="num7">7</integer>
     <integer name="num9">9</integer>
     <integer name="num11">11</integer>
+    <integer name="num13">13</integer>
+    <integer name="num14">14</integer>
     <integer name="milliSecs_3000">3000</integer>
 
 
