@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_homeFragment_to_numberSystemActivity"
             app:destination="@id/numberSystemActivity" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_karnaughMapActivity"
+            app:destination="@id/karnaughMapActivity" />
     </fragment>
 
     <activity
@@ -20,5 +24,11 @@
         android:name="com.dash.projects.android.digiwave.views.features.numsys.NumberSystemActivity"
         android:label="activity_number_system"
         tools:layout="@layout/activity_number_system" />
+
+    <activity
+        android:id="@+id/karnaughMapActivity"
+        android:name="com.dash.projects.android.digiwave.views.features.kmap.KarnaughMapActivity"
+        android:label="activity_karnaugh_map"
+        tools:layout="@layout/activity_karnaugh_map" />
 
 </navigation>

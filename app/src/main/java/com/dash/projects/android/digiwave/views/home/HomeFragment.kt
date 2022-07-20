@@ -58,8 +58,8 @@ class HomeFragment : Fragment() {
     private fun onFeatureClicked(featureName: FeatureName, itemView: View) = itemView.nav {
         when (featureName) {
             FeatureName.NumberSystem -> R.id.action_homeFragment_to_numberSystemActivity
-            // the id bellow will changed later if task above is finish
-            FeatureName.KarnaughMap -> R.id.action_homeFragment_to_numberSystemActivity
+            FeatureName.KarnaughMap -> R.id.action_homeFragment_to_karnaughMapActivity
+            // the id bellow will changed later if the task above finish
             FeatureName.LogicGate -> R.id.action_homeFragment_to_numberSystemActivity
         }
     }
