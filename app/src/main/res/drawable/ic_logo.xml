@@ -1,8 +1,10 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:width="192dp"
     android:height="130dp"
     android:viewportWidth="172"
-    android:viewportHeight="110">
+    android:viewportHeight="110"
+    tools:ignore="VectorPath">
     <group
         android:pivotX="86"
         android:pivotY="55"
