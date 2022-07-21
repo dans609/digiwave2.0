@@ -242,6 +242,14 @@
         <item name="android:layout_height">@dimen/clear</item>
     </style>
 
+    <style name="ConstraintContainer.SuperOuterBarrier.ONLY_TOP" parent="SuperOuterBarrier">
+        <item name="android:layout_width">@dimen/clear</item>
+        <item name="android:layout_height">@dimen/clear</item>
+        <item name="android:layout_marginEnd">@dimen/clear</item>
+        <item name="android:layout_marginBottom">@dimen/clear</item>
+        <item name="android:layout_marginStart">@dimen/clear</item>
+    </style>
+
     <style name="ConstraintContainer.OuterBarrier.ONLY_BOTTOM" parent="ConstraintContainer.OuterBarrier">
         <item name="android:layout_marginTop">@dimen/clear</item>
         <item name="android:layout_marginEnd">@dimen/clear</item>
@@ -345,5 +353,15 @@
 
     <style name="FillContainer.InputType.NONE" parent="FillContainer">
         <item name="android:inputType">none</item>
+    </style>
+
+    <style name="DotsIndicatorThemes">
+        <item name="dotsCornerRadius">@dimen/evenHighMicroValue</item>
+        <item name="dotsColor">@color/mediumGray</item>
+        <item name="selectedDotColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="HugContent.CustomOuterBarrier.Dim50.ONLY_TOP" parent="HugContent">
+        <item name="android:layout_marginTop">@dimen/dim50</item>
     </style>
 </resources>
