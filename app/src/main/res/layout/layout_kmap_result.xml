@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/HugContent.InnerBarrier.StrokeBackground"
+    tools:layout_gravity="top|center">
+
+    <TextView
+        android:id="@+id/kmap_answer_title"
+        style="@style/HugContent.Centered"
+        android:text="@string/kmap_answer_title"
+        android:theme="@style/TextPrimary.Light.Heading2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/kmap_answer"
+        style="@style/HugContent.Centered"
+        android:theme="@style/TextPrimary.Light.Heading2.Normal"
+        app:layout_constraintEnd_toEndOf="@id/kmap_answer_title"
+        app:layout_constraintStart_toStartOf="@id/kmap_answer_title"
+        app:layout_constraintTop_toBottomOf="@id/kmap_answer_title"
+        tools:text="@string/sample_kmap_result" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

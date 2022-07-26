@@ -61,14 +61,14 @@ object Utils {
 
     val Context.bcdForbiddenDigit: List<Int>
         get() = listIntRes(
-            R.integer.decRadix, R.integer.num11, R.integer.slab,
-            R.integer.num13, R.integer.num14, R.integer.parcel,
+            R.integer.decRadix, R.integer.fifthPrimeNum, R.integer.slab,
+            R.integer.archimedianSolid, R.integer.tetraRadix, R.integer.parcel,
         )
 
     val Context.xs3ForbiddenDigit: List<Int>
         get() = listIntRes(
             R.integer.low, R.integer.high, R.integer.bitRadix,
-            R.integer.num13, R.integer.num14, R.integer.parcel,
+            R.integer.archimedianSolid, R.integer.tetraRadix, R.integer.parcel,
         )
 
     fun Collection<Int>.elementToString(radix: Int? = null) = map {

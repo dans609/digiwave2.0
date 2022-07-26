@@ -41,6 +41,13 @@
     <string name="placeholder_xs3_number">0110 0011</string>
     <string name="placeholder_gray_code_number">1000 0001</string>
 
+    <string name="kmap_type">Type: SoP</string>
+    <string name="kmap_answer_title">Answer:</string>
+    <string name="kmap_two_variables_exp00">00</string>
+    <string name="kmap_two_variables_exp01">01</string>
+    <string name="kmap_two_variables_exp11">11</string>
+    <string name="kmap_two_variables_exp10">10</string>
+
     <!-- NOTE: Please do not changed or reposition this code below, it may cause an Exception -->
     <!-- [START] dropdown menus array strings -->
     <string name="auto_complete_tv_default_mode">Binary \u21C4 Binary-Coded Decimal</string>
@@ -62,4 +69,12 @@
     <string name="err_exceeding_limit">The number is exceeds the maximum limit</string>
     <string name="error_radix_namespace">radix=%d</string>
     <string name="nybble_error">Contain %1$s forbidden 4-bit: %2$s</string>
+    
+    <!-- string templates -->
+    <string name="kmap_variables">%s Variable</string>
+
+    <!-- string samples -->
+    <string name="sample_kmap_variable">2 Variable</string>
+    <string name="sample_kmap_result">R = !A.B</string>
+    <string name="sample_kmap_variable_identifier">AB</string>
 </resources>

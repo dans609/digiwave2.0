@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FillContainer.SuperInnerBarrier.KmapBackground"
+    android:backgroundTint="@color/colombianBlue"
+    tools:showIn="@layout/layout_kmap_graphic">
+
+    <TextView
+        android:id="@+id/kmap_variable_identifier"
+        style="@style/HugContent.BorderedRippleBackground"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Heading4.Centered.Thickness"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/sample_kmap_variable_identifier" />
+
+    <TextView
+        android:id="@+id/kmap_00"
+        style="@style/HugContent.BorderedRippleBackground"
+        android:layout_width="@dimen/clear"
+        android:text="@string/kmap_two_variables_exp00"
+        android:theme="@style/TextPrimary.Light.Heading5.Centered"
+        app:layout_constraintEnd_toStartOf="@id/kmap_01"
+        app:layout_constraintHorizontal_weight="@integer/firstAspiringNum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kmap_variable_identifier" />
+
+    <TextView
+        android:id="@+id/kmap_01"
+        style="@style/HugContent.BorderedRippleBackground"
+        android:layout_width="@dimen/clear"
+        android:text="@string/kmap_two_variables_exp01"
+        android:theme="@style/TextPrimary.Light.Heading5.Centered"
+        app:layout_constraintEnd_toStartOf="@id/kmap_11"
+        app:layout_constraintHorizontal_weight="@integer/firstAspiringNum"
+        app:layout_constraintStart_toEndOf="@id/kmap_00"
+        app:layout_constraintTop_toBottomOf="@id/kmap_variable_identifier" />
+
+    <TextView
+        android:id="@+id/kmap_11"
+        style="@style/HugContent.BorderedRippleBackground"
+        android:layout_width="@dimen/clear"
+        android:text="@string/kmap_two_variables_exp11"
+        android:theme="@style/TextPrimary.Light.Heading5.Centered"
+        app:layout_constraintEnd_toEndOf="@id/kmap_10"
+        app:layout_constraintHorizontal_weight="@integer/firstAspiringNum"
+        app:layout_constraintStart_toEndOf="@id/kmap_01"
+        app:layout_constraintTop_toBottomOf="@id/kmap_variable_identifier" />
+
+    <TextView
+        android:id="@+id/kmap_10"
+        style="@style/HugContent.BorderedRippleBackground"
+        android:layout_width="@dimen/clear"
+        android:text="@string/kmap_two_variables_exp10"
+        android:theme="@style/TextPrimary.Light.Heading5.Centered"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="@integer/firstAspiringNum"
+        app:layout_constraintStart_toEndOf="@id/kmap_11"
+        app:layout_constraintTop_toBottomOf="@id/kmap_variable_identifier" />
+
+    <TextView
+        android:id="@+id/tv_kmap_option00"
+        style="@style/HugContent.BorderedRippleBackground.InnerBarrier.OuterBarrier.ONLY_TOP"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText"
+        app:layout_constraintEnd_toEndOf="@id/kmap_00"
+        app:layout_constraintStart_toStartOf="@id/kmap_00"
+        app:layout_constraintTop_toBottomOf="@id/kmap_00"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/tv_kmap_option01"
+        style="@style/HugContent.BorderedRippleBackground.InnerBarrier.OuterBarrier.ONLY_TOP"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText"
+        app:layout_constraintEnd_toEndOf="@id/kmap_01"
+        app:layout_constraintStart_toStartOf="@id/kmap_01"
+        app:layout_constraintTop_toBottomOf="@id/kmap_01"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tv_kmap_option11"
+        style="@style/HugContent.BorderedRippleBackground.InnerBarrier.OuterBarrier.ONLY_TOP"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText"
+        app:layout_constraintEnd_toEndOf="@id/kmap_11"
+        app:layout_constraintStart_toStartOf="@id/kmap_11"
+        app:layout_constraintTop_toBottomOf="@id/kmap_11" />
+
+    <TextView
+        android:id="@+id/tv_kmap_option10"
+        style="@style/HugContent.BorderedRippleBackground.InnerBarrier.OuterBarrier.ONLY_TOP"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText"
+        app:layout_constraintEnd_toEndOf="@id/kmap_10"
+        app:layout_constraintStart_toStartOf="@id/kmap_10"
+        app:layout_constraintTop_toBottomOf="@id/kmap_10" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

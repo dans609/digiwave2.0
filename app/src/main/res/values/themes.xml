@@ -242,14 +242,6 @@
         <item name="android:layout_height">@dimen/clear</item>
     </style>
 
-    <style name="ConstraintContainer.SuperOuterBarrier.ONLY_TOP" parent="SuperOuterBarrier">
-        <item name="android:layout_width">@dimen/clear</item>
-        <item name="android:layout_height">@dimen/clear</item>
-        <item name="android:layout_marginEnd">@dimen/clear</item>
-        <item name="android:layout_marginBottom">@dimen/clear</item>
-        <item name="android:layout_marginStart">@dimen/clear</item>
-    </style>
-
     <style name="ConstraintContainer.OuterBarrier.ONLY_BOTTOM" parent="ConstraintContainer.OuterBarrier">
         <item name="android:layout_marginTop">@dimen/clear</item>
         <item name="android:layout_marginEnd">@dimen/clear</item>
@@ -361,7 +353,82 @@
         <item name="selectedDotColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="HugContent.CustomOuterBarrier.Dim50.ONLY_TOP" parent="HugContent">
-        <item name="android:layout_marginTop">@dimen/dim50</item>
+    <style name="HugContent.SuperOuterBarrier.ONLY_TOP" parent="HugContent">
+        <item name="android:layout_marginTop">@dimen/superBarrierValue</item>
+    </style>
+
+    <style name="TextPrimary.Dark.Heading4" parent="FeatureTitleTextThemes">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/mediumSizePar</item>
+    </style>
+
+    <style name="TextPrimary.Light.Heading4" parent="TextPrimary.Dark.Heading4">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextPrimary.Light.Heading4.Centered">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextPrimary.Light.Heading4.Centered.Thickness">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextPrimary.Light.Heading5.Centered" parent="TextPrimary.Light.Heading4.Centered">
+        <item name="android:textSize">@dimen/smallSizePar</item>
+    </style>
+
+    <style name="TextPrimary.Light.Heading2" parent="FeatureTitleTextThemes">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/header2</item>
+    </style>
+
+    <style name="TextPrimary.Light.Heading2.Normal">
+        <item name="android:textStyle">normal</item>
+        <item name="android:maxLines">@android:integer/config_shortAnimTime</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="FillContainer.SuperInnerBarrier.KmapBackground">
+        <item name="android:background">@drawable/bg_kmap</item>
+        <item name="android:elevation">@dimen/defaultBarrierValue</item>
+    </style>
+
+    <style name="HugContent.BorderedRippleBackground">
+        <item name="android:background">@drawable/ic_white_stroke</item>
+    </style>
+
+    <style name="HugContent.BorderedRippleBackground.InnerBarrier">
+        <item name="android:paddingTop">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingStart">@dimen/defaultBarrierValue</item>
+    </style>
+
+    <style name="HugContent.BorderedRippleBackground.InnerBarrier.OuterBarrier.ONLY_TOP" parent="HugContent.BorderedRippleBackground.InnerBarrier">
+        <item name="android:layout_marginTop">@dimen/defaultBarrierValue</item>
+    </style>
+
+    <style name="HugContent.InnerBarrier.StrokeBackground">
+        <item name="android:background">@drawable/bg_rounded_white_stroke</item>
+    </style>
+
+    <style name="HugContent.Centered">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextPrimary.Light.Custom38.Centered.Thickness" parent="TextPrimary.Light.Heading4.Centered.Thickness">
+        <item name="android:textSize">@dimen/textHero</item>
+    </style>
+
+    <style name="TextPrimary.Light.Custom38.Centered.Thickness.Clickable">
+        <item name="android:ellipsize">none</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText">
+        <item name="android:maxLength">@integer/high</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 </resources>

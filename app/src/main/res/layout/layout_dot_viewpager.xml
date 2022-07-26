@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/FillContainer"
-    tools:showIn="@layout/activity_karnaugh_map">
+    style="@style/FillContainer">
 
     <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
         android:id="@+id/dots_indicator"
-        style="@style/HugContent.CustomOuterBarrier.Dim50.ONLY_TOP"
+        style="@style/HugContent.SuperOuterBarrier.ONLY_TOP"
         android:theme="@style/DotsIndicatorThemes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -15,7 +13,7 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager2"
-        style="@style/ConstraintContainer.SuperOuterBarrier.ONLY_TOP"
+        style="@style/ConstraintContainer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

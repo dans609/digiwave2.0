@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Integer values -->
-    <integer name="low">0</integer>
-    <integer name="high">1</integer>
     <integer name="bitRadix">2</integer>
     <integer name="byteRadix">8</integer>
     <integer name="decRadix">10</integer>
-    <integer name="slab">12</integer>
-    <integer name="parcel">15</integer>
-
+    <integer name="tetraRadix">14</integer>
     <integer name="hexRadix">16</integer>
+    <integer name="low">0</integer>
+    <integer name="high">1</integer>
     <integer name="triad">3</integer>
     <integer name="nibble">4</integer>
-
-    <integer name="num5">5</integer>
-    <integer name="num6">6</integer>
-    <integer name="num7">7</integer>
-    <integer name="num9">9</integer>
-    <integer name="num11">11</integer>
-    <integer name="num13">13</integer>
-    <integer name="num14">14</integer>
+    <integer name="slab">12</integer>
+    <integer name="parcel">15</integer>
+    <integer name="fifthPrimeNum">11</integer>
+    <integer name="archimedianSolid">13</integer>
+    <integer name="firstAspiringNum">25</integer>
     <integer name="milliSecs_3000">3000</integer>
-
 
     <!-- Density-independent pixel values -->
     <dimen name="clear">0dp</dimen>
@@ -38,7 +32,6 @@
     <dimen name="imageDensity_200">200dp</dimen>
     <dimen name="appbarSize">300dp</dimen>
 
-
     <!-- Scale-independent pixel values  -->
     <dimen name="oneLinerInformation">12sp</dimen>
     <dimen name="smallSizePar">14sp</dimen>
@@ -46,4 +39,5 @@
     <dimen name="largeSizePar">18sp</dimen>
     <dimen name="header2">20sp</dimen>
     <dimen name="header1">24sp</dimen>
+    <dimen name="textHero">38sp</dimen>
 </resources>

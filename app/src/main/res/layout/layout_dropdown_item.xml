@@ -2,6 +2,6 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/HugContent.InnerBarrier"
+    android:theme="@style/TextPrimary.Dark.Heading4"
     android:layout_width="match_parent"
-    android:textSize="16sp"
-    tools:text="@tools:sample/cities"/>
+    tools:text="@tools:sample/cities" />
