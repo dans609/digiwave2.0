@@ -3,6 +3,7 @@ package com.dash.projects.android.digiwave.`object`.utils
 import android.content.Context
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntegerRes
@@ -10,9 +11,11 @@ import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.enum.ViewVisibility
+import com.jakewharton.rxbinding2.view.RxView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import java.util.*
+import kotlin.collections.ArrayList
 
 object Utils {
     private fun Context.listIntRes(@IntegerRes vararg id: Int) = id.map {
@@ -52,6 +55,17 @@ object Utils {
         .map(CharSequence::toString)
         .distinctUntilChanged()
         .observeOn(AndroidSchedulers.mainThread())
+        .publish()
+        .refCount()
+
+    fun <T : TextView> T.clickEvent() = RxView.clicks(this)
+        .observeOn(AndroidSchedulers.mainThread())
+        .publish()
+        .refCount()
+
+    fun <T : TextView> T.observeTextView() = RxTextView.textChanges(this)
+        .observeOn(AndroidSchedulers.mainThread())
+        .map(CharSequence::toString)
         .publish()
         .refCount()
 
@@ -127,4 +141,17 @@ object Utils {
     }
 
     fun <T> Iterable<T>.merge(separator: String = "") = joinToString(separator)
+
+    fun eachIsNotEmpty(vararg t: String) = !t.any(String::isEmpty)
+
+    fun String.notContainedIn(vararg arr: String) = !arr.contains(this)
+
+    fun String.eachIsNotEmpty(
+        vararg t: String,
+        onSeedContainedIn: ArrayList<String>.() -> ArrayList<String>
+    ) = eachIsNotEmpty(*t) && notContainedIn(
+        *(ArrayList<String>().onSeedContainedIn().toTypedArray())
+    )
+
+    fun <T> ArrayList<T>.adds(vararg data: T) = apply { addAll(data) }
 }

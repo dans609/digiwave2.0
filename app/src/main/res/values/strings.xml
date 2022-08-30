@@ -47,6 +47,7 @@
     <string name="kmap_two_variables_exp01">01</string>
     <string name="kmap_two_variables_exp11">11</string>
     <string name="kmap_two_variables_exp10">10</string>
+    <string name="kmap_answer_not_defined">N/D</string>
 
     <!-- NOTE: Please do not changed or reposition this code below, it may cause an Exception -->
     <!-- [START] dropdown menus array strings -->
@@ -71,7 +72,7 @@
     <string name="nybble_error">Contain %1$s forbidden 4-bit: %2$s</string>
     
     <!-- string templates -->
-    <string name="kmap_variables">%s Variable</string>
+    <string name="kmap_variables">%d Variable</string>
 
     <!-- string samples -->
     <string name="sample_kmap_variable">2 Variable</string>

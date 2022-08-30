@@ -17,7 +17,7 @@
     <TextView
         android:id="@+id/kmap_answer"
         style="@style/HugContent.Centered"
-        android:theme="@style/TextPrimary.Light.Heading2.Normal"
+        android:theme="@style/TextPrimary.Light.Heading2.Normal.Caps"
         app:layout_constraintEnd_toEndOf="@id/kmap_answer_title"
         app:layout_constraintStart_toStartOf="@id/kmap_answer_title"
         app:layout_constraintTop_toBottomOf="@id/kmap_answer_title"

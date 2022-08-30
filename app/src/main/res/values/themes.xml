@@ -389,6 +389,10 @@
         <item name="android:letterSpacing">0.05</item>
     </style>
 
+    <style name="TextPrimary.Light.Heading2.Normal.Caps">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
     <style name="FillContainer.SuperInnerBarrier.KmapBackground">
         <item name="android:background">@drawable/bg_kmap</item>
         <item name="android:elevation">@dimen/defaultBarrierValue</item>
