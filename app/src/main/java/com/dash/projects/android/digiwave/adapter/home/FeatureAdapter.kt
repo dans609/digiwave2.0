@@ -12,12 +12,10 @@ import com.dash.projects.android.digiwave.model.AppFeature
 class FeatureAdapter :
     RecyclerView.Adapter<FeatureAdapter.FeaturesViewHolder>() {
     var onFeatureClicked: ((FeatureName, View) -> Unit)? = null
-    private val _featureList = ArrayList<AppFeature>()
-    private val featureList: List<AppFeature>
-        get() = _featureList
+    private val featureList = ArrayList<AppFeature>()
 
     fun addFeatures(features: List<AppFeature>) =
-        _featureList.addAll(features)
+        featureList.addAll(features)
 
     inner class FeaturesViewHolder(private val binding: LayoutFeatureTemplateBinding) :
         RecyclerView.ViewHolder(binding.root) {
