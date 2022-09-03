@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/FillContainer.SuperInnerBarrier.KmapBackground"
     android:backgroundTint="@color/colombianBlue"
-    tools:showIn="@layout/layout_kmap_graphic">
+    tools:showIn="@layout/layout_kmap2_graphic">
 
     <TextView
         android:id="@+id/kmap_variable_identifier"

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kmap_variable"
+    style="@style/HugContent.InnerBarrier.StrokeBackground"
+    android:theme="@style/TextPrimary.Light.Heading4"
+    tools:layout_gravity="center"
+    tools:text="@string/sample_kmap_variable" />

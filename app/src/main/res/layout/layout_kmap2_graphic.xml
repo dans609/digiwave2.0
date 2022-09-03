@@ -8,19 +8,17 @@
         style="@style/FillContainer.SuperInnerBarrier.KmapBackground"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/kmap_variable"
-            style="@style/HugContent.InnerBarrier.StrokeBackground"
-            android:theme="@style/TextPrimary.Light.Heading4"
+        <include
+            android:id="@+id/inc_kmap_variable"
+            style="@style/HugContent"
+            layout="@layout/layout_kmap_variable"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/sample_kmap_variable" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/kmap_type"
-            style="@style/HugContent.InnerBarrier.StrokeBackground"
-            android:text="@string/kmap_type"
-            android:theme="@style/TextPrimary.Light.Heading4"
+        <include
+            android:id="@+id/inc_kmap_type"
+            style="@style/HugContent"
+            layout="@layout/layout_kmap_type"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,9 +27,9 @@
             style="@style/HugContent.SuperOuterBarrier.ONLY_TOP"
             layout="@layout/layout_kmap_tiles"
             android:layout_width="@dimen/clear"
-            app:layout_constraintEnd_toEndOf="@id/kmap_type"
-            app:layout_constraintStart_toStartOf="@id/kmap_variable"
-            app:layout_constraintTop_toBottomOf="@id/kmap_variable"
+            app:layout_constraintEnd_toEndOf="@id/inc_kmap_type"
+            app:layout_constraintStart_toStartOf="@id/inc_kmap_variable"
+            app:layout_constraintTop_toBottomOf="@id/inc_kmap_variable"
             tools:ignore="IncludeLayoutParam" />
 
         <include

@@ -19,7 +19,7 @@ import com.dash.projects.android.digiwave.`object`.utils.Utils.notContainedIn
 import com.dash.projects.android.digiwave.`object`.utils.Utils.observeTextView
 import com.dash.projects.android.digiwave.`object`.utils.Utils.stringRes
 import com.dash.projects.android.digiwave.databinding.FragmentKmapTwoBinding
-import com.dash.projects.android.digiwave.databinding.LayoutKmapGraphicBinding
+import com.dash.projects.android.digiwave.databinding.LayoutKmap2GraphicBinding
 import com.dash.projects.android.digiwave.sealed.KmapState
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapTwoViewModel
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.factory.ViewModelFactory
@@ -59,7 +59,8 @@ class KmapTwoFragment : Fragment() {
         activity?.run {
             binding?.incKmapGraphic?.let { graph ->
                 graph.setAnswer(requireContext())
-                graph.kmapVariable.text(getString(R.string.kmap_variables, KMAP_VARIABLE))
+                graph.incKmapVariable.kmapVariable.text(getString(R.string.kmap_variables, KMAP_VARIABLE))
+                graph.incKmapType.kmapType.text(getString(R.string.kmap_type))
                 graph.incKmapTiles.apply {
                     kmapVariableIdentifier.text(getString(R.string.sample_kmap_variable_identifier))
                     viewModel?.apply {
@@ -89,7 +90,7 @@ class KmapTwoFragment : Fragment() {
         }
     }
 
-    private fun LayoutKmapGraphicBinding.setAnswer(c: Context) = incKmapAnswer.apply {
+    private fun LayoutKmap2GraphicBinding.setAnswer(c: Context) = incKmapAnswer.apply {
         fun TextView.ref() = observeTextView()
         fun observes(vararg tvs: TextView) = tvs.map(TextView::ref)
         fun disposes(vararg observables: Observable<String>) =

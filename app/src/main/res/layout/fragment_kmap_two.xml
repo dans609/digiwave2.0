@@ -7,6 +7,6 @@
     <include
         android:id="@+id/inc_kmap_graphic"
         style="@style/FillContainer"
-        layout="@layout/layout_kmap_graphic" />
+        layout="@layout/layout_kmap2_graphic" />
 
 </androidx.core.widget.NestedScrollView>

@@ -52,6 +52,7 @@
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/activity_splash_screen.xml" value="0.11005434782608696" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/fragment_code_system_category.xml" value="0.16666666666666666" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/fragment_home.xml" value="0.16822916666666668" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/fragment_kmap_three.xml" value="0.18229166666666666" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/fragment_kmap_two.xml" value="0.16666666666666666" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/fragment_number_system_category.xml" value="0.16666666666666666" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/fragment_number_system_feature.xml" value="0.18229166666666666" />
@@ -62,6 +63,8 @@
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_graphic.xml" value="0.22" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_result.xml" value="0.22" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_tiles.xml" value="0.22" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_type.xml" value="0.18125" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_variable.xml" value="0.3333333333333333" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_tab.xml" value="0.16666666666666666" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_text_input.xml" value="0.18229166666666666" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_text_input_codesys.xml" value="0.22" />

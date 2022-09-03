@@ -70,7 +70,7 @@
     <string name="err_exceeding_limit">The number is exceeds the maximum limit</string>
     <string name="error_radix_namespace">radix=%d</string>
     <string name="nybble_error">Contain %1$s forbidden 4-bit: %2$s</string>
-    
+
     <!-- string templates -->
     <string name="kmap_variables">%d Variable</string>
 
