@@ -32,11 +32,13 @@ class ToolbarPreferences(private val context: Context) {
         appbar?.elevation = context.resources.getInteger(id).toFloat()
     }
 
-    fun setTitle(@StringRes title: Int, withBackButton: Boolean) = apply {
+    fun setTitle(@StringRes title: Int, withBackButton: Boolean = false) = apply {
         appcompat?.supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(withBackButton)
-            setDisplayShowHomeEnabled(withBackButton)
             this.title = context.getString(title)
+            if (withBackButton) {
+                setDisplayHomeAsUpEnabled(withBackButton)
+                setDisplayShowHomeEnabled(withBackButton)
+            }
         }
     }
 }

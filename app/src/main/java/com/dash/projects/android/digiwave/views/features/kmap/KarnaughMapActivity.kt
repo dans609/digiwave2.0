@@ -1,10 +1,9 @@
 package com.dash.projects.android.digiwave.views.features.kmap
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.dash.projects.android.digiwave.R
-import com.dash.projects.android.digiwave.`object`.utils.Utils.intRes
-import com.dash.projects.android.digiwave.`object`.utils.Utils.stringRes
+import com.dash.projects.android.digiwave.`object`.ToolbarPreferences
 import com.dash.projects.android.digiwave.adapter.features.kmap.KmapPagerAdapter
 import com.dash.projects.android.digiwave.databinding.ActivityKarnaughMapBinding
 
@@ -18,8 +17,16 @@ class KarnaughMapActivity : AppCompatActivity() {
         ::_binding.set(ActivityKarnaughMapBinding.inflate(layoutInflater))
         setContentView(binding?.root)
 
-        actionBarSettings()
-        injectViewPager()
+        binding?.also {
+            ToolbarPreferences(this)
+                .injectAppcompat(this)
+                .injectAppbar(it.kmapAppbar)
+                .injectToolbar(it.incToolbar.toolbar)
+                .toolbarAsActionbar()
+                .setElevation(R.integer.low)
+                .setTitle(R.string.numberSystemFeatureName, true)
+            injectViewPager()
+        }
     }
 
     private fun injectViewPager() = binding?.incKmapViewpager?.run {
@@ -27,11 +34,6 @@ class KarnaughMapActivity : AppCompatActivity() {
             viewPager2.adapter = adapter
             dotsIndicator.attachTo(viewPager2)
         }
-    }
-
-    private fun actionBarSettings() = supportActionBar?.apply {
-        elevation = intRes(R.integer.low).toFloat()
-        title = stringRes(R.string.karnaughMapFeatureName)
     }
 
     override fun onDestroy() {
