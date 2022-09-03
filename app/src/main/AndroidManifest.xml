@@ -16,7 +16,8 @@
         <activity
             android:name=".views.features.numsys.NumberSystemActivity"
             android:exported="false"
-            android:theme="@style/Theme.Digiwave" />
+            android:parentActivityName=".views.home.HomeActivity"
+            android:theme="@style/Theme.Digiwave.NoActionBar" />
         <activity
             android:name=".views.home.HomeActivity"
             android:exported="true">

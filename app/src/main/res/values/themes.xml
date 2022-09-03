@@ -29,6 +29,10 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">?attr/colorOnPrimary</item>
+    </style>
+
     <!-- Application component styles -->
     <style name="Theme.SplashTheme" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
@@ -272,6 +276,10 @@
     </style>
 
     <style name="FillContainer.FitsSystemWindows">
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="ConstraintContainer.FitsSystemWindows">
         <item name="android:fitsSystemWindows">true</item>
     </style>
 

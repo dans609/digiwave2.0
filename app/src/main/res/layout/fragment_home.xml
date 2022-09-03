@@ -8,7 +8,7 @@
         android:id="@+id/rv_features"
         style="@style/FillContainer.RecyclerViewStyles.WithBarrier"
         android:theme="@style/VerticalScrollbarStyle"
-        tools:itemCount="@integer/num6"
+        tools:itemCount="@integer/nibble"
         tools:listitem="@layout/layout_feature_template" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

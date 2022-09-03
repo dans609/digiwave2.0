@@ -28,6 +28,8 @@ object Utils {
 
     fun Context.intRes(@IntegerRes id: Int) = resources.getInteger(id)
 
+    fun Context.floatIntRes(@IntegerRes id: Int) = intRes(id).toFloat()
+
     fun Context.stringRes(@StringRes id: Int) = resources.getString(id)
 
     fun Context.drawableRes(@DrawableRes id: Int) = ContextCompat.getDrawable(this, id)

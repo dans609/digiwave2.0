@@ -3,8 +3,8 @@ package com.dash.projects.android.digiwave.views.features.numsys
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dash.projects.android.digiwave.R
+import com.dash.projects.android.digiwave.`object`.ToolbarPreferences
 import com.dash.projects.android.digiwave.`object`.utils.Utils.drawableRes
-import com.dash.projects.android.digiwave.`object`.utils.Utils.intRes
 import com.dash.projects.android.digiwave.`object`.utils.Utils.stringRes
 import com.dash.projects.android.digiwave.adapter.features.numsys.ViewPagerAdapter
 import com.dash.projects.android.digiwave.databinding.ActivityNumberSystemBinding
@@ -21,13 +21,16 @@ class NumberSystemActivity : AppCompatActivity() {
         ::_binding.set(ActivityNumberSystemBinding.inflate(layoutInflater))
         setContentView(binding?.root)
 
-        actionBarSettings()
-        injectViewPager()
-    }
-
-    private fun actionBarSettings() = supportActionBar?.apply {
-        elevation = intRes(R.integer.low).toFloat()
-        title = getString(R.string.numberSystemFeatureName)
+        binding?.also {
+            ToolbarPreferences(this)
+                .injectAppbar(it.numsysAppbar)
+                .injectToolbar(it.incToolbar.toolbar)
+                .injectAppcompat(this)
+                .toolbarAsActionbar()
+                .setElevation(R.integer.low)
+                .setTitle(R.string.numberSystemFeatureName, true)
+            injectViewPager()
+        }
     }
 
     private fun injectViewPager() = binding?.incTabLayout?.run {
