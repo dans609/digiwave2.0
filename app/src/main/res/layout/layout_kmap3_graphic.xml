@@ -25,7 +25,7 @@
         <include
             android:id="@+id/inc_kmap_tiles"
             style="@style/HugContent.SuperOuterBarrier.ONLY_TOP"
-            layout="@layout/layout_kmap2_tiles"
+            layout="@layout/layout_kmap3_tiles"
             android:layout_width="@dimen/clear"
             app:layout_constraintEnd_toEndOf="@id/inc_kmap_type"
             app:layout_constraintStart_toStartOf="@id/inc_kmap_variable"

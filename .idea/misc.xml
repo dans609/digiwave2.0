@@ -42,6 +42,7 @@
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/drawable/ic_test.xml" value="0.1" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/drawable/ic_white_stroke.xml" value="0.107" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/drawable/ic_white_stroke_bot.xml" value="0.1" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/drawable/line_diagonal.xml" value="0.1" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/drawable/logo_anim.xml" value="0.1" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/drawable/logos.xml" value="0.1" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/activity_home.xml" value="0.22" />
@@ -60,8 +61,13 @@
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_dropdown_item.xml" value="0.3333333333333333" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_feature_template.xml" value="0.31278890600924497" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_home_appbar.xml" value="0.22" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap2_graphic.xml" value="0.1518987341772152" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap2_tiles.xml" value="0.18229166666666666" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap3_graphic.xml" value="0.16666666666666666" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap3_tiles.xml" value="0.22" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_graphic.xml" value="0.22" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_result.xml" value="0.22" />
+        <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_row_tiles.xml" value="0.3333333333333333" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_tiles.xml" value="0.22" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_type.xml" value="0.18125" />
         <entry key="..\:/project/android_project/digiwave/app/src/main/res/layout/layout_kmap_variable.xml" value="0.3333333333333333" />

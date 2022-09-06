@@ -382,6 +382,14 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextPrimary.Light.Heading4.Centered.Thickness.Length2">
+        <item name="android:maxLength">@integer/bitRadix</item>
+    </style>
+
+    <style name="TextPrimary.Light.Heading4.Centered.Thickness.Length2.ColorSecondary">
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
     <style name="TextPrimary.Light.Heading5.Centered" parent="TextPrimary.Light.Heading4.Centered">
         <item name="android:textSize">@dimen/smallSizePar</item>
     </style>
@@ -404,6 +412,13 @@
     <style name="FillContainer.SuperInnerBarrier.KmapBackground">
         <item name="android:background">@drawable/bg_kmap</item>
         <item name="android:elevation">@dimen/defaultBarrierValue</item>
+    </style>
+
+    <style name="FillContainer.InnerBarrier.KmapBackground" parent="FillContainer.SuperInnerBarrier.KmapBackground">
+        <item name="android:paddingTop">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/defaultBarrierValue</item>
+        <item name="android:paddingStart">@dimen/defaultBarrierValue</item>
     </style>
 
     <style name="HugContent.BorderedRippleBackground">
@@ -442,5 +457,35 @@
     <style name="TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText">
         <item name="android:maxLength">@integer/high</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="HugContent.SmallOuterBarrier">
+        <item name="android:layout_marginTop">@dimen/smallBarrierValue</item>
+        <item name="android:layout_marginEnd">@dimen/smallBarrierValue</item>
+        <item name="android:layout_marginBottom">@dimen/smallBarrierValue</item>
+        <item name="android:layout_marginStart">@dimen/smallBarrierValue</item>
+    </style>
+
+    <style name="HugContent.SmallOuterBarrier.SecondLayer">
+        <item name="android:elevation">@dimen/oddLowMicroValue</item>
+    </style>
+
+    <style name="IconSize">
+        <item name="android:layout_width">@dimen/normalIconSize</item>
+        <item name="android:layout_height">@dimen/normalIconSize</item>
+    </style>
+
+    <style name="IconSize.TranslateXY.SMALL" parent="IconSize">
+        <item name="android:translationX">@dimen/smallBarrierValue</item>
+        <item name="android:translationY">@dimen/smallBarrierValue</item>
+    </style>
+
+    <style name="HugContent.TranslateXY.SMALL" parent="IconSize.TranslateXY.SMALL">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="HugContent.TranslateXY.SMALL.Rotate270Deg">
+        <item name="android:rotation">@integer/deg270</item>
     </style>
 </resources>

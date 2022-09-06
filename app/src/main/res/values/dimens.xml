@@ -10,11 +10,15 @@
     <integer name="high">1</integer>
     <integer name="triad">3</integer>
     <integer name="nibble">4</integer>
+    <integer name="pentad">5</integer>
+    <integer name="hexad">6</integer>
+    <integer name="heptad">7</integer>
     <integer name="slab">12</integer>
     <integer name="parcel">15</integer>
     <integer name="fifthPrimeNum">11</integer>
     <integer name="archimedianSolid">13</integer>
     <integer name="firstAspiringNum">25</integer>
+    <integer name="deg270">270</integer>
     <integer name="milliSecs_3000">3000</integer>
 
     <!-- Density-independent pixel values -->
@@ -27,6 +31,7 @@
     <dimen name="defaultBarrierValue">10dp</dimen>
     <dimen name="wideBarrierValue">15dp</dimen>
     <dimen name="superBarrierValue">20dp</dimen>
+    <dimen name="normalIconSize">24dp</dimen>
     <dimen name="dim50">50dp</dimen>
     <dimen name="imageDensity_100">100dp</dimen>
     <dimen name="imageDensity_200">200dp</dimen>

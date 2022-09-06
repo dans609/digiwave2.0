@@ -28,7 +28,7 @@ object Utils {
 
     fun Context.intRes(@IntegerRes id: Int) = resources.getInteger(id)
 
-    fun Context.floatIntRes(@IntegerRes id: Int) = intRes(id).toFloat()
+    fun Context.strIntRes(@IntegerRes id: Int) = intRes(id).toString()
 
     fun Context.stringRes(@StringRes id: Int) = resources.getString(id)
 

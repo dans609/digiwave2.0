@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FillContainer.InnerBarrier.KmapBackground"
+    android:backgroundTint="@color/colombianBlue"
+    tools:showIn="@layout/layout_kmap3_graphic">
+
+    <View
+        android:id="@+id/diagonal_line"
+        style="@style/IconSize.TranslateXY.SMALL"
+        android:background="@drawable/line_diagonal"
+        app:layout_constraintStart_toEndOf="@id/kmap_variable_identifier2"
+        app:layout_constraintTop_toBottomOf="@id/kmap_variable_identifier1" />
+
+    <TextView
+        android:id="@+id/kmap_variable_identifier1"
+        style="@style/HugContent.TranslateXY.SMALL"
+        android:theme="@style/TextPrimary.Light.Heading4.Centered.Thickness"
+        app:layout_constraintStart_toStartOf="@id/diagonal_line"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/sample_kmap_2variable" />
+
+    <TextView
+        android:id="@+id/kmap_variable_identifier2"
+        style="@style/HugContent.TranslateXY.SMALL.Rotate270Deg"
+        android:theme="@style/TextPrimary.Light.Heading4.Centered.Thickness"
+        app:layout_constraintBottom_toBottomOf="@id/diagonal_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kmap_variable_identifier1"
+        tools:text="@string/sample_kmap_1variable" />
+
+    <include
+        android:id="@+id/inc_row_tiles1"
+        style="@style/ConstraintContainer"
+        layout="@layout/layout_kmap_row_tiles"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/diagonal_line"
+        app:layout_constraintTop_toBottomOf="@id/diagonal_line"
+        tools:ignore="IncludeLayoutParam" />
+
+    <include
+        android:id="@+id/inc_row_tiles2"
+        style="@style/ConstraintContainer"
+        layout="@layout/layout_kmap_row_tiles"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/inc_row_tiles1"
+        app:layout_constraintStart_toStartOf="@id/inc_row_tiles1"
+        app:layout_constraintTop_toBottomOf="@id/inc_row_tiles1"
+        tools:ignore="IncludeLayoutParam" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

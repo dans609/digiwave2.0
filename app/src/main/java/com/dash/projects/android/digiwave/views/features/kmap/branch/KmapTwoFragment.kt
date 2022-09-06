@@ -56,10 +56,12 @@ class KmapTwoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val variable = getString(R.string.kmap_variables, KMAP_VARIABLE)
+
         activity?.run {
             binding?.incKmapGraphic?.let { graph ->
                 graph.setAnswer(requireContext())
-                graph.incKmapVariable.kmapVariable.text(getString(R.string.kmap_variables, KMAP_VARIABLE))
+                graph.incKmapVariable.kmapVariable.text(variable)
                 graph.incKmapType.kmapType.text(getString(R.string.kmap_type))
                 graph.incKmapTiles.apply {
                     kmapVariableIdentifier.text(getString(R.string.sample_kmap_variable_identifier))

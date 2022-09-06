@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FillContainer"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/identifier00"
+        style="@style/HugContent.SmallOuterBarrier.SecondLayer"
+        android:theme="@style/TextPrimary.Light.Heading4.Centered.Thickness.Length2.ColorSecondary"
+        app:layout_constraintStart_toStartOf="@id/tv_kmap_option00"
+        app:layout_constraintTop_toTopOf="@id/tv_kmap_option00" />
+
+    <TextView
+        android:id="@+id/tv_kmap_option00"
+        style="@style/HugContent.BorderedRippleBackground.InnerBarrier"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText"
+        app:layout_constraintEnd_toStartOf="@id/tv_kmap_option01"
+        app:layout_constraintHorizontal_weight="@integer/firstAspiringNum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/kmap_two_variables_exp11" />
+
+    <TextView
+        android:id="@+id/identifier01"
+        style="@style/HugContent.SmallOuterBarrier.SecondLayer"
+        android:theme="@style/TextPrimary.Light.Heading4.Centered.Thickness.Length2.ColorSecondary"
+        app:layout_constraintStart_toStartOf="@id/tv_kmap_option01"
+        app:layout_constraintTop_toTopOf="@id/tv_kmap_option01" />
+
+    <TextView
+        android:id="@+id/tv_kmap_option01"
+        style="@style/HugContent.BorderedRippleBackground.InnerBarrier"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText"
+        app:layout_constraintEnd_toStartOf="@id/tv_kmap_option11"
+        app:layout_constraintHorizontal_weight="@integer/firstAspiringNum"
+        app:layout_constraintStart_toEndOf="@id/tv_kmap_option00"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/kmap_two_variables_exp11" />
+
+    <TextView
+        android:id="@+id/identifier11"
+        style="@style/HugContent.SmallOuterBarrier.SecondLayer"
+        android:theme="@style/TextPrimary.Light.Heading4.Centered.Thickness.Length2.ColorSecondary"
+        app:layout_constraintStart_toStartOf="@id/tv_kmap_option11"
+        app:layout_constraintTop_toTopOf="@id/tv_kmap_option11" />
+
+    <TextView
+        android:id="@+id/tv_kmap_option11"
+        style="@style/HugContent.BorderedRippleBackground.InnerBarrier"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText"
+        app:layout_constraintEnd_toStartOf="@id/tv_kmap_option10"
+        app:layout_constraintHorizontal_weight="@integer/firstAspiringNum"
+        app:layout_constraintStart_toEndOf="@id/tv_kmap_option01"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/kmap_two_variables_exp11" />
+
+    <TextView
+        android:id="@+id/identifier10"
+        style="@style/HugContent.SmallOuterBarrier.SecondLayer"
+        android:theme="@style/TextPrimary.Light.Heading4.Centered.Thickness.Length2.ColorSecondary"
+        app:layout_constraintStart_toStartOf="@id/tv_kmap_option10"
+        app:layout_constraintTop_toTopOf="@id/tv_kmap_option10" />
+
+    <TextView
+        android:id="@+id/tv_kmap_option10"
+        style="@style/HugContent.BorderedRippleBackground.InnerBarrier"
+        android:layout_width="@dimen/clear"
+        android:theme="@style/TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="@integer/firstAspiringNum"
+        app:layout_constraintStart_toEndOf="@id/tv_kmap_option11"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
