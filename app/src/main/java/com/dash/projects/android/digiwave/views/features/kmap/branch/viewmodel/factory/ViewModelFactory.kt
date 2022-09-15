@@ -2,6 +2,7 @@ package com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapThreeViewModel
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapTwoViewModel
 
 class ViewModelFactory : ViewModelProvider.NewInstanceFactory() {
@@ -10,6 +11,7 @@ class ViewModelFactory : ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T = when {
         modelClass.isAssignableFrom(KmapTwoViewModel::class.java) -> KmapTwoViewModel() as T
+        modelClass.isAssignableFrom(KmapThreeViewModel::class.java) -> KmapThreeViewModel() as T
         else -> throw Throwable(modelClass.name.message)
     }
 

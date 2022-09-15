@@ -58,7 +58,7 @@ class KmapTwoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val variable = getString(R.string.kmap_variables, KMAP_VARIABLE)
 
-        activity?.run {
+        activity?.also { fa ->
             binding?.incKmapGraphic?.let { graph ->
                 graph.setAnswer(requireContext())
                 graph.incKmapVariable.kmapVariable.text(variable)
@@ -66,12 +66,10 @@ class KmapTwoFragment : Fragment() {
                 graph.incKmapTiles.apply {
                     kmapVariableIdentifier.text(getString(R.string.sample_kmap_variable_identifier))
                     viewModel?.apply {
-                        requireActivity().apply {
-                            state00.observeCell(this, tvKmapOption00)
-                            state01.observeCell(this, tvKmapOption01)
-                            state11.observeCell(this, tvKmapOption11)
-                            state10.observeCell(this, tvKmapOption10)
-                        }
+                        state00.observeCell(fa, tvKmapOption00)
+                        state01.observeCell(fa, tvKmapOption01)
+                        state11.observeCell(fa, tvKmapOption11)
+                        state10.observeCell(fa, tvKmapOption10)
 
                         disposables.addAll(tvKmapOption00.clickEvent().subscribe { setState00() },
                             tvKmapOption01.clickEvent().subscribe { setState01() },
@@ -83,14 +81,15 @@ class KmapTwoFragment : Fragment() {
         }
     }
 
-    private fun LiveData<KmapState>.observeCell(fa: FragmentActivity, tv: TextView) = context.run {
-        observe(fa) {
-            tv.text = when (it) {
-                is KmapState.StateOn -> getString(it.value).apply { valueStateOn?.invoke(this) }
-                is KmapState.StateOff -> null
+    private fun LiveData<KmapState>.observeCell(fa: FragmentActivity, tv: TextView) =
+        fa.applicationContext.run {
+            observe(fa) {
+                tv.text = when (it) {
+                    is KmapState.StateOn -> getString(it.value).apply { valueStateOn?.invoke(this) }
+                    is KmapState.StateOff -> null
+                }
             }
         }
-    }
 
     private fun LayoutKmap2GraphicBinding.setAnswer(c: Context) = incKmapAnswer.apply {
         fun TextView.ref() = observeTextView()
@@ -139,6 +138,7 @@ class KmapTwoFragment : Fragment() {
         super.onDestroy()
         disposables.dispose()
         ::_binding.set(null)
+        ::_viewModel.set(null)
     }
 
     companion object {

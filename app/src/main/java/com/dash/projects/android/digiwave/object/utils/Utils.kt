@@ -13,9 +13,10 @@ import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.enum.ViewVisibility
 import com.jakewharton.rxbinding2.view.RxView
 import com.jakewharton.rxbinding2.widget.RxTextView
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import java.util.*
-import kotlin.collections.ArrayList
 
 object Utils {
     private fun Context.listIntRes(@IntegerRes vararg id: Int) = id.map {
@@ -156,4 +157,7 @@ object Utils {
     )
 
     fun <T> ArrayList<T>.adds(vararg data: T) = apply { addAll(data) }
+
+    fun CompositeDisposable.disposeAll(vararg observables: Observable<String>) =
+        addAll(*observables.map { it.subscribe() }.toTypedArray())
 }
