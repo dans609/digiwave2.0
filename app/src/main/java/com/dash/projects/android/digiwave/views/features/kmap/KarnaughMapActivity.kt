@@ -24,7 +24,7 @@ class KarnaughMapActivity : AppCompatActivity() {
                 .injectToolbar(it.incToolbar.toolbar)
                 .toolbarAsActionbar()
                 .setElevation(R.integer.low)
-                .setTitle(R.string.numberSystemFeatureName, true)
+                .setTitle(R.string.karnaughMapFeatureName, true)
             injectViewPager()
         }
     }

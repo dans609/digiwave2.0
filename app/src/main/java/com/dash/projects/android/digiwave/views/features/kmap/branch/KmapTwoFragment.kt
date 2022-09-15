@@ -1,5 +1,6 @@
 package com.dash.projects.android.digiwave.views.features.kmap.branch
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -81,6 +82,7 @@ class KmapTwoFragment : Fragment() {
         }
     }
 
+    @SuppressLint("ResourceType")
     private fun LiveData<KmapState>.observeCell(fa: FragmentActivity, tv: TextView) =
         fa.applicationContext.run {
             observe(fa) {
