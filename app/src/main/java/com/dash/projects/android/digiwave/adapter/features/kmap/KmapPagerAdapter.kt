@@ -1,5 +1,6 @@
 package com.dash.projects.android.digiwave.adapter.features.kmap
 
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -13,6 +14,7 @@ class KmapPagerAdapter(fm: FragmentManager, l: Lifecycle) : FragmentStateAdapter
     override fun createFragment(position: Int) = when (KMAP_VARIABLES[position]) {
         KmapVariable.TWO_VARIABLES -> KmapTwoFragment()
         KmapVariable.THREE_VARIABLES -> KmapThreeFragment()
+        KmapVariable.FOURTH_VARIABLES -> Fragment()
     }
 
     companion object {
