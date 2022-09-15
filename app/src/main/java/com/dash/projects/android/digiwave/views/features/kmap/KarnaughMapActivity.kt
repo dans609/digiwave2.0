@@ -25,14 +25,16 @@ class KarnaughMapActivity : AppCompatActivity() {
                 .toolbarAsActionbar()
                 .setElevation(R.integer.low)
                 .setTitle(R.string.karnaughMapFeatureName, true)
-            injectViewPager()
+            injectViewPager(it)
         }
     }
 
-    private fun injectViewPager() = binding?.incKmapViewpager?.run {
+    private fun injectViewPager(bind: ActivityKarnaughMapBinding) = bind.incKmapViewpager.run {
         KmapPagerAdapter(supportFragmentManager, lifecycle).let { adapter ->
-            viewPager2.adapter = adapter
-            dotsIndicator.attachTo(viewPager2)
+            viewPager2.apply {
+                this.adapter = adapter
+                dotsIndicator.attachTo(this)
+            }
         }
     }
 
