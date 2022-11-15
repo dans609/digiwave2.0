@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FillContainer.SuperInnerBarrier">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/FillContainer.SuperInnerBarrier.KmapBackground"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/inc_kmap_variable"
+            style="@style/HugContent"
+            layout="@layout/layout_kmap_variable"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/inc_kmap_type"
+            style="@style/HugContent"
+            layout="@layout/layout_kmap_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/inc_kmap_tiles"
+            style="@style/HugContent.SuperOuterBarrier.ONLY_TOP"
+            layout="@layout/layout_kmap4_tiles"
+            android:layout_width="@dimen/clear"
+            app:layout_constraintEnd_toEndOf="@id/inc_kmap_type"
+            app:layout_constraintStart_toStartOf="@id/inc_kmap_variable"
+            app:layout_constraintTop_toBottomOf="@id/inc_kmap_variable"
+            tools:ignore="IncludeLayoutParam" />
+
+        <include
+            android:id="@+id/inc_kmap_answer"
+            style="@style/HugContent.SuperOuterBarrier.ONLY_TOP"
+            layout="@layout/layout_kmap_result"
+            app:layout_constraintEnd_toEndOf="@id/inc_kmap_tiles"
+            app:layout_constraintStart_toStartOf="@id/inc_kmap_tiles"
+            app:layout_constraintTop_toBottomOf="@id/inc_kmap_tiles" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -13,6 +13,7 @@
     <integer name="pentad">5</integer>
     <integer name="hexad">6</integer>
     <integer name="heptad">7</integer>
+    <integer name="nonet">9</integer>
     <integer name="slab">12</integer>
     <integer name="parcel">15</integer>
     <integer name="fifthPrimeNum">11</integer>

@@ -79,5 +79,6 @@
     <string name="sample_kmap_result">R = !A.B</string>
     <string name="sample_kmap_variable_identifier">AB</string>
     <string name="sample_kmap_2variable">BC</string>
+    <string name="sample_kmap_2variable_cd">CD</string>
     <string name="sample_kmap_1variable">A</string>
 </resources>

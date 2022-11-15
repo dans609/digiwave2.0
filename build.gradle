@@ -18,6 +18,7 @@ ext {
     materialAppVersion = '1.6.1'
     constraintLayoutVersion = '2.1.4'
     rxJava2Version = '2.2.19'
+    rxKotlin2Version = '2.4.0'
     rxBinding2Version = '2.0.0'
     splashScreenApiVersion = '1.0.0'
     navigationGraphVersion = '2.5.2'

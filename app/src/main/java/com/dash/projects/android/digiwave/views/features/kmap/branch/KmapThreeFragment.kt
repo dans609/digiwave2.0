@@ -20,7 +20,10 @@ import com.dash.projects.android.digiwave.`object`.utils.Utils.notContainedIn
 import com.dash.projects.android.digiwave.`object`.utils.Utils.observeTextView
 import com.dash.projects.android.digiwave.`object`.utils.Utils.strIntRes
 import com.dash.projects.android.digiwave.`object`.utils.Utils.stringRes
-import com.dash.projects.android.digiwave.databinding.*
+import com.dash.projects.android.digiwave.databinding.FragmentKmapThreeBinding
+import com.dash.projects.android.digiwave.databinding.LayoutKmap3GraphicBinding
+import com.dash.projects.android.digiwave.databinding.LayoutKmap3TilesBinding
+import com.dash.projects.android.digiwave.databinding.LayoutKmapRowTilesBinding
 import com.dash.projects.android.digiwave.sealed.KmapState
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapThreeViewModel
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.factory.ViewModelFactory
@@ -55,14 +58,15 @@ class KmapThreeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val variable = getString(R.string.kmap_variables, KMAP_VARIABLE)
+        val context = requireContext()
 
         activity?.also { fa ->
             binding?.incKmapGraphic?.let { graph ->
-                graph.setAnswer(requireContext())
+                graph.setAnswer(context)
                 graph.incKmapVariable.kmapVariable.text = variable
                 graph.incKmapType.kmapType.text = getString(R.string.kmap_type)
                 graph.incKmapTiles.apply {
-                    setIdentifier(requireContext())
+                    setIdentifier(context)
                     viewModel?.apply {
                         incRowTiles1.apply {
                             state000.observeCell(fa, tvKmapOption00)
@@ -101,7 +105,7 @@ class KmapThreeFragment : Fragment() {
         fa.applicationContext.run {
             observe(fa) {
                 tv.text = when (it) {
-                    is KmapState.StateOn -> getString(it.value).apply { valueStateOn?.invoke(this) }
+                    is KmapState.StateOn -> strIntRes(it.value).apply { valueStateOn?.invoke(this) }
                     is KmapState.StateOff -> null
                 }
             }
@@ -129,25 +133,14 @@ class KmapThreeFragment : Fragment() {
     private fun LayoutKmap3GraphicBinding.setAnswer(c: Context) = incKmapAnswer.apply {
         fun TextView.ref() = observeTextView()
         fun observeAll(vararg tvs: TextView) = tvs.map(TextView::ref)
+        fun LayoutKmapRowTilesBinding.getValue() =
+            observeAll(tvKmapOption00, tvKmapOption01, tvKmapOption11, tvKmapOption10).apply {
+                disposables.disposeAll(*toTypedArray())
+            }
 
         valueStateOn = { high ->
-            val (cell000, cell001, cell011, cell010) = incKmapTiles.incRowTiles1.run {
-                observeAll(
-                    tvKmapOption00,
-                    tvKmapOption01,
-                    tvKmapOption11,
-                    tvKmapOption10
-                ).apply { disposables.disposeAll(*toTypedArray()) }
-            }
-
-            val (cell100, cell101, cell111, cell110) = incKmapTiles.incRowTiles2.run {
-                observeAll(
-                    tvKmapOption00,
-                    tvKmapOption01,
-                    tvKmapOption11,
-                    tvKmapOption10
-                ).apply { disposables.disposeAll(*toTypedArray()) }
-            }
+            val (cell000, cell001, cell011, cell010) = incKmapTiles.incRowTiles1.getValue()
+            val (cell100, cell101, cell111, cell110) = incKmapTiles.incRowTiles2.getValue()
 
             disposables.add(
                 Observable.combineLatest(
@@ -918,8 +911,7 @@ class KmapThreeFragment : Fragment() {
                         high.eachIsNotEmpty(p000, p001, p011, p010, p100, p101, p111) {
                             adds(p110)
                         } -> "(C) + (!A) + (!B)"
-                        eachIsNotEmpty(p000, p001, p011, p010, p100, p101, p111, p110)
-                        -> high
+                        eachIsNotEmpty(p000, p001, p011, p010, p100, p101, p111, p110) -> high
                         else -> c.stringRes(R.string.kmap_answer_not_defined)
                     }.toString()
                 }.subscribe { kmapAnswer.text = it })

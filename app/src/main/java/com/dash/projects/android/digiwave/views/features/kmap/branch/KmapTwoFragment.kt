@@ -1,6 +1,5 @@
 package com.dash.projects.android.digiwave.views.features.kmap.branch
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,6 +17,7 @@ import com.dash.projects.android.digiwave.`object`.utils.Utils.eachIsNotEmpty
 import com.dash.projects.android.digiwave.`object`.utils.Utils.intRes
 import com.dash.projects.android.digiwave.`object`.utils.Utils.notContainedIn
 import com.dash.projects.android.digiwave.`object`.utils.Utils.observeTextView
+import com.dash.projects.android.digiwave.`object`.utils.Utils.strIntRes
 import com.dash.projects.android.digiwave.`object`.utils.Utils.stringRes
 import com.dash.projects.android.digiwave.databinding.FragmentKmapTwoBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmap2GraphicBinding
@@ -82,12 +82,11 @@ class KmapTwoFragment : Fragment() {
         }
     }
 
-    @SuppressLint("ResourceType")
     private fun LiveData<KmapState>.observeCell(fa: FragmentActivity, tv: TextView) =
         fa.applicationContext.run {
             observe(fa) {
                 tv.text = when (it) {
-                    is KmapState.StateOn -> getString(it.value).apply { valueStateOn?.invoke(this) }
+                    is KmapState.StateOn -> strIntRes(it.value).apply { valueStateOn?.invoke(this) }
                     is KmapState.StateOff -> null
                 }
             }

@@ -48,6 +48,8 @@ dependencies {
     implementation("com.google.android.material:material:$materialAppVersion")
     implementation("androidx.constraintlayout:constraintlayout:$constraintLayoutVersion")
     implementation("io.reactivex.rxjava2:rxjava:$rxJava2Version")
+    implementation("io.reactivex.rxjava2:rxkotlin:$rxKotlin2Version")
+
     implementation("com.jakewharton.rxbinding2:rxbinding:$rxBinding2Version")
     implementation("androidx.core:core-splashscreen:$splashScreenApiVersion")
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationGraphVersion")

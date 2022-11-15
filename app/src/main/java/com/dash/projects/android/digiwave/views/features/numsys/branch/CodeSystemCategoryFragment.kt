@@ -187,7 +187,6 @@ class CodeSystemCategoryFragment : Fragment() {
                 elementToString(radix, true).merge().dropWhile(Char::isZero)
             )
 
-
             when {
                 etlBcd.isVisible -> decSplit().paste(etBcd)
                 etlXs3.isVisible -> {
