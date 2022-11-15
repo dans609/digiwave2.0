@@ -1,6 +1,10 @@
 package com.dash.projects.android.digiwave.`object`
 
 import android.content.Context
+import android.os.Build
+import android.view.Window
+import android.view.WindowInsets
+import android.view.WindowManager
 import androidx.annotation.IntegerRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +15,11 @@ class ToolbarPreferences(private val context: Context) {
     private var appbar: AppBarLayout? = null
     private var toolbar: Toolbar? = null
     private var appcompat: AppCompatActivity? = null
+    private var window: Window? = null
+
+    fun injectWindow(window: Window) = apply {
+        this.window = window
+    }
 
     fun injectAppbar(appbar: AppBarLayout) = apply {
         this.appbar = appbar
@@ -32,13 +41,24 @@ class ToolbarPreferences(private val context: Context) {
         appbar?.elevation = context.resources.getInteger(id).toFloat()
     }
 
-    fun setTitle(@StringRes title: Int, withBackButton: Boolean = false) = apply {
+    fun setTitle(@StringRes title: Int, withBackButton: Boolean?) = apply {
         appcompat?.supportActionBar?.apply {
             this.title = context.getString(title)
-            if (withBackButton) {
+            if (withBackButton != null) {
                 setDisplayHomeAsUpEnabled(withBackButton)
                 setDisplayShowHomeEnabled(withBackButton)
             }
         }
+    }
+
+    fun hideStatusBar() = apply {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+            window?.insetsController?.hide(WindowInsets.Type.statusBars())
+        else window?.setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN)
+    }
+
+    companion object {
+        @Suppress("Deprecation")
+        private const val FLAG_FULLSCREEN = WindowManager.LayoutParams.FLAG_FULLSCREEN
     }
 }
