@@ -13,7 +13,6 @@
             android:name=".views.features.logate.LogicGateActivity"
             android:exported="false"
             android:parentActivityName=".views.home.HomeActivity"
-            android:screenOrientation="landscape"
             android:theme="@style/Theme.Digiwave.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"

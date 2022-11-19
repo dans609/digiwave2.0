@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FillContainer.SuperInnerBarrier"
+    tools:showIn="@layout/activity_logic_gate">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_dropdown"
+        style="@style/ConstraintContainer.OutlinedDropdownMenuStyles.GateThemes"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_tv_gates"
+            style="@style/FillContainer.InputType.NONE"
+            android:hint="@string/hint_gate_list"
+            android:text="@string/sample_and_gates" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
     <string name="cd_appbar_numsys">Icon number system</string>
     <string name="cd_appbar_gate">Icon logic gate</string>
     <string name="cd_appbar_title">Vector of application title</string>
+    <string name="cd_icon_logic_gate">Icon logic gate mode: %s</string>
 
     <!-- Application content strings -->
     <string name="numberSystemFeatureName">Number System</string>
@@ -48,21 +49,33 @@
     <string name="kmap_two_variables_exp11">11</string>
     <string name="kmap_two_variables_exp10">10</string>
     <string name="kmap_answer_not_defined">N/D</string>
+    <string name="kmap_variables">%d Variable</string>
 
-    <!-- NOTE: Please do not changed or reposition this code below, it may cause an Exception -->
-    <!-- [START] dropdown menus array strings -->
+    <!-- NOTE: Please do not changed this code, it may cause an Exception -->
+    <!-- [START] dropdown array strings -->
     <string name="auto_complete_tv_default_mode">Binary \u21C4 Binary-Coded Decimal</string>
     <string-array name="code_system_mode">
         <item>Binary \u21C4 Binary-Coded Decimal</item>
         <item>Binary \u21C4 Excess-3</item>
         <item>Binary \u21C4 Gray Code</item>
     </string-array>
-    <!-- [END] dropdown menus mode strings -->
+
+    <string-array name="gate_list">
+        <item>AND Gate</item>
+        <item>OR Gate</item>
+        <item>NOT Gate</item>
+        <item>NAND Gate</item>
+        <item>NOR Gate</item>
+        <item>XOR Gate</item>
+        <item>XNOR Gate</item>
+    </string-array>
+    <!-- [END] dropdown array strings -->
 
     <!-- hints -->
     <string name="hint_dropdown_code_system">Modes</string>
     <string name="hint_bcd_keyword">BCD</string>
     <string name="hint_xs3_keyword">XS3</string>
+    <string name="hint_gate_list">Gates</string>
 
     <!-- error description string  -->
     <string name="et_error_format">Please input allowed digit: (%1$d-%2$d)</string>
@@ -71,8 +84,6 @@
     <string name="error_radix_namespace">radix=%d</string>
     <string name="nybble_error">Contain %1$s forbidden 4-bit: %2$s</string>
 
-    <!-- string templates -->
-    <string name="kmap_variables">%d Variable</string>
 
     <!-- string samples -->
     <string name="sample_kmap_variable">2 Variable</string>
@@ -81,4 +92,5 @@
     <string name="sample_kmap_2variable">BC</string>
     <string name="sample_kmap_2variable_cd">CD</string>
     <string name="sample_kmap_1variable">A</string>
+    <string name="sample_and_gates">AND Gate</string>
 </resources>

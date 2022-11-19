@@ -15,11 +15,6 @@ class ToolbarPreferences(private val context: Context) {
     private var appbar: AppBarLayout? = null
     private var toolbar: Toolbar? = null
     private var appcompat: AppCompatActivity? = null
-    private var window: Window? = null
-
-    fun injectWindow(window: Window) = apply {
-        this.window = window
-    }
 
     fun injectAppbar(appbar: AppBarLayout) = apply {
         this.appbar = appbar
@@ -51,10 +46,10 @@ class ToolbarPreferences(private val context: Context) {
         }
     }
 
-    fun hideStatusBar() = apply {
+    fun hideStatusBar(window: Window) = apply {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
-            window?.insetsController?.hide(WindowInsets.Type.statusBars())
-        else window?.setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN)
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        else window.setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN)
     }
 
     companion object {

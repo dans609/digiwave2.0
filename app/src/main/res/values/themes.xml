@@ -137,6 +137,13 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="HugContent.SmallInnerBarrier">
+        <item name="android:paddingTop">@dimen/smallBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/smallBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/smallBarrierValue</item>
+        <item name="android:paddingStart">@dimen/smallBarrierValue</item>
+    </style>
+
     <style name="HugContent.InnerBarrier.WhiteColor" parent="HugContent.InnerBarrier">
         <item name="android:textColor">@color/white</item>
     </style>
@@ -252,6 +259,11 @@
         <item name="android:layout_marginStart">@dimen/clear</item>
     </style>
 
+    <style name="ConstraintContainer.OuterBarrier.ONLY_START" parent="ConstraintContainer.OuterBarrier.ONLY_BOTTOM">
+        <item name="android:layout_marginBottom">@dimen/clear</item>
+        <item name="android:layout_marginStart">@dimen/defaultBarrierValue</item>
+    </style>
+
     <style name="FillContainer.RecyclerViewStyles">
         <item name="android:background">@drawable/bg_list_features</item>
         <item name="android:elevation">@dimen/defaultBarrierValue</item>
@@ -348,6 +360,12 @@
     <style name="ConstraintContainer.OutlinedDropdownMenuStyles.CodeSystemThemes">
         <item name="android:hint">@string/hint_dropdown_code_system</item>
         <item name="startIconDrawable">@drawable/ic_bit_icon</item>
+        <item name="startIconTint">@null</item>
+    </style>
+
+    <style name="ConstraintContainer.OutlinedDropdownMenuStyles.GateThemes">
+        <item name="android:hint">@string/hint_gate_list</item>
+        <item name="startIconDrawable">@drawable/ic_and</item>
         <item name="startIconTint">@null</item>
     </style>
 
