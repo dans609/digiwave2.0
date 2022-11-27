@@ -22,10 +22,11 @@ class DrawableDropdownGenerator private constructor(context: Context) {
         @Volatile
         private var instance: DrawableDropdownGenerator? = null
 
-        fun getInstance(mContext: Context) = instance ?: synchronized(this) {
-            instance ?: DrawableDropdownGenerator(mContext).apply {
-                instance = this
+        fun getInstance(mContext: Context): DrawableDropdownGenerator =
+            instance ?: synchronized(this) {
+                instance ?: DrawableDropdownGenerator(mContext).apply {
+                    instance = this
+                }
             }
-        }
     }
 }
