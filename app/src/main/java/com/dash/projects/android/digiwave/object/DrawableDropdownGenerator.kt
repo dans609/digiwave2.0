@@ -5,7 +5,7 @@ import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.`object`.utils.Utils.drawableResListOf
 import com.dash.projects.android.digiwave.model.DrawableDropdownItem
 
-class DrawableDropdownGenerator(context: Context) {
+class DrawableDropdownGenerator private constructor(context: Context) {
     private val drawables = drawableResListOf(
         R.drawable.ic_and, R.drawable.ic_or, R.drawable.ic_not,
         R.drawable.ic_nand, R.drawable.ic_nor, R.drawable.ic_xor,
@@ -16,5 +16,16 @@ class DrawableDropdownGenerator(context: Context) {
 
     fun generateDropdownItems() = items.mapIndexed { index, itemName ->
         DrawableDropdownItem(itemName, drawables[index])
+    }
+
+    companion object {
+        @Volatile
+        private var instance: DrawableDropdownGenerator? = null
+
+        fun getInstance(mContext: Context) = instance ?: synchronized(this) {
+            instance ?: DrawableDropdownGenerator(mContext).apply {
+                instance = this
+            }
+        }
     }
 }

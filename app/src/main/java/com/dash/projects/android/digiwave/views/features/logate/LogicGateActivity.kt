@@ -29,7 +29,8 @@ class LogicGateActivity : AppCompatActivity() {
         ToolbarPreferences(this)
             .hideStatusBar(window)
 
-        mGateList.addAll(DrawableDropdownGenerator(this).generateDropdownItems())
+        val generator = DrawableDropdownGenerator.getInstance(this)
+        mGateList.addAll(generator.generateDropdownItems())
     }
 
     override fun onResume() {
