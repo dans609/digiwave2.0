@@ -47,7 +47,7 @@
         android:id="@+id/image_gate"
         style="@style/HugContent"
         android:contentDescription="@string/cd_gate_icon"
-        android:src="@drawable/ic_or_inp"
+        android:src="@drawable/ic_and_inp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/line_gate_output"
         app:layout_constraintStart_toStartOf="parent"
