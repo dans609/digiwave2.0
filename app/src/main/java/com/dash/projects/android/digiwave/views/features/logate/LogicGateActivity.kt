@@ -1,11 +1,13 @@
 package com.dash.projects.android.digiwave.views.features.logate
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AutoCompleteTextView
+import android.widget.TextView
 import androidx.annotation.LayoutRes
-import com.dash.projects.android.digiwave.`object`.*
+import androidx.appcompat.app.AppCompatActivity
+import com.dash.projects.android.digiwave.`object`.DrawableDropdownGenerator
+import com.dash.projects.android.digiwave.`object`.ToolbarPreferences
 import com.dash.projects.android.digiwave.`object`.utils.Utils.callToast
 import com.dash.projects.android.digiwave.`object`.utils.Utils.drawableRes
 import com.dash.projects.android.digiwave.adapter.features.logate.DropdownAdapter
@@ -29,8 +31,20 @@ class LogicGateActivity : AppCompatActivity() {
         ToolbarPreferences(this)
             .hideStatusBar(window)
 
-        val generator = DrawableDropdownGenerator.getInstance(this)
-        mGateList.addAll(generator.generateDropdownItems())
+        val dropdownItemGenerator = DrawableDropdownGenerator.getInstance(this)
+        mGateList.addAll(dropdownItemGenerator.generateDropdownItems())
+
+        var increment1 = 0
+        var increment2 = 0
+        incBinding.tvGateInp1.setOnClickListener {
+            increment1 += 1
+            (it as TextView).text = increment1.toString()
+        }
+
+        incBinding.tvGateInp2.setOnClickListener {
+            increment2 += 1
+            (it as TextView).text = increment2.toString()
+        }
     }
 
     override fun onResume() {

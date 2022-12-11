@@ -20,4 +20,55 @@
             android:text="@string/sample_and_gates" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_gate_inp1"
+        style="@style/HugContent.BackgroundGateInput"
+        android:theme="@style/TextPrimary.ColorPrimary.Heading2.Centered.Thickness.Clickable.SingleText"
+        android:translationX="@dimen/smallBarrierValue"
+        android:translationY="@dimen/densityMin25"
+        app:layout_constraintBottom_toBottomOf="@+id/image_gate"
+        app:layout_constraintStart_toStartOf="@id/image_gate"
+        app:layout_constraintTop_toTopOf="@id/image_gate"
+        tools:text="@integer/low" />
+
+    <TextView
+        android:id="@+id/tv_gate_inp2"
+        style="@style/HugContent.BackgroundGateInput"
+        android:theme="@style/TextPrimary.ColorPrimary.Heading2.Centered.Thickness.Clickable.SingleText"
+        android:translationX="@dimen/smallBarrierValue"
+        android:translationY="@dimen/normalIconSize"
+        app:layout_constraintBottom_toBottomOf="@id/image_gate"
+        app:layout_constraintStart_toStartOf="@id/image_gate"
+        app:layout_constraintTop_toTopOf="@id/image_gate"
+        tools:text="@integer/low" />
+
+    <ImageView
+        android:id="@+id/image_gate"
+        style="@style/HugContent"
+        android:contentDescription="@string/cd_gate_icon"
+        android:src="@drawable/ic_or_inp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/line_gate_output"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_dropdown" />
+
+    <View
+        android:id="@+id/line_gate_output"
+        style="@style/ConstraintContainer.PrimaryColoredHorizontalLine"
+        app:layout_constraintBottom_toBottomOf="@id/image_output"
+        app:layout_constraintEnd_toStartOf="@id/image_output"
+        app:layout_constraintStart_toEndOf="@id/image_gate"
+        app:layout_constraintTop_toTopOf="@id/image_output" />
+
+    <ImageView
+        android:id="@+id/image_output"
+        style="@style/IconSize_Dim40"
+        android:contentDescription="@string/cd_lamp"
+        android:src="@drawable/ic_lamp_on"
+        app:layout_constraintBottom_toBottomOf="@id/image_gate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/line_gate_output"
+        app:layout_constraintTop_toTopOf="@id/image_gate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,8 @@
     <string name="cd_appbar_gate">Icon logic gate</string>
     <string name="cd_appbar_title">Vector of application title</string>
     <string name="cd_icon_logic_gate">Icon logic gate mode: %s</string>
+    <string name="cd_gate_icon">%1$s Gate graphic display</string>
+    <string name="cd_lamp">Lamp icon, used as a indicator for on or off state of gate simulation result</string>
 
     <!-- Application content strings -->
     <string name="numberSystemFeatureName">Number System</string>

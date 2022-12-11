@@ -33,10 +33,14 @@
     <dimen name="wideBarrierValue">15dp</dimen>
     <dimen name="superBarrierValue">20dp</dimen>
     <dimen name="normalIconSize">24dp</dimen>
+    <dimen name="dim40">40dp</dimen>
     <dimen name="dim50">50dp</dimen>
     <dimen name="imageDensity_100">100dp</dimen>
     <dimen name="imageDensity_200">200dp</dimen>
     <dimen name="appbarSize">300dp</dimen>
+
+    <!-- Negative Density-Independent pixel values -->
+    <dimen name="densityMin25">-25dp</dimen>
 
     <!-- Scale-independent pixel values  -->
     <dimen name="oneLinerInformation">12sp</dimen>

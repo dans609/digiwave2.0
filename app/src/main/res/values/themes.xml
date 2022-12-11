@@ -477,6 +477,11 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="TextPrimary.ColorPrimary.Heading2.Centered.Thickness.Clickable.SingleText" parent="TextPrimary.Light.Custom38.Centered.Thickness.Clickable.SingleText">
+        <item name="android:textSize">@dimen/header2</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
     <style name="HugContent.SmallOuterBarrier">
         <item name="android:layout_marginTop">@dimen/smallBarrierValue</item>
         <item name="android:layout_marginEnd">@dimen/smallBarrierValue</item>
@@ -505,5 +510,19 @@
 
     <style name="HugContent.TranslateXY.SMALL.Rotate270Deg">
         <item name="android:rotation">@integer/deg270</item>
+    </style>
+
+    <style name="HugContent.BackgroundGateInput">
+        <item name="android:background">@drawable/bg_gate_input</item>
+    </style>
+
+    <style name="ConstraintContainer.PrimaryColoredHorizontalLine">
+        <item name="android:background">@drawable/line_horizontal</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="IconSize_Dim40">
+        <item name="android:layout_width">@dimen/dim40</item>
+        <item name="android:layout_height">@dimen/dim40</item>
     </style>
 </resources>
