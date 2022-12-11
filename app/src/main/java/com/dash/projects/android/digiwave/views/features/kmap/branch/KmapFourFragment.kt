@@ -18,12 +18,13 @@ import com.dash.projects.android.digiwave.`object`.utils.Utils.clickEvent
 import com.dash.projects.android.digiwave.`object`.utils.Utils.combineLatest
 import com.dash.projects.android.digiwave.`object`.utils.Utils.disposeAll
 import com.dash.projects.android.digiwave.`object`.utils.Utils.observeTextView
+import com.dash.projects.android.digiwave.`object`.utils.Utils.str
 import com.dash.projects.android.digiwave.`object`.utils.Utils.strIntRes
 import com.dash.projects.android.digiwave.databinding.FragmentKmapFourBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmap4GraphicBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmap4TilesBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmapRowTilesBinding
-import com.dash.projects.android.digiwave.sealed.KmapState
+import com.dash.projects.android.digiwave.sealed.BinaryState
 import com.dash.projects.android.digiwave.views.features.kmap.branch.impl.Kmap4AnswerImpl.answer
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapFourViewModel
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.factory.ViewModelFactory
@@ -54,17 +55,17 @@ class KmapFourFragment : Fragment() {
     private fun <T : ViewModel> getViewModel(owner: ViewModelStoreOwner, mClass: Class<T>) =
         ViewModelProvider(owner, ViewModelFactory.getInstance())[mClass]
 
-    private fun LiveData<KmapState>.setTextState(fa: FragmentActivity, tv: TextView) =
+    private fun LiveData<BinaryState>.setTextState(fa: FragmentActivity, tv: TextView) =
         fa.applicationContext.run {
             observe(fa) {
                 tv.text = when (it) {
-                    is KmapState.StateOn -> strIntRes(it.value).apply { valueStateOn?.invoke(this) }
-                    is KmapState.StateOff -> null
+                    is BinaryState.StateOn -> str(it.value).apply { valueStateOn?.invoke(this) }
+                    is BinaryState.StateOff -> null
                 }
             }
         }
 
-    private fun <T : LiveData<KmapState>> LayoutKmapRowTilesBinding.observeCell(
+    private fun <T : LiveData<BinaryState>> LayoutKmapRowTilesBinding.observeCell(
         fa: FragmentActivity, p2: T, p3: T, p4: T, p5: T
     ) = disposables.apply {
         p2.setTextState(fa, tvKmapOption00)

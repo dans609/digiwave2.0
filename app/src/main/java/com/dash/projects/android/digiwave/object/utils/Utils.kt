@@ -25,6 +25,8 @@ object Utils {
         resources.getInteger(it)
     }
 
+    fun <T : Any> str(obj: T) = obj.toString()
+
     fun stringResListOf(@StringRes vararg id: Int) = id.toList()
 
     fun drawableResListOf(@DrawableRes vararg id: Int) = id.toList()

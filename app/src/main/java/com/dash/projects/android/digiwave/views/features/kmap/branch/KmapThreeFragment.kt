@@ -18,13 +18,14 @@ import com.dash.projects.android.digiwave.`object`.utils.Utils.eachIsNotEmpty
 import com.dash.projects.android.digiwave.`object`.utils.Utils.intRes
 import com.dash.projects.android.digiwave.`object`.utils.Utils.notContainedIn
 import com.dash.projects.android.digiwave.`object`.utils.Utils.observeTextView
+import com.dash.projects.android.digiwave.`object`.utils.Utils.str
 import com.dash.projects.android.digiwave.`object`.utils.Utils.strIntRes
 import com.dash.projects.android.digiwave.`object`.utils.Utils.stringRes
 import com.dash.projects.android.digiwave.databinding.FragmentKmapThreeBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmap3GraphicBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmap3TilesBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmapRowTilesBinding
-import com.dash.projects.android.digiwave.sealed.KmapState
+import com.dash.projects.android.digiwave.sealed.BinaryState
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapThreeViewModel
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.factory.ViewModelFactory
 import io.reactivex.Observable
@@ -101,12 +102,12 @@ class KmapThreeFragment : Fragment() {
         }
     }
 
-    private fun LiveData<KmapState>.observeCell(fa: FragmentActivity, tv: TextView) =
+    private fun LiveData<BinaryState>.observeCell(fa: FragmentActivity, tv: TextView) =
         fa.applicationContext.run {
             observe(fa) {
                 tv.text = when (it) {
-                    is KmapState.StateOn -> strIntRes(it.value).apply { valueStateOn?.invoke(this) }
-                    is KmapState.StateOff -> null
+                    is BinaryState.StateOn -> str(it.value).apply { valueStateOn?.invoke(this) }
+                    is BinaryState.StateOff -> null
                 }
             }
         }
