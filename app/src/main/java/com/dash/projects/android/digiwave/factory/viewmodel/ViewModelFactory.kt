@@ -1,4 +1,4 @@
-package com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.factory
+package com.dash.projects.android.digiwave.factory.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

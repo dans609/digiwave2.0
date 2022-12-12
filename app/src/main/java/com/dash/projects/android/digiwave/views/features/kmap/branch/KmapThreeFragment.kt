@@ -27,7 +27,7 @@ import com.dash.projects.android.digiwave.databinding.LayoutKmap3TilesBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmapRowTilesBinding
 import com.dash.projects.android.digiwave.sealed.BinaryState
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapThreeViewModel
-import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.factory.ViewModelFactory
+import com.dash.projects.android.digiwave.factory.viewmodel.ViewModelFactory
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 

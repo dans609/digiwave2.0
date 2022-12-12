@@ -23,7 +23,7 @@ import com.dash.projects.android.digiwave.databinding.FragmentKmapTwoBinding
 import com.dash.projects.android.digiwave.databinding.LayoutKmap2GraphicBinding
 import com.dash.projects.android.digiwave.sealed.BinaryState
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapTwoViewModel
-import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.factory.ViewModelFactory
+import com.dash.projects.android.digiwave.factory.viewmodel.ViewModelFactory
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 
