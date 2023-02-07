@@ -13,6 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/black</item>
+        <item name="warning">@color/crimsonRed</item>
     </style>
 
     <style name="Theme.Digiwave.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -27,6 +28,7 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:textColor">@color/black</item>
+        <item name="warning">@color/crimsonRed</item>
     </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
@@ -43,6 +45,7 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:textColor">@color/black</item>
+        <item name="warning">@color/crimsonRed</item>
     </style>
 
 
@@ -262,6 +265,18 @@
     <style name="ConstraintContainer.OuterBarrier.ONLY_START" parent="ConstraintContainer.OuterBarrier.ONLY_BOTTOM">
         <item name="android:layout_marginBottom">@dimen/clear</item>
         <item name="android:layout_marginStart">@dimen/defaultBarrierValue</item>
+    </style>
+
+    <style name="HugContent.OuterBarrier.ONLY_START" parent="ConstraintContainer.OuterBarrier.ONLY_START">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="HugContent.OuterBarrier.ONLY_START.WideInnerBarrier">
+        <item name="android:paddingTop">@dimen/wideBarrierValue</item>
+        <item name="android:paddingEnd">@dimen/wideBarrierValue</item>
+        <item name="android:paddingBottom">@dimen/wideBarrierValue</item>
+        <item name="android:paddingStart">@dimen/wideBarrierValue</item>
     </style>
 
     <style name="FillContainer.RecyclerViewStyles">

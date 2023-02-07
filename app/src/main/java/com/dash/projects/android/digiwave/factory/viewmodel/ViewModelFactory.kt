@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapFourViewModel
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapThreeViewModel
 import com.dash.projects.android.digiwave.views.features.kmap.branch.viewmodel.KmapTwoViewModel
+import com.dash.projects.android.digiwave.views.features.logate.viewmodel.LogicGateViewModel
 
 class ViewModelFactory : ViewModelProvider.NewInstanceFactory() {
     private val String.message get() = "Unknown ViewModel Class $this"
@@ -14,6 +15,8 @@ class ViewModelFactory : ViewModelProvider.NewInstanceFactory() {
         modelClass.isAssignableFrom(KmapTwoViewModel::class.java) -> KmapTwoViewModel() as T
         modelClass.isAssignableFrom(KmapThreeViewModel::class.java) -> KmapThreeViewModel() as T
         modelClass.isAssignableFrom(KmapFourViewModel::class.java) -> KmapFourViewModel() as T
+
+        modelClass.isAssignableFrom(LogicGateViewModel::class.java) -> LogicGateViewModel() as T
         else -> throw Throwable(modelClass.name.message)
     }
 

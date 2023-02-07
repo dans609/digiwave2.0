@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.ArrayRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntegerRes
 import androidx.annotation.StringRes
@@ -27,6 +28,8 @@ object Utils {
 
     fun <T : Any> str(obj: T) = obj.toString()
 
+    fun Int.castToBoolean() = this >= 1
+
     fun stringResListOf(@StringRes vararg id: Int) = id.toList()
 
     fun drawableResListOf(@DrawableRes vararg id: Int) = id.toList()
@@ -36,6 +39,8 @@ object Utils {
     fun Context.strIntRes(@IntegerRes id: Int) = intRes(id).toString()
 
     fun Context.stringRes(@StringRes id: Int) = resources.getString(id)
+
+    fun Context.arrayRes(@ArrayRes id: Int): Array<String> = resources.getStringArray(id)
 
     fun Context.drawableRes(@DrawableRes id: Int) = ContextCompat.getDrawable(this, id)
 
@@ -65,7 +70,7 @@ object Utils {
         .publish()
         .refCount()
 
-    fun <T : TextView> T.clickEvent() = RxView.clicks(this)
+    fun <T : View> T.clickEvent() = RxView.clicks(this)
         .observeOn(AndroidSchedulers.mainThread())
         .publish()
         .refCount()
@@ -73,6 +78,11 @@ object Utils {
     fun <T : TextView> T.observeTextView() = RxTextView.textChanges(this)
         .observeOn(AndroidSchedulers.mainThread())
         .map(CharSequence::toString)
+        .publish()
+        .refCount()
+
+    fun <T : TextView> T.observeTv() = RxTextView.textChanges(this)
+        .observeOn(AndroidSchedulers.mainThread())
         .publish()
         .refCount()
 
@@ -189,4 +199,24 @@ object Utils {
             it[15] as T16,
         )
     }
+
+    fun and(a: Int, b: Int) = if (a >= 1 && b >= 1) 1 else 0
+
+    fun or(a: Int, b: Int) = if (a >= 1 || b >= 1) 1 else 0
+
+    private fun inverse(a: Int) = if (a >= 1) 0 else 1
+
+    fun nand(a: Int, b: Int) = inverse(and(a, b))
+
+    fun nor(a: Int, b: Int) = inverse(or(a, b))
+
+    fun xnor(a: Int, b: Int) = inverse(a.xor(b))
+
+//
+//    /**
+//     * [toi] are slang of "Text to Int".
+//     *
+//     * Will throw exception if condition doesn't meet (only casting numerical string)
+//     */
+//    fun TextView.toi() = text.toString().toInt()
 }

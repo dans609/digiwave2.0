@@ -1,20 +1,52 @@
 package com.dash.projects.android.digiwave.views.features.logate
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.AutoCompleteTextView
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModelProvider
+import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.`object`.DrawableDropdownGenerator
 import com.dash.projects.android.digiwave.`object`.ToolbarPreferences
+import com.dash.projects.android.digiwave.`object`.utils.Utils.and
+import com.dash.projects.android.digiwave.`object`.utils.Utils.arrayRes
 import com.dash.projects.android.digiwave.`object`.utils.Utils.callToast
+import com.dash.projects.android.digiwave.`object`.utils.Utils.castToBoolean
+import com.dash.projects.android.digiwave.`object`.utils.Utils.clickEvent
 import com.dash.projects.android.digiwave.`object`.utils.Utils.drawableRes
+import com.dash.projects.android.digiwave.`object`.utils.Utils.isNotNull
+import com.dash.projects.android.digiwave.`object`.utils.Utils.nand
+import com.dash.projects.android.digiwave.`object`.utils.Utils.nor
+import com.dash.projects.android.digiwave.`object`.utils.Utils.observeTextView
+import com.dash.projects.android.digiwave.`object`.utils.Utils.or
+import com.dash.projects.android.digiwave.`object`.utils.Utils.str
+import com.dash.projects.android.digiwave.`object`.utils.Utils.xnor
 import com.dash.projects.android.digiwave.adapter.features.logate.DropdownAdapter
 import com.dash.projects.android.digiwave.databinding.ActivityLogicGateBinding
+import com.dash.projects.android.digiwave.databinding.LayoutLogicGateBinding
+import com.dash.projects.android.digiwave.factory.viewmodel.ViewModelFactory
 import com.dash.projects.android.digiwave.model.DrawableDropdownItem
+import com.dash.projects.android.digiwave.sealed.BinaryState
+import com.dash.projects.android.digiwave.views.features.logate.viewmodel.LogicGateViewModel
+import io.reactivex.Flowable
+import io.reactivex.Observable
+import io.reactivex.disposables.CompositeDisposable
 
 class LogicGateActivity : AppCompatActivity() {
+    private var mPlay = false
+    private var gateDrawableRes = R.drawable.ic_and
+
     private val mGateList = ArrayList<DrawableDropdownItem>()
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityLogicGateBinding.inflate(layoutInflater)
@@ -22,6 +54,15 @@ class LogicGateActivity : AppCompatActivity() {
 
     private val incBinding by lazy(LazyThreadSafetyMode.NONE) {
         binding.incLayoutLogate
+    }
+
+    private val viewModel by lazy(LazyThreadSafetyMode.NONE) {
+        val mFactory = ViewModelFactory.getInstance()
+        ViewModelProvider(this, mFactory)[LogicGateViewModel::class.java]
+    }
+
+    private val disposables by lazy(LazyThreadSafetyMode.NONE) {
+        CompositeDisposable()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,18 +75,55 @@ class LogicGateActivity : AppCompatActivity() {
         val dropdownItemGenerator = DrawableDropdownGenerator.getInstance(this)
         mGateList.addAll(dropdownItemGenerator.generateDropdownItems())
 
-        var increment1 = 0
-        var increment2 = 0
-        incBinding.tvGateInp1.setOnClickListener {
-            increment1 += 1
-            (it as TextView).text = increment1.toString()
-        }
+        incBinding.apply {
+            viewModel.also { vm ->
+                observeInput(this@LogicGateActivity, vm.inputA(), vm.inputB())
+                disposables.addAll(
+                    tvGateInp1.clickEvent().subscribe { vm.inputA(true) },
+                    tvGateInp2.clickEvent().subscribe { vm.inputB(true) },
+                )
 
-        incBinding.tvGateInp2.setOnClickListener {
-            increment2 += 1
-            (it as TextView).text = increment2.toString()
+                imageSimulation.setOnClickListener {
+                    vm.play(true)
+                    it.callToast(if (vm.play().value == true) "Started" else "Stopped")
+                }
+
+                vm.play().observe(this@LogicGateActivity) { isPlay ->
+                    mPlay = isPlay
+                    imageSimulation.setDrawable(isPlay, R.drawable.ic_stop, R.drawable.ic_play)
+                }
+
+                disposables.add(Observable.combineLatest(
+                    tvGateInp1.observeTextView().map(String::toInt),
+                    tvGateInp2.observeTextView().map(String::toInt),
+                ) { p1, p2 ->
+                    if (vm.play().value == true) {
+                        when (gateDrawableRes) {
+                            R.drawable.ic_and -> and(p1, p2)
+                            R.drawable.ic_or -> or(p1, p2)
+                            R.drawable.ic_nand -> nand(p1, p2)
+                            R.drawable.ic_nor -> nor(p1, p2)
+                            R.drawable.ic_xor -> p1.xor(p2)
+                            R.drawable.ic_xnor -> xnor(p1, p2)
+                            else -> 0
+                        }
+                    } else 0
+                }.subscribe {
+                    imageOutput.setDrawable(
+                        it.castToBoolean(),
+                        R.drawable.ic_lamp_on,
+                        R.drawable.ic_lamp_off
+                    )
+                })
+            }
         }
     }
+
+    private fun ImageView.setDrawable(
+        cond: Boolean,
+        @DrawableRes ifMeet: Int,
+        @DrawableRes ifNot: Int
+    ) = setImageResource(if (cond) ifMeet else ifNot)
 
     override fun onResume() {
         super.onResume()
@@ -57,8 +135,47 @@ class LogicGateActivity : AppCompatActivity() {
     ) = DropdownAdapter(context, resource, objects.toTypedArray()).let { adapter ->
         setAdapter(adapter)
         setOnItemClickListener { av, v, i, _ ->
-            incBinding.tilDropdown.startIconDrawable = drawableRes(mGateList[i].itemImage)
-            v.callToast(av.getItemAtPosition(i).toString())
+            // this code's used for terminate the simulation when dropdown menu got clicked
+            if (mPlay) {
+                viewModel.play(true)
+            }
+
+            val itemName = str(av.getItemAtPosition(i))
+            val arrayItem = arrayRes(R.array.gate_list)
+            val drawablePairs: Pair<Int, Int> = when (itemName) {
+                arrayItem[0] -> Pair(R.drawable.ic_and, R.drawable.ic_and_inp)
+                arrayItem[1] -> Pair(R.drawable.ic_or, R.drawable.ic_or_inp)
+                arrayItem[2] -> Pair(R.drawable.ic_not, R.drawable.ic_not_inp)
+                arrayItem[3] -> Pair(R.drawable.ic_nand, R.drawable.ic_nand_inp)
+                arrayItem[4] -> Pair(R.drawable.ic_nor, R.drawable.ic_nor_inp)
+                arrayItem[5] -> Pair(R.drawable.ic_xor, R.drawable.ic_xor_inp)
+                arrayItem[6] -> Pair(R.drawable.ic_xnor, R.drawable.ic_xnor_inp)
+                else -> Pair(R.drawable.ic_and, R.drawable.ic_and_inp)
+            }
+
+            incBinding.apply {
+                tilDropdown.startIconDrawable = drawableRes(mGateList[i].itemImage)
+                imageGate.setImageResource(drawablePairs.second)
+                gateDrawableRes = drawablePairs.first
+            }
+
+            v.callToast(itemName)
+        }
+    }
+
+    private fun LayoutLogicGateBinding.observeInput(
+        lo: LifecycleOwner,
+        inputA: LiveData<BinaryState>,
+        inputB: LiveData<BinaryState>?,
+    ) {
+        inputA.setTextState(lo, tvGateInp1)
+        inputB?.setTextState(lo, tvGateInp2)
+    }
+
+    private fun LiveData<BinaryState>.setTextState(lo: LifecycleOwner, tv: TextView) = observe(lo) {
+        tv.text = when (it) {
+            is BinaryState.StateOff -> str(it.value)
+            is BinaryState.StateOn -> str(it.value)
         }
     }
 

@@ -55,6 +55,7 @@ class KmapFourFragment : Fragment() {
     private fun <T : ViewModel> getViewModel(owner: ViewModelStoreOwner, mClass: Class<T>) =
         ViewModelProvider(owner, ViewModelFactory.getInstance())[mClass]
 
+    // noted: context no longer used
     private fun LiveData<BinaryState>.setTextState(fa: FragmentActivity, tv: TextView) =
         fa.applicationContext.run {
             observe(fa) {
@@ -65,6 +66,7 @@ class KmapFourFragment : Fragment() {
             }
         }
 
+    // noted: disposables is no longer used
     private fun <T : LiveData<BinaryState>> LayoutKmapRowTilesBinding.observeCell(
         fa: FragmentActivity, p2: T, p3: T, p4: T, p5: T
     ) = disposables.apply {

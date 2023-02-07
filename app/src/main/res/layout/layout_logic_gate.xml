@@ -9,7 +9,7 @@
         android:id="@+id/til_dropdown"
         style="@style/ConstraintContainer.OutlinedDropdownMenuStyles.GateThemes"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/image_simulation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -21,27 +21,37 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <ImageButton
+        android:id="@+id/image_simulation"
+        style="@style/HugContent.OuterBarrier.ONLY_START.WideInnerBarrier"
+        android:contentDescription="@string/cd_start_simulation"
+        android:src="@drawable/ic_play"
+        app:layout_constraintBottom_toBottomOf="@id/til_dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/til_dropdown"
+        app:layout_constraintTop_toTopOf="@id/til_dropdown" />
+
     <TextView
         android:id="@+id/tv_gate_inp1"
         style="@style/HugContent.BackgroundGateInput"
+        android:text="@integer/low"
         android:theme="@style/TextPrimary.ColorPrimary.Heading2.Centered.Thickness.Clickable.SingleText"
         android:translationX="@dimen/smallBarrierValue"
         android:translationY="@dimen/densityMin25"
         app:layout_constraintBottom_toBottomOf="@+id/image_gate"
         app:layout_constraintStart_toStartOf="@id/image_gate"
-        app:layout_constraintTop_toTopOf="@id/image_gate"
-        tools:text="@integer/low" />
+        app:layout_constraintTop_toTopOf="@id/image_gate" />
 
     <TextView
         android:id="@+id/tv_gate_inp2"
         style="@style/HugContent.BackgroundGateInput"
+        android:text="@integer/low"
         android:theme="@style/TextPrimary.ColorPrimary.Heading2.Centered.Thickness.Clickable.SingleText"
         android:translationX="@dimen/smallBarrierValue"
         android:translationY="@dimen/normalIconSize"
         app:layout_constraintBottom_toBottomOf="@id/image_gate"
         app:layout_constraintStart_toStartOf="@id/image_gate"
-        app:layout_constraintTop_toTopOf="@id/image_gate"
-        tools:text="@integer/low" />
+        app:layout_constraintTop_toTopOf="@id/image_gate" />
 
     <ImageView
         android:id="@+id/image_gate"

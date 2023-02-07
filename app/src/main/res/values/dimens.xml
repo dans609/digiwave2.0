@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Integer values -->
+    <integer name="statusInactive">-1</integer>
     <integer name="bitRadix">2</integer>
     <integer name="byteRadix">8</integer>
     <integer name="decRadix">10</integer>

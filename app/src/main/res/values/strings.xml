@@ -15,6 +15,8 @@
     <string name="cd_icon_logic_gate">Icon logic gate mode: %s</string>
     <string name="cd_gate_icon">%1$s Gate graphic display</string>
     <string name="cd_lamp">Lamp icon, used as a indicator for on or off state of gate simulation result</string>
+    <string name="cd_start_simulation">Used for start simulation</string>
+    <string name="cd_stop_simulation">Used for stop simulation</string>
 
     <!-- Application content strings -->
     <string name="numberSystemFeatureName">Number System</string>
