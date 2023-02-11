@@ -204,19 +204,21 @@ object Utils {
 
     fun or(a: Int, b: Int) = if (a >= 1 || b >= 1) 1 else 0
 
-    private fun inverse(a: Int) = if (a >= 1) 0 else 1
+    fun xor(a: Int, b: Int) = (if (a >= 1) 1 else 0).xor(if (b >= 1) 1 else 0)
+
+    fun inverse(a: Int) = if (a >= 1) 0 else 1
 
     fun nand(a: Int, b: Int) = inverse(and(a, b))
 
     fun nor(a: Int, b: Int) = inverse(or(a, b))
 
-    fun xnor(a: Int, b: Int) = inverse(a.xor(b))
+    fun xnor(a: Int, b: Int) = inverse(xor(a, b))
 
-//
-//    /**
-//     * [toi] are slang of "Text to Int".
-//     *
-//     * Will throw exception if condition doesn't meet (only casting numerical string)
-//     */
-//    fun TextView.toi() = text.toString().toInt()
+
+    /**
+     * [toi] are slang of "Text to Int".
+     *
+     * Will throw exception if condition doesn't meet (only casting numerical string)
+     */
+    fun TextView.toi() = text.toString().toInt()
 }

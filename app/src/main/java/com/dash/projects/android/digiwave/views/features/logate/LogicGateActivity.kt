@@ -1,15 +1,10 @@
 package com.dash.projects.android.digiwave.views.features.logate
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.AutoCompleteTextView
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -25,13 +20,15 @@ import com.dash.projects.android.digiwave.`object`.utils.Utils.callToast
 import com.dash.projects.android.digiwave.`object`.utils.Utils.castToBoolean
 import com.dash.projects.android.digiwave.`object`.utils.Utils.clickEvent
 import com.dash.projects.android.digiwave.`object`.utils.Utils.drawableRes
-import com.dash.projects.android.digiwave.`object`.utils.Utils.isNotNull
+import com.dash.projects.android.digiwave.`object`.utils.Utils.inverse
 import com.dash.projects.android.digiwave.`object`.utils.Utils.nand
 import com.dash.projects.android.digiwave.`object`.utils.Utils.nor
 import com.dash.projects.android.digiwave.`object`.utils.Utils.observeTextView
 import com.dash.projects.android.digiwave.`object`.utils.Utils.or
 import com.dash.projects.android.digiwave.`object`.utils.Utils.str
+import com.dash.projects.android.digiwave.`object`.utils.Utils.toi
 import com.dash.projects.android.digiwave.`object`.utils.Utils.xnor
+import com.dash.projects.android.digiwave.`object`.utils.Utils.xor
 import com.dash.projects.android.digiwave.adapter.features.logate.DropdownAdapter
 import com.dash.projects.android.digiwave.databinding.ActivityLogicGateBinding
 import com.dash.projects.android.digiwave.databinding.LayoutLogicGateBinding
@@ -39,12 +36,10 @@ import com.dash.projects.android.digiwave.factory.viewmodel.ViewModelFactory
 import com.dash.projects.android.digiwave.model.DrawableDropdownItem
 import com.dash.projects.android.digiwave.sealed.BinaryState
 import com.dash.projects.android.digiwave.views.features.logate.viewmodel.LogicGateViewModel
-import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 
 class LogicGateActivity : AppCompatActivity() {
-    private var mPlay = false
     private var gateDrawableRes = R.drawable.ic_and
 
     private val mGateList = ArrayList<DrawableDropdownItem>()
@@ -89,34 +84,41 @@ class LogicGateActivity : AppCompatActivity() {
                 }
 
                 vm.play().observe(this@LogicGateActivity) { isPlay ->
-                    mPlay = isPlay
                     imageSimulation.setDrawable(isPlay, R.drawable.ic_stop, R.drawable.ic_play)
-                }
 
-                disposables.add(Observable.combineLatest(
-                    tvGateInp1.observeTextView().map(String::toInt),
-                    tvGateInp2.observeTextView().map(String::toInt),
-                ) { p1, p2 ->
-                    if (vm.play().value == true) {
-                        when (gateDrawableRes) {
-                            R.drawable.ic_and -> and(p1, p2)
-                            R.drawable.ic_or -> or(p1, p2)
-                            R.drawable.ic_nand -> nand(p1, p2)
-                            R.drawable.ic_nor -> nor(p1, p2)
-                            R.drawable.ic_xor -> p1.xor(p2)
-                            R.drawable.ic_xnor -> xnor(p1, p2)
-                            else -> 0
-                        }
-                    } else 0
-                }.subscribe {
+                    val isOn = gateOutput(tvGateInp1.toi(), tvGateInp2.toi()).castToBoolean()
                     imageOutput.setDrawable(
-                        it.castToBoolean(),
+                        isPlay && isOn,
                         R.drawable.ic_lamp_on,
                         R.drawable.ic_lamp_off
                     )
-                })
+                }
             }
+
+            disposables.add(Observable.combineLatest(
+                tvGateInp1.observeTextView().map(String::toInt),
+                tvGateInp2.observeTextView().map(String::toInt),
+            ) { p1, p2 ->
+                if (viewModel.play().value == true) gateOutput(p1, p2) else 0
+            }.subscribe {
+                imageOutput.setDrawable(
+                    it.castToBoolean(),
+                    R.drawable.ic_lamp_on,
+                    R.drawable.ic_lamp_off
+                )
+            })
         }
+    }
+
+    private fun gateOutput(inputA: Int, inputB: Int) = when (gateDrawableRes) {
+        R.drawable.ic_and -> and(inputA, inputB)
+        R.drawable.ic_or -> or(inputA, inputB)
+        R.drawable.ic_not -> inverse(inputA)
+        R.drawable.ic_nand -> nand(inputA, inputB)
+        R.drawable.ic_nor -> nor(inputA, inputB)
+        R.drawable.ic_xor -> xor(inputA, inputB)
+        R.drawable.ic_xnor -> xnor(inputA, inputB)
+        else -> 0
     }
 
     private fun ImageView.setDrawable(
@@ -136,7 +138,7 @@ class LogicGateActivity : AppCompatActivity() {
         setAdapter(adapter)
         setOnItemClickListener { av, v, i, _ ->
             // this code's used for terminate the simulation when dropdown menu got clicked
-            if (mPlay) {
+            if (viewModel.play().value == true) {
                 viewModel.play(true)
             }
 
@@ -166,10 +168,10 @@ class LogicGateActivity : AppCompatActivity() {
     private fun LayoutLogicGateBinding.observeInput(
         lo: LifecycleOwner,
         inputA: LiveData<BinaryState>,
-        inputB: LiveData<BinaryState>?,
+        inputB: LiveData<BinaryState>,
     ) {
         inputA.setTextState(lo, tvGateInp1)
-        inputB?.setTextState(lo, tvGateInp2)
+        inputB.setTextState(lo, tvGateInp2)
     }
 
     private fun LiveData<BinaryState>.setTextState(lo: LifecycleOwner, tv: TextView) = observe(lo) {
