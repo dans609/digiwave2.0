@@ -55,6 +55,9 @@
     <string name="kmap_answer_not_defined">N/D</string>
     <string name="kmap_variables">%d Variable</string>
 
+    <string name="stop_condition">Simulation has stopped</string>
+    <string name="play_condition">Simulation has started</string>
+
     <!-- NOTE: Please do not changed this code, it may cause an Exception -->
     <!-- [START] dropdown array strings -->
     <string name="auto_complete_tv_default_mode">Binary \u21C4 Binary-Coded Decimal</string>

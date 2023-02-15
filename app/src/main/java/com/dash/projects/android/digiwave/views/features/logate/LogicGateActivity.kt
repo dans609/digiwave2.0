@@ -40,7 +40,7 @@ import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 
 class LogicGateActivity : AppCompatActivity() {
-    private var gateDrawableRes = R.drawable.ic_and
+    private var selectedGateRes = Pair(R.drawable.ic_and, R.drawable.ic_and_inp)
 
     private val mGateList = ArrayList<DrawableDropdownItem>()
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
@@ -60,12 +60,15 @@ class LogicGateActivity : AppCompatActivity() {
         CompositeDisposable()
     }
 
+    private val gateNames by lazy(LazyThreadSafetyMode.NONE) {
+        arrayRes(R.array.gate_list)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        ToolbarPreferences(this)
-            .hideStatusBar(window)
+        ToolbarPreferences(this).hideStatusBar(window)
 
         val dropdownItemGenerator = DrawableDropdownGenerator.getInstance(this)
         mGateList.addAll(dropdownItemGenerator.generateDropdownItems())
@@ -80,7 +83,10 @@ class LogicGateActivity : AppCompatActivity() {
 
                 imageSimulation.setOnClickListener {
                     vm.play(true)
-                    it.callToast(if (vm.play().value == true) "Started" else "Stopped")
+                    it.callToast(
+                        if (vm.play().value == true) R.string.play_condition
+                        else R.string.stop_condition
+                    )
                 }
 
                 vm.play().observe(this@LogicGateActivity) { isPlay ->
@@ -88,10 +94,22 @@ class LogicGateActivity : AppCompatActivity() {
 
                     val isOn = gateOutput(tvGateInp1.toi(), tvGateInp2.toi()).castToBoolean()
                     imageOutput.setDrawable(
-                        isPlay && isOn,
-                        R.drawable.ic_lamp_on,
-                        R.drawable.ic_lamp_off
+                        isPlay && isOn, R.drawable.ic_lamp_on, R.drawable.ic_lamp_off
                     )
+                }
+
+                vm.getGatePairs().observe(this@LogicGateActivity) { gatePairs ->
+                    if (gatePairs.toList().none { it == 0 }) selectedGateRes = gatePairs
+
+                    /**
+                     * When the statement above is false
+                     * (in this case the value of [gatePairs] component is zero (0))
+                     *
+                     * Therefore, in the code below uses the initial or last changed value of [selectedGateRes]
+                     * instead of [gatePairs] value for updating the gate UI. Otherwise, an exception will occur.
+                     */
+                    incBinding.tilDropdown.startIconDrawable = drawableRes(selectedGateRes.first)
+                    incBinding.imageGate.setImageResource(selectedGateRes.second)
                 }
             }
 
@@ -102,15 +120,13 @@ class LogicGateActivity : AppCompatActivity() {
                 if (viewModel.play().value == true) gateOutput(p1, p2) else 0
             }.subscribe {
                 imageOutput.setDrawable(
-                    it.castToBoolean(),
-                    R.drawable.ic_lamp_on,
-                    R.drawable.ic_lamp_off
+                    it.castToBoolean(), R.drawable.ic_lamp_on, R.drawable.ic_lamp_off
                 )
             })
         }
     }
 
-    private fun gateOutput(inputA: Int, inputB: Int) = when (gateDrawableRes) {
+    private fun gateOutput(inputA: Int, inputB: Int) = when (selectedGateRes.first) {
         R.drawable.ic_and -> and(inputA, inputB)
         R.drawable.ic_or -> or(inputA, inputB)
         R.drawable.ic_not -> inverse(inputA)
@@ -122,9 +138,7 @@ class LogicGateActivity : AppCompatActivity() {
     }
 
     private fun ImageView.setDrawable(
-        cond: Boolean,
-        @DrawableRes ifMeet: Int,
-        @DrawableRes ifNot: Int
+        cond: Boolean, @DrawableRes ifMeet: Int, @DrawableRes ifNot: Int
     ) = setImageResource(if (cond) ifMeet else ifNot)
 
     override fun onResume() {
@@ -143,23 +157,16 @@ class LogicGateActivity : AppCompatActivity() {
             }
 
             val itemName = str(av.getItemAtPosition(i))
-            val arrayItem = arrayRes(R.array.gate_list)
-            val drawablePairs: Pair<Int, Int> = when (itemName) {
-                arrayItem[0] -> Pair(R.drawable.ic_and, R.drawable.ic_and_inp)
-                arrayItem[1] -> Pair(R.drawable.ic_or, R.drawable.ic_or_inp)
-                arrayItem[2] -> Pair(R.drawable.ic_not, R.drawable.ic_not_inp)
-                arrayItem[3] -> Pair(R.drawable.ic_nand, R.drawable.ic_nand_inp)
-                arrayItem[4] -> Pair(R.drawable.ic_nor, R.drawable.ic_nor_inp)
-                arrayItem[5] -> Pair(R.drawable.ic_xor, R.drawable.ic_xor_inp)
-                arrayItem[6] -> Pair(R.drawable.ic_xnor, R.drawable.ic_xnor_inp)
+            when (itemName) {
+                gateNames[0] -> Pair(R.drawable.ic_and, R.drawable.ic_and_inp)
+                gateNames[1] -> Pair(R.drawable.ic_or, R.drawable.ic_or_inp)
+                gateNames[2] -> Pair(R.drawable.ic_not, R.drawable.ic_not_inp)
+                gateNames[3] -> Pair(R.drawable.ic_nand, R.drawable.ic_nand_inp)
+                gateNames[4] -> Pair(R.drawable.ic_nor, R.drawable.ic_nor_inp)
+                gateNames[5] -> Pair(R.drawable.ic_xor, R.drawable.ic_xor_inp)
+                gateNames[6] -> Pair(R.drawable.ic_xnor, R.drawable.ic_xnor_inp)
                 else -> Pair(R.drawable.ic_and, R.drawable.ic_and_inp)
-            }
-
-            incBinding.apply {
-                tilDropdown.startIconDrawable = drawableRes(mGateList[i].itemImage)
-                imageGate.setImageResource(drawablePairs.second)
-                gateDrawableRes = drawablePairs.first
-            }
+            }.apply { viewModel.setSelectedGateDrawables(first, second) }
 
             v.callToast(itemName)
         }
