@@ -2,6 +2,7 @@ package com.dash.projects.android.digiwave.views.features.logate
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import android.widget.AutoCompleteTextView
 import android.widget.ImageView
 import android.widget.TextView
@@ -49,6 +50,10 @@ class LogicGateActivity : AppCompatActivity() {
 
     private val incBinding by lazy(LazyThreadSafetyMode.NONE) {
         binding.incLayoutLogate
+    }
+
+    private val firstInputTranslationY by lazy(LazyThreadSafetyMode.NONE) {
+        incBinding.tvGateInp1.translationY
     }
 
     private val viewModel by lazy(LazyThreadSafetyMode.NONE) {
@@ -108,8 +113,20 @@ class LogicGateActivity : AppCompatActivity() {
                      * Therefore, in the code below uses the initial or last changed value of [selectedGateRes]
                      * instead of [gatePairs] value for updating the gate UI. Otherwise, an exception will occur.
                      */
-                    incBinding.tilDropdown.startIconDrawable = drawableRes(selectedGateRes.first)
-                    incBinding.imageGate.setImageResource(selectedGateRes.second)
+                    incBinding.apply {
+                        tilDropdown.startIconDrawable = drawableRes(selectedGateRes.first)
+                        imageGate.setImageResource(selectedGateRes.second)
+                        when (selectedGateRes.first) {
+                            R.drawable.ic_not -> {
+                                tvGateInp2.visibility = View.GONE
+                                tvGateInp1.translationY = firstInputTranslationY * 0.05f
+                            }
+                            else -> {
+                                tvGateInp2.visibility = View.VISIBLE
+                                tvGateInp1.translationY = firstInputTranslationY
+                            }
+                        }
+                    }
                 }
             }
 
