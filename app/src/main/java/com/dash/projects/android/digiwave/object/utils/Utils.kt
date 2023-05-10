@@ -134,7 +134,7 @@ object Utils {
     }
 
     fun <T : CharSequence> T.toGray(base: Int) = toDecimal(base).let {
-        it.xor(it.shr(1)).toString(base)
+        it.xor(it.shr(1)).toString(2)
     }
 
     fun Long.splitDigit() = toString().map(Char::digitToIntOrNull)
