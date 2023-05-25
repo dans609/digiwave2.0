@@ -1028,7 +1028,6 @@ class LogicGateSimulatorTest {
         onView(withId(R.id.image_output)).check(matches(withDrawable(IC_ON)))
     }
 
-    @Suppress("unused")
     companion object {
         private const val SWITCH_ON = "1"
         private const val SWITCH_OFF = "0"
