@@ -53,7 +53,7 @@
     <string name="kmap_two_variables_exp11">11</string>
     <string name="kmap_two_variables_exp10">10</string>
     <string name="kmap_answer_not_defined">N/D</string>
-    <string name="kmap_variables">%d Variable</string>
+    <string name="kmap_variables">%d Variables</string>
 
     <string name="stop_condition">Simulation has stopped</string>
     <string name="play_condition">Simulation has started</string>

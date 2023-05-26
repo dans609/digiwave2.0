@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Application name -->
+    <string name="app_name">Digiwave</string>
+
+    <!-- Application version information -->
+    <string name="app_version">versi %d.%d.%d</string>
+    <string name="app_version_sample">versi 1.0.0</string>
+
+    <!-- Content description strings -->
+    <string name="cd_applicationLogo">Logo aplikasi</string>
+    <string name="cd_featureImage">Gambar fitur</string>
+    <string name="cd_appbar_numsys">Ikon sistem bilangan</string>
+    <string name="cd_appbar_gate">Ikon gerbang logika</string>
+    <string name="cd_appbar_title">Gambar title aplikasi (Digiwave Sisdig Corner\'s)</string>
+    <string name="cd_icon_logic_gate">Ikon untuk mode gerbang logika: %s</string>
+    <string name="cd_gate_icon">Tampilan grafis gerbang %1$s</string>
+    <string name="cd_lamp">Ikon lampu, digunakan sebagai indikator nyala matinnya sebuah kondisi dari hasil simulasi gerbang logika</string>
+    <string name="cd_start_simulation">Digunakan untuk memulai simulasi</string>
+    <string name="cd_stop_simulation">Digunakan untuk memberhentikan simulasi</string>
+
+    <!-- Application content strings -->
+    <string name="numberSystemFeatureName">Sistem Bilangan</string>
+    <string name="karnaughMapFeatureName">Peta Karnaugh</string>
+    <string name="logicGateFeatureName">Simulator Gerbang Logika</string>
+
+    <string name="numberSystemFeatureDesc">Fitur ini digunakan untuk melakukan proses konversi sistem bilangan atau sistem kode.</string>
+    <string name="karnaughMapFeatureDesc">Fitur ini digunakan untuk menyimulasikan peta Karnaugh dalam menyederhanakan persamaan logika suatu bilangan digital, dengan representasi grafis.</string>
+    <string name="logicGateFeatureDesc">Fitur ini digunakan untuk melakukan proses simulasi dalam membangun suatu rangkaian gerbang logika, yang selanjutnya dapat menganalisa hasil yang didapatkan dari proses simulasi tersebut.</string>
+    <string name="code_system_tab_title">Sistem Kode</string>
+
+    <string name="bin_text">Biner</string>
+    <string name="dec_text">Desimal</string>
+    <string name="oct_text">Oktal</string>
+    <string name="hex_text">Heksadesimal</string>
+    <string name="placeholder_bin_number">0100 101111</string>
+    <string name="placeholder_dec_number">0329</string>
+    <string name="placeholder_oct_number">0367</string>
+    <string name="placeholder_hex_number">036F</string>
+    <string name="first_hex_allowed_symbol">A</string>
+    <string name="last_hex_allowed_symbol">F</string>
+
+    <string name="bcd_text">Binary-Coded Decimal</string>
+    <string name="xs3_text">Excess-3</string>
+    <string name="gray_code_text">Kode Gray</string>
+    <string name="placeholder_bcd_number">0111 0101</string>
+    <string name="placeholder_xs3_number">0110 0011</string>
+    <string name="placeholder_gray_code_number">1000 0001</string>
+
+    <string name="kmap_type">Type: SoP</string>
+    <string name="kmap_answer_title">Hasil:</string>
+    <string name="kmap_two_variables_exp00">00</string>
+    <string name="kmap_two_variables_exp01">01</string>
+    <string name="kmap_two_variables_exp11">11</string>
+    <string name="kmap_two_variables_exp10">10</string>
+    <string name="kmap_answer_not_defined">N/D</string>
+    <string name="kmap_variables">%d Variabel</string>
+
+    <string name="stop_condition">Simulasi dihentikan</string>
+    <string name="play_condition">Simulasi dimulai</string>
+
+    <!-- NOTE: Please do not changed this code, it may cause an Exception -->
+    <!-- [START] dropdown array strings -->
+    <string name="auto_complete_tv_default_mode">Binary \u21C4 Binary-Coded Decimal</string>
+    <string-array name="code_system_mode">
+        <item>Binary \u21C4 Binary-Coded Decimal</item>
+        <item>Binary \u21C4 Excess-3</item>
+        <item>Binary \u21C4 Kode Gray</item>
+    </string-array>
+
+    <string-array name="gate_list">
+        <item>Gerbang AND</item>
+        <item>Gerbang OR</item>
+        <item>Gerbang NOT</item>
+        <item>Gerbang NAND</item>
+        <item>Gerbang NOR</item>
+        <item>Gerbang XOR</item>
+        <item>Gerbang XNOR</item>
+    </string-array>
+    <!-- [END] dropdown array strings -->
+
+    <!-- hints -->
+    <string name="hint_dropdown_code_system">Mode</string>
+    <string name="hint_bcd_keyword">BCD</string>
+    <string name="hint_xs3_keyword">XS3</string>
+    <string name="hint_gate_list">Gerbang</string>
+
+    <!-- error description string  -->
+    <string name="et_error_format">Mohon masukkan digit yang diperbolehkan: (%1$d-%2$d)</string>
+    <string name="et_error_format_with_symbol">Mohon masukkan digit atau simbol yang diperbolehkan: (%1$d-%2$d) \u0026 (%3$s-%4$s)</string>
+    <string name="err_exceeding_limit">Bilangan melebihi batas maksimal</string>
+    <string name="error_radix_namespace">radix=%d</string>
+    <string name="nybble_error">Input %1$s mengandung 4-bit (nibble) terlarang: %2$s</string>
+
+
+    <!-- string samples -->
+    <string name="sample_kmap_variable">2 Variable</string>
+    <string name="sample_kmap_result">R = !A.B</string>
+    <string name="sample_kmap_variable_identifier">AB</string>
+    <string name="sample_kmap_2variable">BC</string>
+    <string name="sample_kmap_2variable_cd">CD</string>
+    <string name="sample_kmap_1variable">A</string>
+    <string name="sample_and_gates">AND Gate</string>
+    <string name="language_preferences">Language Preferences</string>
+    <string name="subject_materials">Subject Materials</string>
+</resources>
