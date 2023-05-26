@@ -22,13 +22,13 @@ class NumberSystemActivity : AppCompatActivity() {
         setContentView(binding?.root)
 
         binding?.also {
-            ToolbarPreferences(this)
+            ToolbarPreferences.Builder(this)
                 .injectAppbar(it.numsysAppbar)
                 .injectToolbar(it.incToolbar.toolbar)
-                .injectAppcompat(this)
-                .toolbarAsActionbar()
-                .setElevation(R.integer.low)
-                .setTitle(R.string.numberSystemFeatureName, true)
+                .createInstance()
+                .setToolbarAsActionbar()
+                .setAppBarElevation(R.integer.low)
+                .setActionbarTitle(R.string.numberSystemFeatureName, true)
             injectViewPager()
         }
     }

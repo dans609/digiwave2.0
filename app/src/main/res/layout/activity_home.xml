@@ -23,6 +23,7 @@
                 app:layout_collapseMode="parallax" />
 
             <include
+                android:id="@+id/inc_toolbar"
                 style="@style/FillContainer"
                 layout="@layout/layout_toolbar"
                 android:layout_height="?attr/actionBarSize"

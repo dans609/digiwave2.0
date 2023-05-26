@@ -18,13 +18,13 @@ class KarnaughMapActivity : AppCompatActivity() {
         setContentView(binding?.root)
 
         binding?.also {
-            ToolbarPreferences(this)
-                .injectAppcompat(this)
+            ToolbarPreferences.Builder(this)
                 .injectAppbar(it.kmapAppbar)
                 .injectToolbar(it.incToolbar.toolbar)
-                .toolbarAsActionbar()
-                .setElevation(R.integer.low)
-                .setTitle(R.string.karnaughMapFeatureName, true)
+                .createInstance()
+                .setToolbarAsActionbar()
+                .setAppBarElevation(R.integer.low)
+                .setActionbarTitle(R.string.karnaughMapFeatureName, true)
             injectViewPager(it)
         }
     }

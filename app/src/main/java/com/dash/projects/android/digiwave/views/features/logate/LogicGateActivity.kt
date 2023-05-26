@@ -14,7 +14,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.`object`.DrawableDropdownGenerator
-import com.dash.projects.android.digiwave.`object`.ToolbarPreferences
+import com.dash.projects.android.digiwave.`object`.ToolbarPreferences.Companion.hideStatusBar
 import com.dash.projects.android.digiwave.`object`.utils.Utils.and
 import com.dash.projects.android.digiwave.`object`.utils.Utils.arrayRes
 import com.dash.projects.android.digiwave.`object`.utils.Utils.callToast
@@ -72,8 +72,7 @@ class LogicGateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        ToolbarPreferences(this).hideStatusBar(window)
+        hideStatusBar(window)
 
         val dropdownItemGenerator = DrawableDropdownGenerator.getInstance(this)
         mGateList.addAll(dropdownItemGenerator.generateDropdownItems())

@@ -100,4 +100,6 @@
     <string name="sample_kmap_2variable_cd">CD</string>
     <string name="sample_kmap_1variable">A</string>
     <string name="sample_and_gates">AND Gate</string>
+    <string name="language_preferences">Language Preferences</string>
+    <string name="subject_materials">Subject Materials</string>
 </resources>

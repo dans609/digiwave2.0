@@ -11,33 +11,52 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.appbar.AppBarLayout
 
-class ToolbarPreferences(private val context: Context) {
-    private var appbar: AppBarLayout? = null
+class ToolbarPreferences<in T : AppCompatActivity> private constructor(private val appCompat: T) {
+    private val context: Context
+
+    private var appBar: AppBarLayout? = null
     private var toolbar: Toolbar? = null
-    private var appcompat: AppCompatActivity? = null
 
-    fun injectAppbar(appbar: AppBarLayout) = apply {
-        this.appbar = appbar
+    init {
+        context = appCompat
     }
 
-    fun injectToolbar(toolbar: Toolbar) = apply {
-        this.toolbar = toolbar
+    private fun setAppBar(mAppBar: AppBarLayout) {
+        appBar = mAppBar
     }
 
-    fun injectAppcompat(appcompat: AppCompatActivity) = apply {
-        this.appcompat = appcompat
+    private fun setToolbar(mToolbar: Toolbar) {
+        toolbar = mToolbar
     }
 
-    fun toolbarAsActionbar() = apply {
-        appcompat?.setSupportActionBar(toolbar)
+    class Builder<in T : AppCompatActivity>(appCompat: T) {
+        private val toolbarPreferences: ToolbarPreferences<T>
+
+        init {
+            toolbarPreferences = ToolbarPreferences(appCompat)
+        }
+
+        fun injectAppbar(mAppbar: AppBarLayout): Builder<T> = apply {
+            toolbarPreferences.setAppBar(mAppbar)
+        }
+
+        fun injectToolbar(mToolbar: Toolbar): Builder<T> = apply {
+            toolbarPreferences.setToolbar(mToolbar)
+        }
+
+        fun createInstance() = toolbarPreferences
     }
 
-    fun setElevation(@IntegerRes id: Int) = apply {
-        appbar?.elevation = context.resources.getInteger(id).toFloat()
+    fun setToolbarAsActionbar() = apply {
+        appCompat.setSupportActionBar(toolbar)
     }
 
-    fun setTitle(@StringRes title: Int, withBackButton: Boolean?) = apply {
-        appcompat?.supportActionBar?.apply {
+    fun setAppBarElevation(@IntegerRes id: Int) = apply {
+        appBar?.elevation = context.resources.getInteger(id).toFloat()
+    }
+
+    fun setActionbarTitle(@StringRes title: Int, withBackButton: Boolean?) = apply {
+        appCompat.supportActionBar?.apply {
             this.title = context.getString(title)
             if (withBackButton != null) {
                 setDisplayHomeAsUpEnabled(withBackButton)
@@ -46,14 +65,14 @@ class ToolbarPreferences(private val context: Context) {
         }
     }
 
-    fun hideStatusBar(window: Window) = apply {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        else window.setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN)
-    }
-
     companion object {
         @Suppress("Deprecation")
         private const val FLAG_FULLSCREEN = WindowManager.LayoutParams.FLAG_FULLSCREEN
+
+        fun hideStatusBar(window: Window) = apply {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+                window.insetsController?.hide(WindowInsets.Type.statusBars())
+            else window.setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN)
+        }
     }
 }
