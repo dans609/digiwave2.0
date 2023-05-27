@@ -17,6 +17,7 @@
     <string name="cd_lamp">Lamp icon, used as a indicator for on or off state of gate simulation result</string>
     <string name="cd_start_simulation">Used for start simulation</string>
     <string name="cd_stop_simulation">Used for stop simulation</string>
+    <string name="cd_icon_book">Book icon</string>
 
     <!-- Application content strings -->
     <string name="numberSystemFeatureName">Number System</string>
@@ -100,6 +101,10 @@
     <string name="sample_kmap_2variable_cd">CD</string>
     <string name="sample_kmap_1variable">A</string>
     <string name="sample_and_gates">AND Gate</string>
+    <string name="sample_material_title">Subject Material #1</string>
+
     <string name="language_preferences">Language Preferences</string>
+
     <string name="subject_materials">Subject Materials</string>
+    <string name="subject_material_title">Subject Material #%1$s</string>
 </resources>

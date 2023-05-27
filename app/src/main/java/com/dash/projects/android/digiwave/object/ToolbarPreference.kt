@@ -47,7 +47,19 @@ class ToolbarPreferences<in T : AppCompatActivity> private constructor(private v
         fun createInstance() = toolbarPreferences
     }
 
-    fun setToolbarAsActionbar() = apply {
+    inner class ToolbarTitle {
+        fun setToolbarTitle(@StringRes title: Int, withBackButton: Boolean?) = apply {
+            appCompat.supportActionBar?.apply {
+                this.title = context.getString(title)
+                if (withBackButton != null) {
+                    setDisplayHomeAsUpEnabled(withBackButton)
+                    setDisplayShowHomeEnabled(withBackButton)
+                }
+            }
+        }
+    }
+
+    fun setToolbarAsActionbar() = ToolbarTitle().apply {
         appCompat.setSupportActionBar(toolbar)
     }
 
@@ -55,9 +67,10 @@ class ToolbarPreferences<in T : AppCompatActivity> private constructor(private v
         appBar?.elevation = context.resources.getInteger(id).toFloat()
     }
 
+    @Suppress("unused")
     fun setActionbarTitle(@StringRes title: Int, withBackButton: Boolean?) = apply {
-        appCompat.supportActionBar?.apply {
-            this.title = context.getString(title)
+        appCompat.supportActionBar?.run {
+            this@run.title = context.getString(title)
             if (withBackButton != null) {
                 setDisplayHomeAsUpEnabled(withBackButton)
                 setDisplayShowHomeEnabled(withBackButton)

@@ -26,9 +26,9 @@ class NumberSystemActivity : AppCompatActivity() {
                 .injectAppbar(it.numsysAppbar)
                 .injectToolbar(it.incToolbar.toolbar)
                 .createInstance()
-                .setToolbarAsActionbar()
                 .setAppBarElevation(R.integer.low)
-                .setActionbarTitle(R.string.numberSystemFeatureName, true)
+                .setToolbarAsActionbar()
+                .setToolbarTitle(R.string.numberSystemFeatureName, true)
             injectViewPager()
         }
     }

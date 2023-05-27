@@ -9,8 +9,7 @@ import com.dash.projects.android.digiwave.databinding.LayoutFeatureTemplateBindi
 import com.dash.projects.android.digiwave.enum.FeatureName
 import com.dash.projects.android.digiwave.model.AppFeature
 
-class FeatureAdapter :
-    RecyclerView.Adapter<FeatureAdapter.FeaturesViewHolder>() {
+class FeatureAdapter : RecyclerView.Adapter<FeatureAdapter.FeaturesViewHolder>() {
     var onFeatureClicked: ((FeatureName, View) -> Unit)? = null
     private val featureList = ArrayList<AppFeature>()
 
@@ -36,11 +35,7 @@ class FeatureAdapter :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = FeaturesViewHolder(
-        LayoutFeatureTemplateBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
+        LayoutFeatureTemplateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
     override fun onBindViewHolder(holder: FeaturesViewHolder, position: Int) =

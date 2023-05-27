@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SplashTheme">
         <activity
+            android:name=".views.menus.materials.SubjectMaterialsActivity"
+            android:exported="false"
+            android:parentActivityName=".views.home.HomeActivity"
+            android:theme="@style/Theme.Digiwave.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".views.features.logate.LogicGateActivity"
             android:exported="false"
             android:parentActivityName=".views.home.HomeActivity"

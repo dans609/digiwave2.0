@@ -223,6 +223,12 @@
         <item name="android:layout_marginBottom">@dimen/clear</item>
     </style>
 
+    <style name="LightCardViewStyle.SmallElevation.SuperOuterBarrier.CLEAR_BOTTOM" parent="LightCardViewStyle.SuperOuterBarrier.CLEAR_BOTTOM">
+        <item name="cardElevation">@dimen/oddHighMicroValue</item>
+        <item name="cardMaxElevation">@dimen/oddHighMicroValue</item>
+        <item name="cardCornerRadius">@dimen/smallBarrierValue</item>
+    </style>
+
     <style name="DarkCardViewStyle.SuperOuterBarrier.CLEAR_BOTTOM">
         <item name="android:layout_marginBottom">@dimen/clear</item>
     </style>
@@ -230,6 +236,11 @@
     <style name="FeatureListStyle">
         <item name="android:layout_width">@dimen/imageDensity_100</item>
         <item name="android:layout_height">@dimen/imageDensity_100</item>
+    </style>
+
+    <style name="SubjectMaterialCardImageSize">
+        <item name="android:layout_width">@dimen/dim40</item>
+        <item name="android:layout_height">@dimen/dim40</item>
     </style>
 
     <style name="FeatureImageThemes">
@@ -244,6 +255,11 @@
         <item name="android:maxLines">@integer/high</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/aestheticBlack</item>
+    </style>
+
+    <style name="SubjectMaterialsTitleTextThemes" parent="FeatureTitleTextThemes">
+        <item name="android:textSize">@dimen/largeSizePar</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="FeatureDescriptionTextThemes" parent="FeatureTitleTextThemes">
