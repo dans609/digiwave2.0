@@ -258,8 +258,14 @@
     </style>
 
     <style name="SubjectMaterialsTitleTextThemes" parent="FeatureTitleTextThemes">
-        <item name="android:textSize">@dimen/largeSizePar</item>
+        <item name="android:textSize">@dimen/mediumSizePar</item>
         <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="SubjectMaterialsDescTextThemes" parent="SubjectMaterialsTitleTextThemes">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/smallSizePar</item>
     </style>
 
     <style name="FeatureDescriptionTextThemes" parent="FeatureTitleTextThemes">
@@ -320,6 +326,11 @@
 
     <style name="FillContainer.FitsSystemWindows">
         <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="FillContainer.FitsSystemWindows.CollapsingToolbarScrim">
+        <item name="contentScrim">?attr/colorPrimary</item>
+        <item name="statusBarScrim">?attr/colorPrimary</item>
     </style>
 
     <style name="ConstraintContainer.FitsSystemWindows">

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FillContainer.FitsSystemWindows"
+    tools:context=".views.menus.materials.SubjectMaterialsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        style="@style/FillContainer.FitsSystemWindows"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapse_subject_materials"
+            style="@style/FillContainer.FitsSystemWindows.CollapsingToolbarScrim"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|snap|enterAlways"
+            app:titleEnabled="false">
+
+            <include
+                android:id="@+id/inc_toolbar"
+                style="@style/FillContainer"
+                layout="@layout/layout_toolbar"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="pin"
+                tools:ignore="IncludeLayoutParam" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_subject_materials"
+        style="@style/FillContainer"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

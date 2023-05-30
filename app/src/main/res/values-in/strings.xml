@@ -19,6 +19,7 @@
     <string name="cd_start_simulation">Digunakan untuk memulai simulasi</string>
     <string name="cd_stop_simulation">Digunakan untuk memberhentikan simulasi</string>
     <string name="cd_icon_book">Ikon buku</string>
+    <string name="cd_see_pdf">Ikon ini digunakan untuk melihat file pdf dari materi pelajaran</string>
 
     <!-- Application content strings -->
     <string name="numberSystemFeatureName">Sistem Bilangan</string>
@@ -102,10 +103,31 @@
     <string name="sample_kmap_2variable_cd">CD</string>
     <string name="sample_kmap_1variable">A</string>
     <string name="sample_and_gates">AND Gate</string>
-    <string name="sample_material_title">Materi Pelajaran #1</string>
+    <string name="sample_material_title">Materi Kuliah ke-1</string>
+    <string name="sample_material_desc">Aljabar Boolean</string>
 
     <string name="language_preferences">Language Preferences</string>
+    <string name="subject_materials">Materi Kuliah</string>
+    <string name="subject_material_title">Materi Kuliah ke-%1$s</string>
 
-    <string name="subject_materials">Materi Pelajaran</string>
-    <string name="subject_material_title">Materi Pelajaran #%1$s</string>
+    <string name="desc_subject_contract">Kontrak perkuliahan</string>
+    <string name="desc_subject_numsys">Sistem bilangan</string>
+    <string name="desc_subject_codesys">Sistem kode</string>
+    <string name="desc_subject_electronics_comps">Pengenalan komponen elektronika</string>
+    <string name="desc_subject_logate">Gerbang logika dasar</string>
+    <string name="desc_subject_digital_circuit">Timing Diagram dan SOP \u0026 POS</string>
+    <string name="desc_subject_kmap">Karnaugh Map</string>
+    <string name="desc_subject_mid_exams">Latihan soal Ujian Tengah Semester (UTS)</string>
+    <string name="desc_subject_bool_algebra">Aljabar Boolean</string>
+    <string name="desc_subject_seven_segments">Display LED (7-Segmen)</string>
+    <string name="desc_subject_register_counter">Register \u0026 Counter</string>
+    <string name="desc_subject_flip_flop">Flip-flop</string>
+    <string name="desc_subject_comparator_multiplexer">Rangkaian Comparator dan Multiplekser Demultiplekser</string>
+    <string name="desc_subject_decoder_encoder">Decoder \u0026 Encoder</string>
+    <string name="desc_subject_final_exams">Latihan soal Ujian Akhir Semester (UAS)</string>
+
+    <string name="text_downloading">Sedang mengunduh…</string>
+    <string name="text_error_message">Error</string>
+    <string name="text_check_internet">Periksa koneksi internet Anda dan coba lagi.</string>
+    <string name="text_try_again">Try again</string>
 </resources>

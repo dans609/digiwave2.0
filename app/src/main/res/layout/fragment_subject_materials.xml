@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FillContainer"
+    tools:context=".views.menus.materials.branch.SubjectMaterialsFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_subject_materials"
+        style="@style/FillContainer.RecyclerViewStyles"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/template_card_image_title" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -529,7 +529,7 @@ class UtilsTest {
 
     @Test
     @Suppress("SpellCheckingInspection")
-    fun testEachIsNotEmpty_checkingAResultIfArrayOnFirstParamIsHaveAnEmptyElementButAnExtensionStringIsContainedOnArrayElementAtSecondParam_returnFalse() {
+    fun testEachIsNotEmpty_checkingAResultIfArrayOnFirstParamIsHaveAnEmptyElementAlsoAnExtensionStringIsContainedOnArrayElementAtSecondParam_returnFalse() {
         val firstParam = listOf("sisdig corner's", "numsys", " lorem games", "", "", "")
         val extensionString = "digiwave"
 

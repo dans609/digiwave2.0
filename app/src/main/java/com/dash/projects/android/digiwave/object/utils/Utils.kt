@@ -81,6 +81,7 @@ object Utils {
         .publish()
         .refCount()
 
+    @Suppress("unused")
     fun <T : TextView> T.observeTv() = RxTextView.textChanges(this)
         .observeOn(AndroidSchedulers.mainThread())
         .publish()

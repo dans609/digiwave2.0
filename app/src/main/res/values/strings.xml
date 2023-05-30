@@ -18,6 +18,7 @@
     <string name="cd_start_simulation">Used for start simulation</string>
     <string name="cd_stop_simulation">Used for stop simulation</string>
     <string name="cd_icon_book">Book icon</string>
+    <string name="cd_see_pdf">Used for see pdf file of subject material</string>
 
     <!-- Application content strings -->
     <string name="numberSystemFeatureName">Number System</string>
@@ -102,9 +103,30 @@
     <string name="sample_kmap_1variable">A</string>
     <string name="sample_and_gates">AND Gate</string>
     <string name="sample_material_title">Subject Material #1</string>
+    <string name="sample_material_desc">Algebra Boolean</string>
 
     <string name="language_preferences">Language Preferences</string>
-
     <string name="subject_materials">Subject Materials</string>
     <string name="subject_material_title">Subject Material #%1$s</string>
+
+    <string name="desc_subject_contract">Subject Contract</string>
+    <string name="desc_subject_numsys">Number system</string>
+    <string name="desc_subject_codesys">Code system</string>
+    <string name="desc_subject_electronics_comps">Electronics components</string>
+    <string name="desc_subject_logate">Logic gate</string>
+    <string name="desc_subject_digital_circuit">Digital circuit and Timing Diagram</string>
+    <string name="desc_subject_kmap">Karnaugh Map</string>
+    <string name="desc_subject_mid_exams">Mid-term exams</string>
+    <string name="desc_subject_bool_algebra">Boolean Algebra</string>
+    <string name="desc_subject_seven_segments">Seven segments</string>
+    <string name="desc_subject_register_counter">Register and Counter</string>
+    <string name="desc_subject_comparator_multiplexer">Comparator and De-multiplexer Multiplexer Circuits</string>
+    <string name="desc_subject_flip_flop">Flip-flop</string>
+    <string name="desc_subject_decoder_encoder">Decoder and Encoder</string>
+    <string name="desc_subject_final_exams">Final exams</string>
+    
+    <string name="text_downloading">Downloading…</string>
+    <string name="text_error_message">Error</string>
+    <string name="text_check_internet">Check your internet connection and Try again.</string>
+    <string name="text_try_again">Try again</string>
 </resources>
