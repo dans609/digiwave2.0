@@ -12,6 +12,8 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:textColor">@color/black</item>
         <item name="warning">@color/crimsonRed</item>
+        <item name="gateColor">@color/colombianBlue</item>
+        <item name="autocompleteColor">@color/black</item>
     </style>
 
     <style name="Theme.Digiwave.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -27,5 +29,7 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:textColor">@color/black</item>
         <item name="warning">@color/crimsonRed</item>
+        <item name="gateColor">@color/colombianBlue</item>
+        <item name="autocompleteColor">@color/black</item>
     </style>
 </resources>

@@ -3,20 +3,20 @@
     android:width="247dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#00000000"
         android:pathData="M147.49,139.26H141.57C142.57,136.71 143.9,133.16 145.23,129.11C147.87,121.03 150.61,110.6 150.49,102.1C150.37,94.19 147.63,84.52 145.04,77.04C143.81,73.48 142.58,70.33 141.63,68H147.49C171.87,68 187.09,77.29 196.24,86.44C200.83,91.04 203.93,95.63 205.86,99.07C206.83,100.78 207.51,102.2 207.93,103.18C208.01,103.34 208.07,103.49 208.13,103.63C208.07,103.77 208.01,103.92 207.93,104.08C207.51,105.06 206.83,106.48 205.86,108.19C203.93,111.63 200.83,116.22 196.24,120.82C187.09,129.97 171.87,139.26 147.49,139.26Z"
-        android:strokeColor="#0A1450" android:strokeWidth="6"/>
+        android:strokeColor="?attr/gateColor" android:strokeWidth="6"/>
     <path android:fillColor="#00000000"
         android:pathData="M102.93,79.86H144.52"
-        android:strokeColor="#0A1450" android:strokeWidth="6"/>
+        android:strokeColor="?attr/gateColor" android:strokeWidth="6"/>
     <path android:fillColor="#00000000"
         android:pathData="M102.93,127.4H144.52"
-        android:strokeColor="#0A1450" android:strokeWidth="6"/>
+        android:strokeColor="?attr/gateColor" android:strokeWidth="6"/>
     <path android:fillColor="#00000000"
         android:pathData="M209.87,103.63H247"
-        android:strokeColor="#0A1450" android:strokeWidth="6"/>
+        android:strokeColor="?attr/gateColor" android:strokeWidth="6"/>
     <path android:fillColor="#00000000"
         android:pathData="M36.48,80.5H103.43M5,97H32.98C34.63,97 35.98,95.66 35.98,94V66C35.98,64.34 34.63,63 32.98,63H5C3.34,63 2,64.34 2,66V94C2,95.66 3.34,97 5,97Z"
-        android:strokeColor="#0A1450" android:strokeWidth="3"/>
+        android:strokeColor="?attr/gateColor" android:strokeWidth="3"/>
     <path android:fillColor="#00000000"
         android:pathData="M36.48,128H103.43M5,145H32.98C34.63,145 35.98,143.66 35.98,142V114C35.98,112.34 34.63,111 32.98,111H5C3.34,111 2,112.34 2,114V142C2,143.66 3.34,145 5,145Z"
-        android:strokeColor="#0A1450" android:strokeWidth="3"/>
+        android:strokeColor="?attr/gateColor" android:strokeWidth="3"/>
 </vector>

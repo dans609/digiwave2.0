@@ -5,10 +5,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_bin"
-        style="@style/ConstraintContainer.TextInputStyles"
+        style="@style/ConstraintContainer.TextInputStyles.TextInputThemes"
         android:layout_height="wrap_content"
         android:hint="@string/bin_text"
-        android:theme="@style/TextInputThemes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,10 +22,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_dec"
-        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
+        style="@style/ConstraintContainer.TextInputStyles.TextInputThemes"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/superBarrierValue"
         android:hint="@string/dec_text"
-        android:theme="@style/TextInputThemes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etl_bin"
@@ -41,10 +40,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_oct"
-        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
+        style="@style/ConstraintContainer.TextInputStyles.TextInputThemes"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/superBarrierValue"
         android:hint="@string/oct_text"
-        android:theme="@style/TextInputThemes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etl_dec"
@@ -59,10 +58,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etl_hex"
-        style="@style/ConstraintContainer.TextInputStyles.SuperOuterBarrier.JUST_TOP"
+        style="@style/ConstraintContainer.TextInputStyles.TextInputThemes"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/wideBarrierValue"
         android:hint="@string/hex_text"
-        android:theme="@style/TextInputThemes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etl_oct"
@@ -74,5 +73,15 @@
             android:layout_height="wrap_content"
             android:theme="@style/TextInputTypeTextChapCharacters" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_see_formulation"
+        style="@style/HugContent"
+        android:layout_marginTop="@dimen/superBarrierValue"
+        android:text="@string/see_formulation"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etl_hex" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

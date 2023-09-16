@@ -8,12 +8,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
+import android.webkit.WebViewClient
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.`object`.SubjectMaterialWebClient
 import com.dash.projects.android.digiwave.`object`.utils.Utils.callToast
 import com.dash.projects.android.digiwave.databinding.FragmentMaterialNavigationBinding
+import com.google.android.material.appbar.AppBarLayout
 
 class MaterialNavigationFragment : Fragment() {
     private var _binding: FragmentMaterialNavigationBinding? = null
@@ -24,10 +28,8 @@ class MaterialNavigationFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        activity?.apply {
-            (this as AppCompatActivity?)?.supportActionBar?.apply {
-                setDisplayHomeAsUpEnabled(false)
-                setDisplayShowHomeEnabled(false)
+        if (activity != null) {
+            (activity as AppCompatActivity).supportActionBar?.apply {
                 if (newTitle == null) setTitle(R.string.subject_materials)
                 else title = newTitle
             }
@@ -36,10 +38,8 @@ class MaterialNavigationFragment : Fragment() {
 
     override fun onStop() {
         super.onStop()
-        activity?.apply {
-            (this as AppCompatActivity?)?.supportActionBar?.apply {
-                setDisplayHomeAsUpEnabled(true)
-                setDisplayShowHomeEnabled(true)
+        if (activity != null) {
+            (activity as AppCompatActivity).supportActionBar?.apply {
                 setTitle(R.string.subject_materials)
             }
         }
@@ -50,12 +50,18 @@ class MaterialNavigationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentMaterialNavigationBinding.inflate(inflater, container, false)
+        container?.rootView?.findViewById<AppBarLayout>(R.id.appbar_subject)
+            ?.setExpanded(true, true)
+        container?.rootView?.findViewById<Button>(R.id.home)?.setOnClickListener {
+            activity?.onBackPressedDispatcher?.onBackPressed()
+        }
         return binding?.root
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         if (activity != null) {
             val context = activity?.applicationContext
 
@@ -65,9 +71,12 @@ class MaterialNavigationFragment : Fragment() {
                     _newTitle = arguments?.getString(EXTRA_TITLE)
 
                     web.loadUrl(url)
-                    web.webViewClient = SubjectMaterialWebClient.getInstance(context)
+                    web.webViewClient = WebViewClient()
                     web.settings.javaScriptEnabled = true
                     web.settings.javaScriptCanOpenWindowsAutomatically = true
+                    web.settings.setSupportZoom(true)
+                    web.settings.mediaPlaybackRequiresUserGesture = false
+                    web.settings.setPluginState(WebSettings.PluginState.ON)
                     web.clearCache(true)
                     web.clearHistory()
                     web.setDownloadListener { mUrl, _, _, _, _ ->

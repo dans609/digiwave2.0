@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.dash.projects.android.digiwave.R
+import com.dash.projects.android.digiwave.`object`.utils.Utils.callToast
 import com.dash.projects.android.digiwave.`object`.utils.Utils.intRes
 import com.dash.projects.android.digiwave.databinding.FragmentNumberSystemCategoryBinding
 import com.dash.projects.android.digiwave.views.features.numsys.NumberSystemActivity.Companion.ON_ERROR_TAG
 import com.dash.projects.android.digiwave.views.features.numsys.NumberSystemActivity.Companion.ON_NEXT_TAG
+import com.dash.projects.android.digiwave.views.features.numsys.dialog.NumberSystemDialog
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.jakewharton.rxbinding2.widget.RxTextView
@@ -48,8 +50,47 @@ class NumberSystemCategoryFragment : Fragment() {
                         etOct.observe().subscribe(onNext(octRadix, bind), ::onError),
                         etHex.observe().subscribe(onNext(hexRadix, bind), ::onError),
                     )
+
+                    btnSeeFormulation.setOnClickListener {
+                        when {
+                            isInputsEmpty(etBin, etDec, etOct, etHex) ->
+                                it.callToast(R.string.empty_input)
+                            hasNegativeValue(etBin, etDec, etOct, etHex) ->
+                                it.callToast(R.string.cannot_see_the_formulation)
+                            else -> {
+                                val numberSystemDialog = NumberSystemDialog()
+                                val bundle = Bundle().apply {
+                                    putString(NumberSystemDialog.BIN_TEXT, etBin.text.toString())
+                                    putString(NumberSystemDialog.OCT_TEXT, etOct.text.toString())
+                                    putString(NumberSystemDialog.HEX_TEXT, etHex.text.toString())
+                                }
+
+                                numberSystemDialog.arguments = bundle
+                                val fragmentTransaction = supportFragmentManager.beginTransaction()
+                                val fragmentTag = NumberSystemDialog::class.java.simpleName
+                                val fragment = supportFragmentManager.findFragmentByTag(fragmentTag)
+
+                                if (fragment != null) fragmentTransaction.remove(fragment)
+
+                                fragmentTransaction.addToBackStack(null)
+                                numberSystemDialog.show(fragmentTransaction, fragmentTag)
+                            }
+                        }
+                    }
                 }
             }
+        }
+    }
+
+    private fun <ET : EditText> isInputsEmpty(vararg et: ET): Boolean {
+        return et.any {
+            it.text.isNullOrBlank()
+        }
+    }
+
+    private fun <ET : EditText> hasNegativeValue(vararg et: ET): Boolean {
+        return et.any {
+            it.text.toString()[0].toString() == "-"
         }
     }
 

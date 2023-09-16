@@ -6,6 +6,7 @@
     tools:context=".views.menus.materials.SubjectMaterialsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_subject"
         style="@style/FillContainer.FitsSystemWindows"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">

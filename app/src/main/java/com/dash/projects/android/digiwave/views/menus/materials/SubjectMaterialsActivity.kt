@@ -1,6 +1,7 @@
 package com.dash.projects.android.digiwave.views.menus.materials
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.dash.projects.android.digiwave.R
 import com.dash.projects.android.digiwave.`object`.ToolbarPreferences
@@ -32,5 +33,14 @@ class SubjectMaterialsActivity : AppCompatActivity() {
                 .add(R.id.fragment_container_subject_materials, fragment, fragmentTag)
                 .commit()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == android.R.id.home) {
+            onBackPressedDispatcher.onBackPressed()
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

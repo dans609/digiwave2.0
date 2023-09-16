@@ -129,4 +129,17 @@
     <string name="text_error_message">Error</string>
     <string name="text_check_internet">Check your internet connection and Try again.</string>
     <string name="text_try_again">Try again</string>
+
+    <string name="see_formulation">See Formulation</string>
+    <string name="cannot_see_the_formulation">Can\'t see the formulation for negative numbers</string>
+    <string name="empty_input">Inputs are empty</string>
+    <string name="bin_formulation_title">BIN:</string>
+    <string name="oct_formulation_title">OCT:</string>
+    <string name="hex_formulation_title">HEX:</string>
+    <string name="dec_formulation_title">DEC:</string>
+    <string name="radio_is_not_selected">None of the radios is selected</string>
+    <string name="formulation_title">Formulation:</string>
+    <string name="bin_to_dec">Bin to Dec</string>
+    <string name="oct_to_dec">Oct to Dec</string>
+    <string name="hex_to_dec">Hex to Dec</string>
 </resources>

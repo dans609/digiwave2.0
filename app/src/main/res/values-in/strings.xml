@@ -130,4 +130,17 @@
     <string name="text_error_message">Error</string>
     <string name="text_check_internet">Periksa koneksi internet Anda dan coba lagi.</string>
     <string name="text_try_again">Try again</string>
+
+    <string name="see_formulation">Lihat Formulasi</string>
+    <string name="cannot_see_the_formulation">Tidak dapat melihat formulasi untuk bilangan negatif</string>
+    <string name="empty_input">Inputs are empty</string>
+    <string name="bin_formulation_title">BIN:</string>
+    <string name="oct_formulation_title">OCT:</string>
+    <string name="hex_formulation_title">HEX:</string>
+    <string name="dec_formulation_title">DEC:</string>
+    <string name="radio_is_not_selected">None of the radios is selected</string>
+    <string name="formulation_title">Formulation:</string>
+    <string name="bin_to_dec">Bin ke Des</string>
+    <string name="oct_to_dec">Oct ke Des</string>
+    <string name="hex_to_dec">Hek ke Des</string>
 </resources>

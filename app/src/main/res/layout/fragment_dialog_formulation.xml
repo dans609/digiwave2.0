@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_formulation"
+    style="@style/FillContainer"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/FillContainer.SuperInnerBarrier">
+
+        <TextView
+            android:id="@+id/tv_formulation_title"
+            style="@style/FillContainer"
+            android:layout_height="wrap_content"
+            android:text="@string/formulation_title"
+            android:theme="@style/FeatureTitleTextThemes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rg_conversion_type"
+            style="@style/FillContainer.SmallOuterBarrier.ONLY_TOP"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_formulation_title">
+
+            <RadioButton
+                android:id="@+id/rb_bin_dec"
+                style="@style/HugContent"
+                android:layout_weight="@integer/high"
+                android:checked="true"
+                android:text="@string/bin_to_dec" />
+
+            <RadioButton
+                android:id="@+id/rb_oct_dec"
+                style="@style/HugContent"
+                android:layout_weight="@integer/high"
+                android:text="@string/oct_to_dec" />
+
+            <RadioButton
+                android:id="@+id/rb_hex_dec"
+                style="@style/HugContent"
+                android:layout_weight="@integer/high"
+                android:text="@string/hex_to_dec" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_selected_numsys_title"
+            style="@style/HugContent.OuterBarrierDim24.ONLY_TOP"
+            android:text="@string/bin_formulation_title"
+            android:theme="@style/FeatureTitleTextThemes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_conversion_type" />
+
+        <TextView
+            android:id="@+id/tv_selected_numsys_digit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@id/tv_selected_numsys_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_selected_numsys_title"
+            app:layout_constraintTop_toTopOf="@id/tv_selected_numsys_title"
+            tools:text="1010" />
+
+        <TextView
+            android:id="@+id/tv_target_numsys_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:singleLine="true"
+            android:text="@string/dec_formulation_title"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_selected_numsys_title" />
+
+        <TextView
+            android:id="@+id/tv_target_numsys_digit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.2"
+            android:maxLines="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_target_numsys_title"
+            app:layout_constraintTop_toTopOf="@id/tv_target_numsys_title"
+            tools:text="1010" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

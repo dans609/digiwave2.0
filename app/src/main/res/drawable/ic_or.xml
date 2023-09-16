@@ -1,13 +1,27 @@
-<vector android:autoMirrored="true" android:height="50dp"
-    android:viewportHeight="70" android:viewportWidth="70"
-    android:width="50dp" xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#00000000"
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:autoMirrored="true"
+    android:viewportWidth="70"
+    android:viewportHeight="70">
+    <path
+        android:fillColor="#00000000"
         android:pathData="M26,47H23.992C24.331,46.14 24.781,44.941 25.229,43.571C26.118,40.852 27.041,37.343 27,34.486C26.962,31.826 26.039,28.573 25.168,26.056C24.751,24.849 24.335,23.786 24.014,23H26C34.212,23 39.339,26.128 42.418,29.207C43.967,30.756 45.008,32.304 45.66,33.46C45.986,34.038 46.214,34.515 46.358,34.844C46.383,34.9 46.405,34.953 46.425,35C46.405,35.047 46.383,35.1 46.358,35.156C46.214,35.485 45.986,35.962 45.66,36.54C45.008,37.696 43.967,39.244 42.418,40.793C39.339,43.872 34.212,47 26,47Z"
-        android:strokeColor="#0A1450" android:strokeWidth="2"/>
-    <path android:fillColor="#00000000" android:pathData="M11,27H25"
-        android:strokeColor="#0A1450" android:strokeWidth="2"/>
-    <path android:fillColor="#00000000" android:pathData="M11,43H25"
-        android:strokeColor="#0A1450" android:strokeWidth="2"/>
-    <path android:fillColor="#00000000" android:pathData="M47,35H59.5"
-        android:strokeColor="#0A1450" android:strokeWidth="2"/>
+        android:strokeWidth="2"
+        android:strokeColor="?attr/gateColor" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M11,27H25"
+        android:strokeWidth="2"
+        android:strokeColor="?attr/gateColor" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M11,43H25"
+        android:strokeWidth="2"
+        android:strokeColor="?attr/gateColor" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M47,35H59.5"
+        android:strokeWidth="2"
+        android:strokeColor="?attr/gateColor" />
 </vector>

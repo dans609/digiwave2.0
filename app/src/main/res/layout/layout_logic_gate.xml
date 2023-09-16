@@ -17,7 +17,8 @@
             android:id="@+id/auto_tv_gates"
             style="@style/FillContainer.InputType.NONE"
             android:hint="@string/hint_gate_list"
-            android:text="@string/sample_and_gates" />
+            android:text="@string/sample_and_gates"
+            android:textColor="?attr/autocompleteColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

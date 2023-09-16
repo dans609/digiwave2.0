@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dash.projects.android.digiwave.R
@@ -41,6 +40,7 @@ class SubjectMaterialsFragment : Fragment() {
             showRecyclerList(rvSubjectMaterials)
         }
     }
+
     private fun showRecyclerList(rv: RecyclerView) = subjectMaterialAdapter.also { adapter ->
         adapter.onMaterialClicked = ::onSubjectMaterialClicked
         rv.layoutManager = LinearLayoutManager(activity)

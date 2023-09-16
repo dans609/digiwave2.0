@@ -14,6 +14,8 @@
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/black</item>
         <item name="warning">@color/crimsonRed</item>
+        <item name="gateColor">@color/colombianBlue</item>
+        <item name="autocompleteColor">@color/black</item>
     </style>
 
     <style name="Theme.Digiwave.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -29,6 +31,8 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:textColor">@color/black</item>
         <item name="warning">@color/crimsonRed</item>
+        <item name="gateColor">@color/colombianBlue</item>
+        <item name="autocompleteColor">@color/black</item>
     </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
@@ -46,6 +50,8 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:textColor">@color/black</item>
         <item name="warning">@color/crimsonRed</item>
+        <item name="gateColor">@color/colombianBlue</item>
+        <item name="autocompleteColor">@color/black</item>
     </style>
 
 
@@ -375,6 +381,13 @@
         <item name="endIconTint">?attr/colorPrimary</item>
     </style>
 
+    <style name="ConstraintContainer.TextInputStyles.TextInputThemes" parent="TextInputThemes">
+        <item name="android:layout_width">@dimen/clear</item>
+        <item name="android:layout_height">@dimen/clear</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">?attr/colorPrimary</item>
+    </style>
+
     <style name="TextInputTypeNumber">
         <item name="android:inputType">number</item>
     </style>
@@ -566,5 +579,17 @@
     <style name="IconSize_Dim40">
         <item name="android:layout_width">@dimen/dim40</item>
         <item name="android:layout_height">@dimen/dim40</item>
+    </style>
+
+    <style name="FillContainer.SmallOuterBarrier.ONLY_TOP" parent="FillContainer">
+        <item name="android:layout_marginTop">@dimen/smallBarrierValue</item>
+    </style>
+
+    <style name="FillContainer.OuterBarrierDim24.ONLY_TOP" parent="FillContainer">
+        <item name="android:layout_marginTop">@dimen/normalIconSize</item>
+    </style>
+
+    <style name="HugContent.OuterBarrierDim24.ONLY_TOP" parent="HugContent">
+        <item name="android:layout_marginTop">@dimen/normalIconSize</item>
     </style>
 </resources>
